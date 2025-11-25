@@ -637,3 +637,7 @@
 - [x] Link cards to resource download modals
 - [x] Test responsive layout on mobile and desktop
 - [x] Verify lead capture flow from homepage to download (12 tests passing)
+
+
+## Bug Fixes
+- [x] Fix nested anchor tag error on /solutions/group-homes page
