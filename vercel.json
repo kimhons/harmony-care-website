@@ -55,10 +55,5 @@
       "NODE_VERSION": "22"
     }
   },
-  "functions": {
-    "api/**/*.ts": {
-      "runtime": "nodejs22.x"
-    }
-  },
   "crons": []
 }
