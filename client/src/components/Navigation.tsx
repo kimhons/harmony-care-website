@@ -98,12 +98,12 @@ export default function Navigation() {
           <div className="flex flex-col h-full p-6">
             <nav className="flex flex-col gap-1">
               <Link href="/agents">
-                <a 
-                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors"
+                <div 
+                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors cursor-pointer"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   AI Agents
-                </a>
+                </div>
               </Link>
               
               {/* Solutions Section */}
@@ -111,31 +111,31 @@ export default function Navigation() {
                 Solutions
               </div>
               <Link href="/solutions/group-homes">
-                <a 
-                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors"
+                <div 
+                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors cursor-pointer"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <div>Group Homes</div>
                   <div className="text-xs text-muted-foreground mt-0.5">For 1-10 residents</div>
-                </a>
+                </div>
               </Link>
               <Link href="/solutions/icf-id">
-                <a 
-                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors"
+                <div 
+                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors cursor-pointer"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <div>ICF-ID Facilities</div>
                   <div className="text-xs text-muted-foreground mt-0.5">For 16-50+ residents</div>
-                </a>
+                </div>
               </Link>
               
               <Link href="/pricing">
-                <a 
-                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors"
+                <div 
+                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors cursor-pointer"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Pricing
-                </a>
+                </div>
               </Link>
               <a 
                 href="#resources" 

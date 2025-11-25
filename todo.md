@@ -287,3 +287,6 @@
 - [ ] Create API endpoint for cron to call
 - [ ] Test cron configuration locally
 - [ ] Document deployment instructions
+
+## Fix Nested Anchor Tags
+- [x] Find and fix nested <a> tags in homepage or navigation
