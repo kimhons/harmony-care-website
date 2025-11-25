@@ -327,3 +327,13 @@
 - [x] Build shareable milestone posts with pre-written content
 - [x] Integrate milestone celebrations into referral flow
 - [x] Test milestone celebration system
+
+## Logo and About Page
+- [x] Fix logo size in navigation (increase size)
+- [x] Add About link to navigation
+- [x] Create About page route
+- [x] Add mission statement
+- [x] Add vision statement
+- [x] Add core values section
+- [x] Add detailed discussion on enhancing residential care
+- [x] Test About page

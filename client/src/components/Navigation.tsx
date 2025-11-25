@@ -16,7 +16,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-14">
             <Link href="/">
               <div className="flex items-center cursor-pointer hover:opacity-80 transition-opacity">
-                 <img src={APP_LOGO} alt="HarmonyCare" className="h-12" />
+                 <img src={APP_LOGO} alt="HarmonyCare" className="h-10" />
               </div>
             </Link>
             
@@ -52,6 +52,9 @@ export default function Navigation() {
               
               <Link href="/pricing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Pricing
+              </Link>
+              <Link href="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                About
               </Link>
               <a href="#resources" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                 Resources
@@ -135,6 +138,14 @@ export default function Navigation() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Pricing
+                </div>
+              </Link>
+              <Link href="/about">
+                <div 
+                  className="px-4 py-3 rounded-lg text-sm font-medium hover:bg-accent/10 transition-colors cursor-pointer"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
                 </div>
               </Link>
               <a 
