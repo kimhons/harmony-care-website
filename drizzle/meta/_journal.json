@@ -50,6 +50,13 @@
       "when": 1764103259821,
       "tag": "0006_little_callisto",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1764104822941,
+      "tag": "0007_great_pestilence",
+      "breakpoints": true
     }
   ]
 }

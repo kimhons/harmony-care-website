@@ -172,6 +172,27 @@ export const adminCalculatorLeadsRouter = router({
       .groupBy(sql`date`)
       .orderBy(sql`date`);
 
+    // Lead scoring distribution
+    const leadTierResult = await db
+      .select({
+        tier: calculatorLeads.leadTier,
+        count: sql<number>`count(*)`,
+      })
+      .from(calculatorLeads)
+      .groupBy(calculatorLeads.leadTier);
+
+    // Savings breakdown aggregation
+    const savingsBreakdownResult = await db
+      .select({
+        totalOvertime: sql<number>`SUM(${calculatorLeads.overtimeSavings})`,
+        totalError: sql<number>`SUM(${calculatorLeads.errorSavings})`,
+        totalCompliance: sql<number>`SUM(${calculatorLeads.complianceSavings})`,
+        totalRetention: sql<number>`SUM(${calculatorLeads.retentionSavings})`,
+      })
+      .from(calculatorLeads);
+
+    const savingsBreakdown = savingsBreakdownResult[0] || {};
+
     return {
       total,
       bySource: sourceResult.map(r => ({ source: r.source || 'unknown', count: Number(r.count) })),
@@ -179,6 +200,13 @@ export const adminCalculatorLeadsRouter = router({
       avgSavings,
       byUtmSource: utmSourceResult.map(r => ({ utmSource: r.utmSource || 'unknown', count: Number(r.count) })),
       leadsOverTime: leadsOverTimeResult.map(r => ({ date: r.date, count: Number(r.count) })),
+      byLeadTier: leadTierResult.map(r => ({ tier: r.tier, count: Number(r.count) })),
+      savingsBreakdown: {
+        overtime: Math.round(Number(savingsBreakdown.totalOvertime || 0)),
+        error: Math.round(Number(savingsBreakdown.totalError || 0)),
+        compliance: Math.round(Number(savingsBreakdown.totalCompliance || 0)),
+        retention: Math.round(Number(savingsBreakdown.totalRetention || 0)),
+      },
     };
   }),
 

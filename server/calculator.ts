@@ -3,6 +3,7 @@ import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { getDb } from "./db";
 import { calculatorLeads } from "../drizzle/schema";
+import { calculateLeadScore } from "./leadScoringService";
 
 // HubSpot API integration
 const HUBSPOT_API_KEY = process.env.HUBSPOT_API_KEY || '';
@@ -347,6 +348,13 @@ export const calculatorRouter = router({
         if (!db) {
           console.warn("Database not available, skipping lead storage");
         } else {
+          // Calculate initial lead score
+          const scoreResult = calculateLeadScore({
+            residentCount: input.residents,
+            annualSavings: input.annualSavings,
+            engagementScore: 0, // Initial score, will increase with engagement
+          });
+
           await db.insert(calculatorLeads).values({
           email: input.email,
           name: input.name || null,
@@ -365,6 +373,9 @@ export const calculatorRouter = router({
           utmTerm: input.utmTerm || null,
           utmContent: input.utmContent || null,
           emailSent: 0,
+          leadScore: scoreResult.score,
+          leadTier: scoreResult.tier,
+          engagementScore: 0,
           });
           
           console.log("Calculator lead stored in database");

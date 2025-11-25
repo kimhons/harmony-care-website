@@ -27,6 +27,34 @@ import {
 import { Download, Search, TrendingUp, Users, DollarSign, Target } from "lucide-react";
 import { toast } from "sonner";
 import Navigation from "@/components/Navigation";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from "chart.js";
+import { Line, Bar, Doughnut } from "react-chartjs-2";
+
+// Register Chart.js components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  ArcElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+);
 
 export default function AdminCalculatorLeads() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -69,6 +97,8 @@ export default function AdminCalculatorLeads() {
       "Facility Type",
       "Residents",
       "Annual Savings",
+      "Lead Score",
+      "Lead Tier",
       "Source",
       "UTM Source",
       "UTM Medium",
@@ -81,6 +111,8 @@ export default function AdminCalculatorLeads() {
       lead.facilityType || "N/A",
       lead.residentCount?.toString() || "0",
       lead.annualSavings ? `$${lead.annualSavings.toLocaleString()}` : "$0",
+      lead.leadScore?.toString() || "0",
+      lead.leadTier || "cold",
       lead.source,
       lead.utmSource || "N/A",
       lead.utmMedium || "N/A",
@@ -140,6 +172,86 @@ export default function AdminCalculatorLeads() {
   // Calculate total projected savings
   const totalProjectedSavings = leadsData?.leads.reduce((sum, lead) => sum + (lead.annualSavings || 0), 0) || 0;
   const avgSavingsPerLead = stats?.avgSavings || 0;
+
+  // Prepare chart data
+  const leadsOverTimeData = {
+    labels: stats?.leadsOverTime.map(d => new Date(d.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })) || [],
+    datasets: [
+      {
+        label: 'New Leads',
+        data: stats?.leadsOverTime.map(d => d.count) || [],
+        borderColor: 'rgb(0, 102, 255)',
+        backgroundColor: 'rgba(0, 102, 255, 0.1)',
+        fill: true,
+        tension: 0.4,
+      },
+    ],
+  };
+
+  const savingsBreakdownData = {
+    labels: ['Overtime Reduction', 'Error Prevention', 'Compliance Savings', 'Retention Improvement'],
+    datasets: [
+      {
+        label: 'Total Savings ($)',
+        data: [
+          stats?.savingsBreakdown.overtime || 0,
+          stats?.savingsBreakdown.error || 0,
+          stats?.savingsBreakdown.compliance || 0,
+          stats?.savingsBreakdown.retention || 0,
+        ],
+        backgroundColor: [
+          'rgba(0, 102, 255, 0.8)',
+          'rgba(0, 204, 255, 0.8)',
+          'rgba(16, 185, 129, 0.8)',
+          'rgba(245, 158, 11, 0.8)',
+        ],
+      },
+    ],
+  };
+
+  const leadTierData = {
+    labels: ['Hot Leads', 'Warm Leads', 'Cold Leads'],
+    datasets: [
+      {
+        data: [
+          stats?.byLeadTier.find(t => t.tier === 'hot')?.count || 0,
+          stats?.byLeadTier.find(t => t.tier === 'warm')?.count || 0,
+          stats?.byLeadTier.find(t => t.tier === 'cold')?.count || 0,
+        ],
+        backgroundColor: [
+          'rgba(239, 68, 68, 0.8)', // Red for hot
+          'rgba(245, 158, 11, 0.8)', // Orange for warm
+          'rgba(59, 130, 246, 0.8)', // Blue for cold
+        ],
+        borderWidth: 0,
+      },
+    ],
+  };
+
+  const conversionFunnelData = {
+    labels: ['Calculator Submissions', 'Exit-Intent Captures'],
+    datasets: [
+      {
+        label: 'Lead Sources',
+        data: [calculatorLeads, exitIntentLeads],
+        backgroundColor: [
+          'rgba(0, 102, 255, 0.8)',
+          'rgba(0, 204, 255, 0.8)',
+        ],
+      },
+    ],
+  };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+        position: 'bottom' as const,
+      },
+    },
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -209,85 +321,56 @@ export default function AdminCalculatorLeads() {
           </Card>
         </div>
 
-        {/* Lead Source Breakdown */}
+        {/* Charts Section */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
+          {/* Leads Over Time Chart */}
           <Card>
             <CardHeader>
-              <CardTitle>Leads by Source</CardTitle>
-              <CardDescription>Calculator vs Exit-Intent performance</CardDescription>
+              <CardTitle>Leads Over Time (30 Days)</CardTitle>
+              <CardDescription>Daily lead acquisition trend</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium">Calculator Form</span>
-                    <span className="text-sm text-muted-foreground">
-                      {calculatorLeads} leads
-                    </span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-2">
-                    <div
-                      className="bg-primary rounded-full h-2"
-                      style={{
-                        width: `${
-                          totalLeads
-                            ? (calculatorLeads / totalLeads) * 100
-                            : 0
-                        }%`,
-                      }}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium">Exit-Intent Popup</span>
-                    <span className="text-sm text-muted-foreground">
-                      {exitIntentLeads} leads
-                    </span>
-                  </div>
-                  <div className="w-full bg-muted rounded-full h-2">
-                    <div
-                      className="bg-accent rounded-full h-2"
-                      style={{
-                        width: `${
-                          totalLeads
-                            ? (exitIntentLeads / totalLeads) * 100
-                            : 0
-                        }%`,
-                      }}
-                    />
-                  </div>
-                </div>
+              <div style={{ height: '300px' }}>
+                <Line data={leadsOverTimeData} options={chartOptions} />
               </div>
             </CardContent>
           </Card>
 
+          {/* Lead Scoring Distribution */}
           <Card>
             <CardHeader>
-              <CardTitle>Leads by Facility Type</CardTitle>
-              <CardDescription>Group Homes vs ICF-ID distribution</CardDescription>
+              <CardTitle>Lead Quality Distribution</CardTitle>
+              <CardDescription>Hot, Warm, and Cold leads by score</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {stats?.byFacilityType &&
-                  stats.byFacilityType.map((item) => (
-                    <div key={item.facilityType}>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium">{item.facilityType || "Unknown"}</span>
-                        <span className="text-sm text-muted-foreground">{item.count} leads</span>
-                      </div>
-                      <div className="w-full bg-muted rounded-full h-2">
-                        <div
-                          className="bg-primary rounded-full h-2"
-                          style={{
-                            width: `${
-                              totalLeads ? (item.count / totalLeads) * 100 : 0
-                            }%`,
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+              <div style={{ height: '300px' }}>
+                <Doughnut data={leadTierData} options={chartOptions} />
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Savings Breakdown Chart */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Total Savings Breakdown</CardTitle>
+              <CardDescription>Projected savings by category</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div style={{ height: '300px' }}>
+                <Bar data={savingsBreakdownData} options={chartOptions} />
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Conversion Funnel Chart */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Lead Source Performance</CardTitle>
+              <CardDescription>Calculator vs Exit-Intent comparison</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div style={{ height: '300px' }}>
+                <Bar data={conversionFunnelData} options={chartOptions} />
               </div>
             </CardContent>
           </Card>
@@ -355,8 +438,8 @@ export default function AdminCalculatorLeads() {
                     <TableHead>Facility Type</TableHead>
                     <TableHead>Residents</TableHead>
                     <TableHead>Annual Savings</TableHead>
+                    <TableHead>Lead Score</TableHead>
                     <TableHead>Source</TableHead>
-                    <TableHead>UTM Source</TableHead>
                     <TableHead>Date</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -377,6 +460,22 @@ export default function AdminCalculatorLeads() {
                           {lead.annualSavings ? formatCurrency(lead.annualSavings) : "$0"}
                         </TableCell>
                         <TableCell>
+                          <div className="flex items-center gap-2">
+                            <span className="font-semibold">{lead.leadScore || 0}</span>
+                            <span
+                              className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
+                                lead.leadTier === "hot"
+                                  ? "bg-red-100 text-red-800"
+                                  : lead.leadTier === "warm"
+                                  ? "bg-orange-100 text-orange-800"
+                                  : "bg-blue-100 text-blue-800"
+                              }`}
+                            >
+                              {lead.leadTier || "cold"}
+                            </span>
+                          </div>
+                        </TableCell>
+                        <TableCell>
                           <span
                             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                               lead.source === "calculator"
@@ -386,9 +485,6 @@ export default function AdminCalculatorLeads() {
                           >
                             {lead.source}
                           </span>
-                        </TableCell>
-                        <TableCell className="text-muted-foreground">
-                          {lead.utmSource || "direct"}
                         </TableCell>
                         <TableCell className="text-muted-foreground">
                           {new Date(lead.createdAt).toLocaleDateString()}

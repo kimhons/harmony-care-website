@@ -516,3 +516,62 @@
 - [x] Add Harmony product mentions and CTAs
 - [x] Convert to PDF format
 - [x] Host PDF on website for download
+
+## Calculator Leads Email Nurture Automation
+- [ ] Create email templates for Day 1 (PDF guide delivery)
+- [ ] Create email templates for Day 3 (Case study)
+- [ ] Create email templates for Day 7 (Demo invitation)
+- [ ] Build automated email scheduling system for calculator leads
+- [ ] Add email sequence tracking to calculatorLeads table
+- [ ] Implement cron job or scheduled task for email sending
+- [ ] Test complete email nurture sequence
+- [ ] Add email analytics (open rates, click rates)
+
+## Lead Scoring System
+- [ ] Design lead scoring algorithm (facility size, savings, engagement)
+- [ ] Add leadScore field to calculatorLeads table
+- [ ] Implement scoring calculation function
+- [ ] Add score tier labels (Hot, Warm, Cold)
+- [ ] Update admin dashboard to show lead scores
+- [ ] Add score-based filtering and sorting
+- [ ] Create score distribution chart
+- [ ] Test scoring accuracy and adjust weights
+
+## Analytics Charts Enhancement
+- [ ] Install Chart.js dependencies
+- [ ] Create leads over time line chart (30-day trend)
+- [ ] Create conversion funnel chart (calculator vs exit-intent)
+- [ ] Create ROI projections chart by facility type
+- [ ] Add source attribution pie chart (UTM sources)
+- [ ] Create savings breakdown chart (overtime, errors, compliance, retention)
+- [ ] Integrate charts into admin dashboard
+- [ ] Add interactive tooltips and legends
+- [ ] Test chart responsiveness on mobile
+- [ ] Add export chart as image functionality
+
+## Email Nurture Automation - Completed
+- [x] Create email templates for Day 1 (PDF guide delivery)
+- [x] Create email templates for Day 3 (Case study)
+- [x] Create email templates for Day 7 (Demo invitation)
+- [x] Build automated email scheduling system for calculator leads
+- [x] Add email sequence tracking to calculatorLeads table
+- [x] Implement service for email sending
+- [x] Create manual run script for email processing
+
+## Lead Scoring System - Completed
+- [x] Design lead scoring algorithm (facility size, savings, engagement)
+- [x] Add leadScore field to calculatorLeads table
+- [x] Implement scoring calculation function
+- [x] Add score tier labels (Hot, Warm, Cold)
+- [x] Integrate scoring into calculator lead submission
+
+## Analytics Charts Enhancement - Completed
+- [x] Install Chart.js dependencies
+- [x] Create leads over time line chart (30-day trend)
+- [x] Create conversion funnel chart (calculator vs exit-intent)
+- [x] Create ROI projections chart by facility type
+- [x] Add source attribution chart (lead sources)
+- [x] Create savings breakdown chart (overtime, errors, compliance, retention)
+- [x] Create lead scoring distribution doughnut chart
+- [x] Integrate charts into admin dashboard
+- [x] Add interactive tooltips and legends

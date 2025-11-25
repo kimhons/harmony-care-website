@@ -131,6 +131,18 @@ export const calculatorLeads = mysqlTable("calculatorLeads", {
   emailSent: int("emailSent").default(0).notNull(), // 0 = not sent, 1 = sent
   emailSentAt: timestamp("emailSentAt"),
   
+  // Email nurture sequence tracking
+  nurtureSequence: text("nurtureSequence"), // JSON array of sent emails: [{type: 'day1', sentAt: timestamp}, ...]
+  lastNurtureEmail: varchar("lastNurtureEmail", { length: 50 }), // 'day1', 'day3', 'day7'
+  lastNurtureEmailSentAt: timestamp("lastNurtureEmailSentAt"),
+  nurtureCompleted: int("nurtureCompleted").default(0).notNull(), // 0 = in progress, 1 = completed
+  
+  // Lead scoring
+  leadScore: int("leadScore").default(0).notNull(), // 0-100 score based on facility size, savings, engagement
+  leadTier: varchar("leadTier", { length: 20 }).default("cold").notNull(), // 'hot', 'warm', 'cold'
+  engagementScore: int("engagementScore").default(0).notNull(), // Email opens, clicks, demo requests
+  lastEngagementAt: timestamp("lastEngagementAt"),
+  
   // Metadata
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
