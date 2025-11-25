@@ -10,6 +10,7 @@ import { getCurrentTier, REWARD_TIERS } from "../shared/referralRewards";
 import { getCampaignStats } from "./emailCampaign";
 import { validateReferralCode, createReferral, generateUniqueReferralCode } from "./referral";
 import { getReferralAnalytics } from "./referralAnalytics";
+import { checkAndCreateMilestones, getUnviewedMilestones, markMilestoneAsViewed, markMilestoneAsShared, getAllMilestones } from "./milestoneService";
 import { signups, referrals } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 
@@ -266,19 +267,8 @@ export const appRouter = router({
                   totalReferrals,
                 });
                 
-                // Check if they just hit a milestone
-                const previousTier = getCurrentTier(totalReferrals - 1);
-                const currentTier = getCurrentTier(totalReferrals);
-                
-                if (currentTier && currentTier.id !== previousTier?.id) {
-                  // They just unlocked a new tier!
-                  await sendMilestoneEmail({
-                    email: referrer.email,
-                    firstName: referrer.firstName,
-                    tier: currentTier,
-                    totalReferrals,
-                  });
-                }
+                // Check for milestone achievements (tier upgrades, leaderboard, etc.)
+                await checkAndCreateMilestones(referrerSignupId);
               }
             }
           } catch (emailError) {
@@ -360,6 +350,63 @@ export const appRouter = router({
         referredUsers: referredUsers.filter(Boolean),
       };
     }),
+    
+    milestones: publicProcedure.query(async ({ ctx }) => {
+      if (!ctx.user) {
+        throw new Error('Unauthorized');
+      }
+      
+      // Get user's signup record
+      const db = await getDb();
+      if (!db) {
+        throw new Error('Database not available');
+      }
+      
+      const userSignup = await db
+        .select()
+        .from(signups)
+        .where(eq(signups.email, ctx.user.email || ''))
+        .limit(1);
+      
+      if (userSignup.length === 0) {
+        throw new Error('Signup record not found');
+      }
+      
+      const signup = userSignup[0];
+      
+      // Get all milestone notifications
+      const allMilestones = await getAllMilestones(signup.id);
+      const unviewedMilestones = await getUnviewedMilestones(signup.id);
+      
+      return {
+        all: allMilestones,
+        unviewed: unviewedMilestones,
+      };
+    }),
+    
+    markViewed: publicProcedure
+      .input(z.object({ notificationId: z.number() }))
+      .mutation(async ({ input, ctx }) => {
+        if (!ctx.user) {
+          throw new Error('Unauthorized');
+        }
+        
+        await markMilestoneAsViewed(input.notificationId);
+        
+        return { success: true };
+      }),
+    
+    markShared: publicProcedure
+      .input(z.object({ notificationId: z.number() }))
+      .mutation(async ({ input, ctx }) => {
+        if (!ctx.user) {
+          throw new Error('Unauthorized');
+        }
+        
+        await markMilestoneAsShared(input.notificationId);
+        
+        return { success: true };
+      }),
   }),
 });
 

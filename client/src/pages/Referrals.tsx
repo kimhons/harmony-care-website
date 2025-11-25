@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { REWARD_TIERS, getCurrentTier, getNextTier, getProgressToNextTier } from "@/../../shared/referralRewards";
 import ShareTemplates from "@/components/ShareTemplates";
 import type { ShareTemplateVariables } from "@/../../shared/shareTemplates";
+import { MilestoneCelebration } from "@/components/MilestoneCelebration";
 
 export default function Referrals() {
   const [, setLocation] = useLocation();
@@ -22,6 +23,31 @@ export default function Referrals() {
   
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [activeMilestone, setActiveMilestone] = useState<any>(null);
+  
+  // Fetch milestone notifications
+  const { data: milestonesData } = trpc.referral.milestones.useQuery(undefined, {
+    enabled: !!user,
+    refetchInterval: 30000, // Refetch every 30 seconds
+  });
+  
+  const markViewedMutation = trpc.referral.markViewed.useMutation();
+  const markSharedMutation = trpc.referral.markShared.useMutation();
+  
+  // Show unviewed milestones automatically
+  useEffect(() => {
+    if (milestonesData?.unviewed && milestonesData.unviewed.length > 0 && !activeMilestone) {
+      setActiveMilestone(milestonesData.unviewed[0]);
+    }
+  }, [milestonesData, activeMilestone]);
+  
+  const handleMarkViewed = (id: number) => {
+    markViewedMutation.mutate({ notificationId: id });
+  };
+  
+  const handleMarkShared = (id: number) => {
+    markSharedMutation.mutate({ notificationId: id });
+  };
   
   // Redirect if not logged in
   useEffect(() => {
@@ -373,6 +399,20 @@ export default function Referrals() {
           </CardContent>
         </Card>
       </div>
+      
+      {/* Milestone Celebration Modal */}
+      <MilestoneCelebration
+        milestone={activeMilestone}
+        onClose={() => setActiveMilestone(null)}
+        onMarkViewed={handleMarkViewed}
+        onMarkShared={handleMarkShared}
+        userInfo={{
+          name: user.name || 'Founding Member',
+          facilityName: referredUsers[0]?.facilityName || 'Your Facility',
+          referralCode,
+          totalReferrals,
+        }}
+      />
     </div>
   );
 }

@@ -79,3 +79,22 @@ export const referrals = mysqlTable("referrals", {
 
 export type Referral = typeof referrals.$inferSelect;
 export type InsertReferral = typeof referrals.$inferInsert;
+
+/**
+ * Milestone notifications table to track achievement celebrations
+ */
+export const milestoneNotifications = mysqlTable("milestoneNotifications", {
+  id: int("id").autoincrement().primaryKey(),
+  signupId: int("signupId").notNull(), // ID of the signup who achieved the milestone
+  milestoneId: varchar("milestoneId", { length: 50 }).notNull(), // e.g., 'first-referral', 'bronze-tier'
+  milestoneType: varchar("milestoneType", { length: 50 }).notNull(), // referral_count, tier_upgrade, leaderboard
+  title: varchar("title", { length: 200 }).notNull(), // e.g., '🎉 First Referral!'
+  description: text("description").notNull(), // Celebration message
+  badgePath: varchar("badgePath", { length: 500 }).notNull(), // Path to badge graphic
+  isViewed: int("isViewed").default(0).notNull(), // 0 = not viewed, 1 = viewed
+  isShared: int("isShared").default(0).notNull(), // 0 = not shared, 1 = shared
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type MilestoneNotification = typeof milestoneNotifications.$inferSelect;
+export type InsertMilestoneNotification = typeof milestoneNotifications.$inferInsert;
