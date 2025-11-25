@@ -6,6 +6,7 @@ import VideoModal from "@/components/VideoModal";
 import Navigation from "@/components/Navigation";
 import { CostSavingsLineChart, TimeAllocationCharts, ROIBreakdownChart, EfficiencyGauges } from "@/components/CostSavingsChart";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { SavingsCalculator } from "@/components/SavingsCalculator";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -404,6 +405,13 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Interactive Savings Calculator */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <SavingsCalculator />
         </div>
       </section>
 

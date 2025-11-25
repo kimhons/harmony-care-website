@@ -437,3 +437,13 @@
 - [ ] Add pulsing glow effect to CTA buttons
 - [ ] Generate 3D certification badges
 - [ ] Add neural network background visualization for agents section
+
+## Interactive Savings Calculator
+- [x] Design calculator UI with facility size input (residents count)
+- [x] Implement ROI calculation logic based on facility size
+- [x] Add real-time visual feedback with animated numbers
+- [x] Create breakdown visualization showing savings categories
+- [x] Add facility type selector (Group Home vs ICF-ID)
+- [x] Integrate calculator into homepage after pricing section
+- [x] Add smooth animations and transitions
+- [x] Test calculator with various facility sizes
