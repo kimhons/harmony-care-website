@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import { AnimatedCounter } from './AnimatedCounter';
-import { DollarSign, Users, TrendingUp, Clock, Shield, Award } from 'lucide-react';
+import { DollarSign, Users, TrendingUp, Clock, Shield, Award, Mail, CheckCircle2 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
+import { toast } from 'sonner';
 
 interface CalculatorResults {
   annualSavings: number;
@@ -25,6 +28,9 @@ export function SavingsCalculator() {
   const [residents, setResidents] = useState(20);
   const [facilityType, setFacilityType] = useState<'group-home' | 'icf-id'>('group-home');
   const [results, setResults] = useState<CalculatorResults | null>(null);
+  const [email, setEmail] = useState('');
+  const [showEmailForm, setShowEmailForm] = useState(false);
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
@@ -236,17 +242,86 @@ export function SavingsCalculator() {
               </div>
             </div>
 
-            {/* CTA */}
-            <div className="text-center pt-6 border-t border-border">
-              <p className="text-muted-foreground mb-4">
-                Ready to start saving? Lock in founding member pricing today.
-              </p>
-              <button
-                onClick={() => window.location.href = '/demo'}
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-semibold transition-all hover:shadow-lg"
-              >
-                Get Your Personalized Quote
-              </button>
+            {/* Email Capture CTA */}
+            <div className="pt-6 border-t border-border">
+              {!emailSubmitted ? (
+                <div className="max-w-2xl mx-auto">
+                  {!showEmailForm ? (
+                    <div className="text-center">
+                      <p className="text-muted-foreground mb-4">
+                        Want a detailed ROI report with these savings sent to your inbox?
+                      </p>
+                      <Button
+                        onClick={() => setShowEmailForm(true)}
+                        size="lg"
+                        className="bg-primary hover:bg-primary/90 text-white px-8 rounded-full"
+                      >
+                        <Mail className="w-4 h-4 mr-2" />
+                        Get My Personalized ROI Report
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="bg-card border border-primary/30 rounded-xl p-6">
+                      <h4 className="text-lg font-semibold mb-4 text-center">
+                        Get Your Personalized ROI Report
+                      </h4>
+                      <form
+                        onSubmit={(e) => {
+                          e.preventDefault();
+                          if (!email || !email.includes('@')) {
+                            toast.error('Please enter a valid email address');
+                            return;
+                          }
+                          // Store lead data
+                          const leadData = {
+                            email,
+                            residents,
+                            facilityType,
+                            annualSavings: results?.annualSavings,
+                            timestamp: new Date().toISOString(),
+                          };
+                          console.log('Lead captured:', leadData);
+                          // TODO: Send to backend API
+                          setEmailSubmitted(true);
+                          toast.success('Success! Check your email for your personalized ROI report.');
+                        }}
+                        className="space-y-4"
+                      >
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          <Input
+                            type="email"
+                            placeholder="Enter your work email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="flex-1"
+                            required
+                          />
+                          <Button type="submit" className="bg-primary hover:bg-primary/90 text-white">
+                            Send My Report
+                          </Button>
+                        </div>
+                        <p className="text-xs text-muted-foreground text-center">
+                          We'll send you a detailed breakdown of your ${results?.annualSavings.toLocaleString()} potential savings.
+                        </p>
+                      </form>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div className="text-center bg-green-500/10 border border-green-500/30 rounded-xl p-6">
+                  <CheckCircle2 className="w-12 h-12 text-green-500 mx-auto mb-3" />
+                  <h4 className="text-lg font-semibold mb-2">Report Sent!</h4>
+                  <p className="text-muted-foreground mb-4">
+                    Check your inbox for your personalized ROI report showing ${results?.annualSavings.toLocaleString()} in annual savings.
+                  </p>
+                  <Button
+                    onClick={() => window.location.href = '/demo'}
+                    className="bg-primary hover:bg-primary/90 text-white"
+                  >
+                    Schedule a Demo
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         )}

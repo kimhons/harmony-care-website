@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import { SimpleChatButton } from "./components/LiveChat";
 import GroupHomes from "./pages/GroupHomes";
 import IcfId from "./pages/IcfId";
 import Pricing from "./pages/Pricing";
@@ -55,6 +56,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <SimpleChatButton />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

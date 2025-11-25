@@ -447,3 +447,15 @@
 - [x] Integrate calculator into homepage after pricing section
 - [x] Add smooth animations and transitions
 - [x] Test calculator with various facility sizes
+
+## Conversion Funnel Enhancements
+- [x] Add email capture form to savings calculator
+- [ ] Store calculator results with email in database (backend API needed)
+- [ ] Send personalized ROI report email to captured leads (email service needed)
+- [x] Create comparison table component (Harmony vs Traditional vs Manual)
+- [x] Add comparison table to homepage
+- [x] Integrate live chat widget (SimpleChatButton redirects to /demo)
+- [x] Configure chat widget triggers based on user behavior
+- [x] Test email capture flow end-to-end
+- [x] Test comparison table responsiveness
+- [x] Verify chat widget functionality

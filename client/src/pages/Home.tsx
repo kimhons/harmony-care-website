@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import { CostSavingsLineChart, TimeAllocationCharts, ROIBreakdownChart, EfficiencyGauges } from "@/components/CostSavingsChart";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
+import { ComparisonTable } from "@/components/ComparisonTable";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -412,6 +413,13 @@ export default function Home() {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-6">
           <SavingsCalculator />
+        </div>
+      </section>
+
+      {/* Comparison Table */}
+      <section className="py-24 bg-card">
+        <div className="container mx-auto px-6">
+          <ComparisonTable />
         </div>
       </section>
 
