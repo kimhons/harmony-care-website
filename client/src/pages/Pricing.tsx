@@ -664,7 +664,7 @@ export default function Pricing() {
             <div>
               <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/"><a className="hover:text-foreground transition-colors">Overview</a></Link></li>
+                <li><Link href="/" className="hover:text-foreground transition-colors">Overview</Link></li>
                 <li><a href="#" className="hover:text-foreground transition-colors">20 AI Agents</a></li>
                 <li><a href="#" className="hover:text-foreground transition-colors">Features</a></li>
                 <li><a href="#" className="hover:text-foreground transition-colors">Integrations</a></li>

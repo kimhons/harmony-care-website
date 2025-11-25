@@ -705,9 +705,9 @@ export default function Agents() {
             <div>
               <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/"><a className="hover:text-foreground transition-colors">Overview</a></Link></li>
-                <li><Link href="/agents"><a className="hover:text-foreground transition-colors">20 AI Agents</a></Link></li>
-                <li><Link href="/pricing"><a className="hover:text-foreground transition-colors">Pricing</a></Link></li>
+                <li><Link href="/" className="hover:text-foreground transition-colors">Overview</Link></li>
+                <li><Link href="/agents" className="hover:text-foreground transition-colors">20 AI Agents</Link></li>
+                <li><Link href="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
               </ul>
             </div>
 

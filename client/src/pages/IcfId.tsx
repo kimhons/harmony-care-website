@@ -294,11 +294,11 @@ export default function IcfId() {
             </Link>
             
             <div className="hidden md:flex items-center gap-8">
-              <Link href="/agents">
-                <a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">AI Agents</a>
+              <Link href="/agents" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                AI Agents
               </Link>
-              <Link href="/pricing">
-                <a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+              <Link href="/pricing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                Pricing
               </Link>
             </div>
 
@@ -837,17 +837,17 @@ export default function IcfId() {
             <div>
               <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/"><a className="hover:text-foreground transition-colors">Overview</a></Link></li>
-                <li><Link href="/agents"><a className="hover:text-foreground transition-colors">20 AI Agents</a></Link></li>
-                <li><Link href="/pricing"><a className="hover:text-foreground transition-colors">Pricing</a></Link></li>
+                <li><Link href="/" className="hover:text-foreground transition-colors">Overview</Link></li>
+                <li><Link href="/agents" className="hover:text-foreground transition-colors">20 AI Agents</Link></li>
+                <li><Link href="/pricing" className="hover:text-foreground transition-colors">Pricing</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Solutions</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/solutions/group-homes"><a className="hover:text-foreground transition-colors">For Group Homes</a></Link></li>
-                <li><Link href="/solutions/icf-id"><a className="hover:text-foreground transition-colors">For ICF-ID</a></Link></li>
+                <li><Link href="/solutions/group-homes" className="hover:text-foreground transition-colors">For Group Homes</Link></li>
+                <li><Link href="/solutions/icf-id" className="hover:text-foreground transition-colors">For ICF-ID</Link></li>
                 <li><a href="#" className="hover:text-foreground transition-colors">For Families</a></li>
               </ul>
             </div>
