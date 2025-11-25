@@ -13,6 +13,7 @@ import { getReferralAnalytics } from "./referralAnalytics";
 import { checkAndCreateMilestones, getUnviewedMilestones, markMilestoneAsViewed, markMilestoneAsShared, getAllMilestones } from "./milestoneService";
 import { calculatorRouter } from "./calculator";
 import { adminCalculatorLeadsRouter } from "./adminCalculatorLeads";
+import { resendWebhookRouter } from "./resendWebhook";
 import { signups, referrals } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 
@@ -21,6 +22,7 @@ export const appRouter = router({
   system: systemRouter,
   calculator: calculatorRouter,
   adminCalculatorLeads: adminCalculatorLeadsRouter,
+  resendWebhook: resendWebhookRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

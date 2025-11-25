@@ -164,11 +164,16 @@ async function sendNurtureEmail(
       break;
   }
 
-  // Send email via Resend
+  // Send email via Resend with lead ID in tags for webhook tracking
   await sendEmail({
     to: lead.email,
     subject: template.subject,
     html: template.html,
+    tags: [
+      { name: "lead_id", value: lead.id.toString() },
+      { name: "email_type", value: emailType },
+      { name: "campaign", value: "nurture_sequence" },
+    ],
   });
 
   // Update lead record

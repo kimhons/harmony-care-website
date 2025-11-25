@@ -575,3 +575,23 @@
 - [x] Create lead scoring distribution doughnut chart
 - [x] Integrate charts into admin dashboard
 - [x] Add interactive tooltips and legends
+
+
+## Resend Webhook Integration for Email Tracking - Completed
+- [x] Create webhook endpoint to receive Resend events
+- [x] Implement webhook signature verification for security
+- [x] Handle email.opened event to track opens
+- [x] Handle email.clicked event to track clicks
+- [x] Extract lead ID from email metadata
+- [x] Call trackEngagement() to update lead scores in real-time
+- [x] Add webhook URL configuration documentation
+- [x] Create comprehensive webhook tests (9 tests passing)
+- [x] Test with Resend webhook simulator
+- [x] Add error handling and logging for webhook events
+
+
+## Email Template Updates - Completed
+- [x] Update SendEmailParams interface to include tags
+- [x] Update sendEmail function to pass tags to Resend
+- [x] Update nurtureEmailService to include lead_id in tags
+- [x] Add email_type and campaign tags for tracking

@@ -6,13 +6,14 @@ export interface SendEmailParams {
   to: string;
   subject: string;
   html: string;
+  tags?: Array<{ name: string; value: string }>;
 }
 
 /**
  * Generic email sending function
  */
 export async function sendEmail(params: SendEmailParams) {
-  const { to, subject, html } = params;
+  const { to, subject, html, tags } = params;
   
   try {
     const { data, error } = await resend.emails.send({
@@ -20,6 +21,7 @@ export async function sendEmail(params: SendEmailParams) {
       to: [to],
       subject,
       html,
+      tags: tags || [],
     });
     
     if (error) {

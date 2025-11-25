@@ -27,6 +27,7 @@ interface EmailData {
   to: string;
   subject: string;
   html: string;
+  tags?: Array<{ name: string; value: string }>;
 }
 
 /**
@@ -288,19 +289,20 @@ async function sendROIEmail(data: EmailData): Promise<void> {
   }
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${RESEND_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: 'Harmony <onboarding@resend.dev>', // Change to your verified domain
-        to: data.to,
-        subject: data.subject,
-        html: data.html,
-      }),
-    });
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${RESEND_API_KEY}`,
+    },
+    body: JSON.stringify({
+      from: 'HarmonyCare <noreply@updates.manus.space>',
+      to: data.to,
+      subject: data.subject,
+      html: data.html,
+      tags: data.tags || [],
+    }),
+  });
 
     if (!response.ok) {
       const error = await response.text();
