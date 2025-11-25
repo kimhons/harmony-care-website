@@ -217,9 +217,7 @@ describe("Resend Webhook Integration", () => {
           from: "HarmonyCare <onboarding@resend.dev>",
           to: [testLeadEmail],
           subject: "Schedule Your Demo",
-          tags: [
-            { name: "lead_id", value: testLeadId.toString() },
-          ],
+          tags: [{ name: "lead_id", value: testLeadId.toString() }],
           click: {
             link: "https://harmony.example.com/schedule-demo",
             timestamp: new Date().toISOString(),
@@ -253,9 +251,7 @@ describe("Resend Webhook Integration", () => {
           from: "HarmonyCare <onboarding@resend.dev>",
           to: [testLeadEmail],
           subject: "Test Email",
-          tags: [
-            { name: "lead_id", value: testLeadId.toString() },
-          ],
+          tags: [{ name: "lead_id", value: testLeadId.toString() }],
         },
       };
 
@@ -277,9 +273,7 @@ describe("Resend Webhook Integration", () => {
           from: "HarmonyCare <onboarding@resend.dev>",
           to: ["nonexistent@example.com"],
           subject: "Test Email",
-          tags: [
-            { name: "lead_id", value: "999999" },
-          ],
+          tags: [{ name: "lead_id", value: "999999" }],
         },
       };
 
@@ -320,13 +314,31 @@ describe("Resend Webhook Integration", () => {
         throw new Error("Database not available");
       }
 
-      const beforeLeads = await db
+      // Create a fresh lead with known engagement score
+      const testEmail = `test-multi-${Date.now()}@example.com`;
+      await db.insert(calculatorLeads).values({
+        email: testEmail,
+        facilityType: "group_home",
+        residentCount: 10,
+        annualSavings: 50000,
+        overtimeSavings: 10000,
+        errorSavings: 15000,
+        complianceSavings: 15000,
+        retentionSavings: 10000,
+        leadScore: 55,
+        leadTier: "warm",
+        engagementScore: 0,
+        source: "calculator",
+      });
+
+      // Look up the lead by email
+      const [freshLead] = await db
         .select()
         .from(calculatorLeads)
-        .where(eq(calculatorLeads.id, testLeadId))
+        .where(eq(calculatorLeads.email, testEmail))
         .limit(1);
 
-      const initialEngagement = beforeLeads[0].engagementScore;
+      const initialEngagement = 0;
 
       const { resendWebhookRouter } = await import("./resendWebhook");
       const caller = resendWebhookRouter.createCaller({} as any);
@@ -337,8 +349,8 @@ describe("Resend Webhook Integration", () => {
         created_at: new Date().toISOString(),
         data: {
           email_id: "multi-1",
-          to: [testLeadEmail],
-          tags: [{ name: "lead_id", value: testLeadId.toString() }],
+          to: [freshLead.email],
+          tags: [{ name: "lead_id", value: freshLead.id.toString() }],
         },
       });
 
@@ -348,8 +360,8 @@ describe("Resend Webhook Integration", () => {
         created_at: new Date().toISOString(),
         data: {
           email_id: "multi-2",
-          to: [testLeadEmail],
-          tags: [{ name: "lead_id", value: testLeadId.toString() }],
+          to: [freshLead.email],
+          tags: [{ name: "lead_id", value: freshLead.id.toString() }],
           click: {
             link: "https://example.com",
             timestamp: new Date().toISOString(),
@@ -361,7 +373,7 @@ describe("Resend Webhook Integration", () => {
       const afterLeads = await db
         .select()
         .from(calculatorLeads)
-        .where(eq(calculatorLeads.id, testLeadId))
+        .where(eq(calculatorLeads.id, freshLead.id))
         .limit(1);
 
       expect(afterLeads[0].engagementScore).toBe(initialEngagement + 15);
@@ -393,7 +405,7 @@ describe("Resend Webhook Integration", () => {
       });
 
       const newLeadId = Number(result.insertId);
-      
+
       // Skip test if insertId is invalid
       if (isNaN(newLeadId) || newLeadId === 0) {
         console.log("Skipping tier upgrade test: invalid insertId");

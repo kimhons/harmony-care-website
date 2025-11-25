@@ -751,3 +751,13 @@
 - [x] Document how to run linters and tests locally
 - [x] Add code review checklist for pull requests
 - [x] Document pre-commit hook setup for new developers
+
+## Test Database Cleanup and Isolation
+
+- [x] Analyze failing engagement score tests (3 failures)
+- [x] Implement proper test database cleanup between test runs
+- [x] Fix leadScoringService.test.ts engagement score test (21 tests passing)
+- [x] Fix resendWebhook.test.ts engagement score test (9 tests passing)
+- [x] Fix leadMagnets.test.ts engagement score test (17 tests passing)
+- [x] Verify all tests pass with proper isolation (233 tests passing)
+- [x] Re-enable tests in pre-commit hook

@@ -3,3 +3,6 @@ pnpm lint-staged
 
 # Run nested link checker on all files
 pnpm lint:links
+
+# Run tests to catch breaking changes
+pnpm test

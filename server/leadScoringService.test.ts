@@ -123,7 +123,9 @@ describe("updateLeadScore", () => {
   });
 
   it("should throw error for non-existent lead", async () => {
-    await expect(updateLeadScore(999999)).rejects.toThrow("Lead 999999 not found");
+    await expect(updateLeadScore(999999)).rejects.toThrow(
+      "Lead 999999 not found"
+    );
   });
 });
 
@@ -134,28 +136,43 @@ describe("trackEngagement", () => {
       throw new Error("Database not available");
     }
 
-    const leads = await db.select().from(calculatorLeads).limit(1);
-    if (leads.length === 0) {
-      console.log("No leads in database, skipping test");
-      return;
-    }
+    // Create a fresh lead with known engagement score
+    const testEmail = `test-engagement-${Date.now()}@example.com`;
+    await db.insert(calculatorLeads).values({
+      email: testEmail,
+      facilityType: "group_home",
+      residentCount: 10,
+      annualSavings: 50000,
+      overtimeSavings: 10000,
+      errorSavings: 15000,
+      complianceSavings: 15000,
+      retentionSavings: 10000,
+      leadScore: 55,
+      leadTier: "warm",
+      engagementScore: 0,
+      source: "calculator",
+    });
 
-    const lead = leads[0];
-    const initialEngagement = lead.engagementScore;
+    // Look up the lead by email
+    const [newLead] = await db
+      .select()
+      .from(calculatorLeads)
+      .where(eq(calculatorLeads.email, testEmail))
+      .limit(1);
 
-    const result = await trackEngagement(lead.id, "email_open");
+    const result = await trackEngagement(newLead.id, "email_open");
 
     expect(result.success).toBe(true);
-    expect(result.newEngagementScore).toBe(initialEngagement + 5);
+    expect(result.newEngagementScore).toBe(5);
 
     // Verify database was updated
     const updatedLeads = await db
       .select()
       .from(calculatorLeads)
-      .where(eq(calculatorLeads.id, lead.id))
+      .where(eq(calculatorLeads.id, newLead.id))
       .limit(1);
 
-    expect(updatedLeads[0].engagementScore).toBe(initialEngagement + 5);
+    expect(updatedLeads[0].engagementScore).toBe(5);
     expect(updatedLeads[0].lastEngagementAt).not.toBeNull();
   });
 
@@ -251,7 +268,7 @@ describe("recalculateAllLeadScores", () => {
 
     const allLeads = await db.select().from(calculatorLeads);
 
-    allLeads.forEach((lead) => {
+    allLeads.forEach(lead => {
       expect(lead.leadScore).toBeGreaterThanOrEqual(0);
       expect(lead.leadScore).toBeLessThanOrEqual(100);
       expect(["hot", "warm", "cold"]).toContain(lead.leadTier);
@@ -278,7 +295,7 @@ describe("getLeadScoreStats", () => {
   it("should have valid tier distribution", async () => {
     const stats = await getLeadScoreStats();
 
-    stats.byTier.forEach((tier) => {
+    stats.byTier.forEach(tier => {
       expect(tier).toHaveProperty("tier");
       expect(tier).toHaveProperty("count");
       expect(["hot", "warm", "cold"]).toContain(tier.tier);
@@ -293,7 +310,7 @@ describe("getLeadScoreStats", () => {
   it("should have valid score ranges", async () => {
     const stats = await getLeadScoreStats();
 
-    stats.scoreRanges.forEach((range) => {
+    stats.scoreRanges.forEach(range => {
       expect(range).toHaveProperty("range");
       expect(range).toHaveProperty("count");
       expect(typeof range.range).toBe("string");
@@ -370,7 +387,11 @@ describe("lead scoring algorithm validation", () => {
       engagementScore: 50,
     });
 
-    expect(result.breakdown.engagement).toBeLessThan(result.breakdown.facilitySize);
-    expect(result.breakdown.engagement).toBeLessThan(result.breakdown.annualSavings);
+    expect(result.breakdown.engagement).toBeLessThan(
+      result.breakdown.facilitySize
+    );
+    expect(result.breakdown.engagement).toBeLessThan(
+      result.breakdown.annualSavings
+    );
   });
 });
