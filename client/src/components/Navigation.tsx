@@ -7,6 +7,22 @@ import { Link } from "wouter";
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
+    setSolutionsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setSolutionsOpen(false);
+    }, 300); // 300ms delay before closing
+    setCloseTimeout(timeout);
+  };
 
   return (
     <>
@@ -28,8 +44,8 @@ export default function Navigation() {
               {/* Solutions Dropdown */}
               <div 
                 className="relative"
-                onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => setSolutionsOpen(false)}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 <button className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                   Solutions
@@ -37,7 +53,11 @@ export default function Navigation() {
                 </button>
                 
                 {solutionsOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-lg shadow-lg overflow-hidden">
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-56 bg-card border border-border rounded-lg shadow-lg overflow-hidden"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <Link href="/solutions/group-homes" className="block px-4 py-3 hover:bg-accent/10 transition-colors">
                       <div className="font-medium text-sm text-foreground">Group Homes</div>
                       <div className="text-xs text-muted-foreground mt-0.5">For 1-10 residents</div>

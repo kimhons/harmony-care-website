@@ -412,3 +412,28 @@
 - [x] Create Vercel configuration file
 - [x] Commit and push workflows to GitHub
 - [x] Document workflow setup instructions
+
+## UX Improvements
+- [x] Fix dropdown menu UX - make it more stable and easier to click (add delay, click-to-stay-open)
+- [x] Update hero message to better represent Harmony's comprehensive platform (20+ agents, 15+ modules, 269+ features)
+
+## Homepage Visual Enhancements
+- [x] Generate hero image: caregiver with resident showing tablet
+- [x] Generate before/after split image for paperwork problem section
+- [x] Generate team collaboration image
+- [x] Generate facility environment images
+- [x] Create animated cost savings line chart (Chart.js/D3.js)
+- [x] Create time allocation donut charts with animation
+- [x] Create ROI breakdown stacked bar chart
+- [x] Create efficiency gains radial progress charts
+- [ ] Add interactive savings calculator widget
+- [x] Implement scroll-triggered animations for all sections (via useInView)
+- [x] Add number counter animations for statistics
+- [x] Add hover animations to agent cards
+- [ ] Add micro-animations to feature icons
+- [ ] Add parallax effects to background elements
+- [ ] Update pricing cards with 3D tilt effect
+- [ ] Add animated countdown for founding member spots
+- [ ] Add pulsing glow effect to CTA buttons
+- [ ] Generate 3D certification badges
+- [ ] Add neural network background visualization for agents section

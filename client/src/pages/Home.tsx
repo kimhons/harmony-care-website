@@ -4,6 +4,8 @@ import { Heart, Sparkles, Shield, Brain, Calendar, Users, FileText, TrendingUp, 
 import { APP_TITLE } from "@/const";
 import VideoModal from "@/components/VideoModal";
 import Navigation from "@/components/Navigation";
+import { CostSavingsLineChart, TimeAllocationCharts, ROIBreakdownChart, EfficiencyGauges } from "@/components/CostSavingsChart";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -157,24 +159,25 @@ export default function Home() {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-in-up delay-100">
-              Join the founding members securing exclusive early access to 20 autonomous AI agents that will reduce paperwork by 70%, ensure 100% compliance, and let caregivers focus on what matters most: caring. <strong>Launching Q1 2026.</strong>
+              Join the founding members securing exclusive early access to Harmony - the first AI-native platform that transforms every aspect of care management. With 20+ autonomous agents working 24/7 across admissions, clinical care, compliance, billing, and operations, we're not just reducing paperwork by 70% - we're reimagining what's possible when caregivers can focus entirely on residents. <strong>Launching Q1 2026.</strong>
             </p>
 
-            {/* Video Container */}
+            {/* Hero Image */}
             <div className="relative max-w-4xl mx-auto mb-12 animate-fade-in-up delay-200">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-blue-200 shadow-2xl shadow-primary/20 border border-primary/20">
-                {/* Video Thumbnail/Placeholder */}
-                <div 
-                  className="absolute inset-0 bg-gradient-to-br from-primary/20 via-blue-100/60 to-accent/15 flex items-center justify-center group cursor-pointer"
-                  onClick={() => setVideoModalOpen(true)}
-                >
-                  <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center shadow-2xl transition-transform group-hover:scale-110">
-                    <Play className="w-10 h-10 text-white ml-1" fill="currentColor" />
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-primary/20 group cursor-pointer" onClick={() => setVideoModalOpen(true)}>
+                <img 
+                  src="/hero-caregiver-resident.jpg" 
+                  alt="Caregiver using Harmony with resident" 
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center shadow-2xl">
+                    <Play className="w-8 h-8 text-white ml-1" fill="currentColor" />
                   </div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-foreground font-semibold text-lg">See Harmony Care in Action</p>
-                    <p className="text-muted-foreground text-sm">2-minute product overview</p>
-                  </div>
+                </div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="text-white font-semibold text-lg drop-shadow-lg">See Harmony Care in Action</p>
+                  <p className="text-white/90 text-sm drop-shadow-lg">2-minute product overview</p>
                 </div>
               </div>
             </div>
@@ -222,18 +225,33 @@ export default function Home() {
               While you're drowning in documentation, compliance violations, and staffing crises, your residents need care—not administrators buried in forms.
             </p>
             
+            {/* Before/After Image */}
+            <div className="mb-16">
+              <img 
+                src="/before-after-paperwork.jpg" 
+                alt="Digital Care Transformation - Before and After Harmony" 
+                className="w-full max-w-4xl mx-auto rounded-2xl shadow-2xl border border-border"
+              />
+            </div>
+
             <div className="grid md:grid-cols-3 gap-8 mt-16">
-              <div className="p-6 rounded-xl bg-background border border-border">
-                <div className="text-4xl font-bold text-destructive mb-2">60%</div>
+              <div className="p-6 rounded-xl bg-background border border-border hover:shadow-lg transition-shadow">
+                <div className="text-4xl font-bold text-destructive mb-2">
+                  <AnimatedCounter end={60} suffix="%" />
+                </div>
                 <p className="text-muted-foreground">Time spent on paperwork instead of caring</p>
               </div>
-              <div className="p-6 rounded-xl bg-background border border-border">
-                <div className="text-4xl font-bold text-destructive mb-2">$50K+</div>
-                <p className="text-muted-foreground">Average cost per compliance violation</p>
+              <div className="p-6 rounded-xl bg-background border border-border hover:shadow-lg transition-shadow">
+                <div className="text-4xl font-bold text-destructive mb-2">
+                  $<AnimatedCounter end={50} suffix="K+" />
+                </div>
+                <p className="text-muted-foreground">Lost annually to compliance violations</p>
               </div>
-              <div className="p-6 rounded-xl bg-background border border-border">
-                <div className="text-4xl font-bold text-destructive mb-2">50%+</div>
-                <p className="text-muted-foreground">Annual staff turnover from burnout</p>
+              <div className="p-6 rounded-xl bg-background border border-border hover:shadow-lg transition-shadow">
+                <div className="text-4xl font-bold text-destructive mb-2">
+                  <AnimatedCounter end={50} suffix="%+" />
+                </div>
+                <p className="text-muted-foreground">Staff turnover from burnout</p>
               </div>
             </div>
           </div>
@@ -338,13 +356,52 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
               {outcomes.map((outcome, index) => (
-                <div key={index} className="text-center p-8 rounded-2xl bg-card border border-border">
+                <div key={index} className="text-center p-8 rounded-2xl bg-card border border-border hover:shadow-lg transition-shadow">
                   <div className="text-5xl font-bold text-primary mb-2">{outcome.metric}</div>
                   <p className="text-muted-foreground">{outcome.label}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Cost Savings Visualization */}
+            <div className="mt-24 space-y-20">
+              {/* Cumulative Savings Chart */}
+              <div>
+                <h3 className="text-3xl font-bold text-center mb-4">Your Path to $156K+ Annual Savings</h3>
+                <p className="text-center text-muted-foreground mb-8">See how Harmony delivers measurable ROI from day one</p>
+                <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
+                  <CostSavingsLineChart />
+                </div>
+              </div>
+
+              {/* Time Allocation Charts */}
+              <div>
+                <h3 className="text-3xl font-bold text-center mb-4">Reclaim 70% of Your Team's Time</h3>
+                <p className="text-center text-muted-foreground mb-8">Transform paperwork hours into resident care moments</p>
+                <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
+                  <TimeAllocationCharts />
+                </div>
+              </div>
+
+              {/* ROI Breakdown */}
+              <div>
+                <h3 className="text-3xl font-bold text-center mb-4">Where Your Savings Come From</h3>
+                <p className="text-center text-muted-foreground mb-8">$156K+ in annual cost reductions across four key areas</p>
+                <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
+                  <ROIBreakdownChart />
+                </div>
+              </div>
+
+              {/* Efficiency Gauges */}
+              <div>
+                <h3 className="text-3xl font-bold text-center mb-4">Measurable Performance Improvements</h3>
+                <p className="text-center text-muted-foreground mb-8">Track the metrics that matter most to your facility</p>
+                <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
+                  <EfficiencyGauges />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -442,8 +499,18 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-gradient-to-b from-background to-card">
-        <div className="container mx-auto px-6">
+      <section className="py-24 bg-gradient-to-b from-background to-card relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/celebration-team.jpg" 
+            alt="Healthcare team celebrating success" 
+            className="w-full h-full object-cover opacity-10"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 to-card/95"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Transform
