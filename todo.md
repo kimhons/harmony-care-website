@@ -62,3 +62,13 @@
 - [x] Add agent descriptions, use cases, and impact metrics
 - [x] Implement filtering/categorization by function
 - [x] Add visual icons/illustrations for each agent
+
+## Demo Request Form
+- [x] Create /demo route
+- [x] Build multi-step form wizard (3 steps)
+- [x] Step 1: Facility information (name, type, size, location)
+- [x] Step 2: Current challenges selection
+- [x] Step 3: Scheduling with calendar integration
+- [x] Add form validation and error handling
+- [x] Implement progress indicator
+- [x] Add success confirmation page

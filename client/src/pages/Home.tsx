@@ -105,9 +105,11 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Button className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white rounded-full px-6">
-                Schedule Demo
-              </Button>
+              <Link href="/demo">
+                <Button className="hidden sm:inline-flex bg-primary hover:bg-primary/90 text-white rounded-full px-6">
+                  Schedule Demo
+                </Button>
+              </Link>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="md:hidden p-2 hover:bg-accent/10 rounded-lg transition-colors"
@@ -173,13 +175,14 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col gap-3 mt-auto">
-              <Button
-                size="lg"
-                className="w-full bg-primary hover:bg-primary/90 text-white rounded-full"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Schedule Demo
-              </Button>
+              <Link href="/demo">
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-white rounded-full w-full"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Schedule Demo
+                </Button>
+              </Link>
               <Button
                 size="lg"
                 variant="outline"
@@ -259,10 +262,12 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-300">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 text-base font-semibold">
-                Schedule Your Demo
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <Link href="/demo">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 text-base font-semibold">
+                  Schedule Your Demo
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="rounded-full px-8 text-base font-semibold border-white/20 hover:bg-white/10">
                 Start Free Trial
               </Button>
@@ -464,9 +469,11 @@ export default function Home() {
               Join the future of residential care management. Schedule a personalized demo today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8">
-                Schedule Personalized Demo
-              </Button>
+              <Link href="/demo">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8">
+                  Schedule Personalized Demo
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="rounded-full px-8">
                 Start 30-Day Free Trial
               </Button>
