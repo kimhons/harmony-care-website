@@ -164,3 +164,20 @@
 - [x] Update homepage pricing references
 - [x] Recalculate savings examples
 - [x] Test all pricing displays
+
+## HarmonyCare Logo
+- [x] Generate medical logo with "Harmony" and "Care" in different colors
+- [x] Add medical icon (heart with pulse or cross)
+- [x] Update APP_LOGO constant in const.ts
+- [x] Test logo across all pages
+
+## Trust Badges & Certifications
+- [x] Design trust badges section with HIPAA, SOC 2, security certifications
+- [x] Add integration partner logos (EHR systems, pharmacy platforms)
+- [x] Include industry association memberships
+- [x] Add trust badges to homepage (after pricing section)
+- [x] Add trust badges to Pricing page
+- [x] Add trust badges to Group Homes solutions page (using same design)
+- [x] Add trust badges to ICF-ID solutions page (using same design)
+- [x] Ensure responsive design for mobile
+- [x] Test all pages with trust badges and new logo

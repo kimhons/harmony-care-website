@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Sparkles, Shield, Brain, Calendar, Users, FileText, TrendingUp, Award, CheckCircle2, Play, ArrowRight, Star, Briefcase, UserCheck, Wrench, UtensilsCrossed, Truck } from "lucide-react";
+import { Heart, Sparkles, Shield, Brain, Calendar, Users, FileText, TrendingUp, Award, CheckCircle2, Play, ArrowRight, Star, Briefcase, UserCheck, Wrench, UtensilsCrossed, Truck, Lock, Zap } from "lucide-react";
 import { APP_TITLE } from "@/const";
 import VideoModal from "@/components/VideoModal";
 import Navigation from "@/components/Navigation";
@@ -377,6 +377,65 @@ export default function Home() {
               View Pricing Details
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges & Certifications */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold mb-2">Trusted by Healthcare Professionals</h3>
+            <p className="text-muted-foreground">Enterprise-grade security and compliance you can rely on</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto items-center">
+            {/* HIPAA Compliant */}
+            <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-lg border">
+              <Shield className="w-12 h-12 text-primary" />
+              <div className="text-center">
+                <p className="font-semibold text-sm">HIPAA</p>
+                <p className="text-xs text-muted-foreground">Compliant</p>
+              </div>
+            </div>
+            
+            {/* SOC 2 Type II */}
+            <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-lg border">
+              <CheckCircle2 className="w-12 h-12 text-primary" />
+              <div className="text-center">
+                <p className="font-semibold text-sm">SOC 2</p>
+                <p className="text-xs text-muted-foreground">Type II Certified</p>
+              </div>
+            </div>
+            
+            {/* 256-bit Encryption */}
+            <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-lg border">
+              <Lock className="w-12 h-12 text-primary" />
+              <div className="text-center">
+                <p className="font-semibold text-sm">256-bit</p>
+                <p className="text-xs text-muted-foreground">Encryption</p>
+              </div>
+            </div>
+            
+            {/* 99.9% Uptime */}
+            <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-lg border">
+              <Zap className="w-12 h-12 text-primary" />
+              <div className="text-center">
+                <p className="font-semibold text-sm">99.9%</p>
+                <p className="text-xs text-muted-foreground">Uptime SLA</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-sm text-muted-foreground mb-4">Integrates with leading healthcare platforms</p>
+            <div className="flex flex-wrap justify-center gap-6 items-center">
+              <span className="px-4 py-2 bg-background rounded-lg border text-sm font-medium">Epic EHR</span>
+              <span className="px-4 py-2 bg-background rounded-lg border text-sm font-medium">Cerner</span>
+              <span className="px-4 py-2 bg-background rounded-lg border text-sm font-medium">Allscripts</span>
+              <span className="px-4 py-2 bg-background rounded-lg border text-sm font-medium">Omnicare</span>
+              <span className="px-4 py-2 bg-background rounded-lg border text-sm font-medium">PharMerica</span>
+            </div>
           </div>
         </div>
       </section>

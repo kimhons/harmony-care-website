@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Check, X, ArrowRight, TrendingUp, DollarSign, Users, Building2, Sparkles, ChevronDown } from "lucide-react";
+import { Check, X, ArrowRight, TrendingUp, DollarSign, Users, Building2, Sparkles, ChevronDown, Lock, Zap, Shield, CheckCircle2 } from "lucide-react";
 import { APP_TITLE } from "@/const";
 import Navigation from "@/components/Navigation";
 import { useState } from "react";
@@ -572,6 +572,50 @@ export default function Pricing() {
               <Button size="lg" variant="outline" className="rounded-full px-8 border-border hover:bg-accent/10">
                 Email Sales Team
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold mb-2">Enterprise-Grade Security & Compliance</h3>
+            <p className="text-muted-foreground">Your data is protected with industry-leading standards</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-lg border">
+              <Shield className="w-12 h-12 text-primary" />
+              <div className="text-center">
+                <p className="font-semibold text-sm">HIPAA</p>
+                <p className="text-xs text-muted-foreground">Compliant</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-lg border">
+              <CheckCircle2 className="w-12 h-12 text-primary" />
+              <div className="text-center">
+                <p className="font-semibold text-sm">SOC 2</p>
+                <p className="text-xs text-muted-foreground">Type II</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-lg border">
+              <Lock className="w-12 h-12 text-primary" />
+              <div className="text-center">
+                <p className="font-semibold text-sm">256-bit</p>
+                <p className="text-xs text-muted-foreground">Encryption</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-col items-center gap-3 p-6 bg-background rounded-lg border">
+              <Zap className="w-12 h-12 text-primary" />
+              <div className="text-center">
+                <p className="font-semibold text-sm">99.9%</p>
+                <p className="text-xs text-muted-foreground">Uptime</p>
+              </div>
             </div>
           </div>
         </div>
