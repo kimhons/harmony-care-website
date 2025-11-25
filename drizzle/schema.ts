@@ -41,6 +41,12 @@ export const signups = mysqlTable("signups", {
   interestedFeatures: text("interestedFeatures"), // JSON array of selected features
   additionalNeeds: text("additionalNeeds"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
+  
+  // Email campaign tracking
+  emailsSent: text("emailsSent"), // JSON array of sent email types and timestamps
+  lastEmailSent: timestamp("lastEmailSent"),
+  emailOptOut: int("emailOptOut").default(0).notNull(), // 0 = opted in, 1 = opted out
+  campaignStatus: varchar("campaignStatus", { length: 50 }).default("active").notNull(), // active, paused, completed
 });
 
 export type Signup = typeof signups.$inferSelect;

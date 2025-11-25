@@ -2,6 +2,39 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+export interface SendEmailParams {
+  to: string;
+  subject: string;
+  html: string;
+}
+
+/**
+ * Generic email sending function
+ */
+export async function sendEmail(params: SendEmailParams) {
+  const { to, subject, html } = params;
+  
+  try {
+    const { data, error } = await resend.emails.send({
+      from: 'HarmonyCare <onboarding@resend.dev>',
+      to: [to],
+      subject,
+      html,
+    });
+    
+    if (error) {
+      console.error('[Email] Failed to send:', error);
+      throw error;
+    }
+    
+    console.log('[Email] Sent successfully:', data);
+    return data;
+  } catch (error) {
+    console.error('[Email] Error:', error);
+    throw error;
+  }
+}
+
 export interface SendWelcomeEmailParams {
   email: string;
   firstName: string;
