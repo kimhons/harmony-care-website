@@ -63,6 +63,7 @@ function calculateEngagementScore(engagementScore: number): number {
   // engagementScore is cumulative:
   // +5 for each email open
   // +10 for each email click
+  // +15 for each resource download
   // +20 for demo request
   
   if (engagementScore >= 30) return 20; // Highly engaged (demo + clicks)
@@ -200,7 +201,7 @@ export async function recalculateAllLeadScores() {
  */
 export async function trackEngagement(
   leadId: number,
-  eventType: "email_open" | "email_click" | "demo_request"
+  eventType: "email_open" | "email_click" | "demo_request" | "resource_download"
 ) {
   const db = await getDb();
   if (!db) {
@@ -228,6 +229,9 @@ export async function trackEngagement(
       break;
     case "email_click":
       points = 10;
+      break;
+    case "resource_download":
+      points = 15;
       break;
     case "demo_request":
       points = 20;

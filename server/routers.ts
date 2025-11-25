@@ -14,6 +14,7 @@ import { checkAndCreateMilestones, getUnviewedMilestones, markMilestoneAsViewed,
 import { calculatorRouter } from "./calculator";
 import { adminCalculatorLeadsRouter } from "./adminCalculatorLeads";
 import { resendWebhookRouter } from "./resendWebhook";
+import { leadMagnetsRouter } from "./leadMagnets";
 import { signups, referrals } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 
@@ -23,6 +24,7 @@ export const appRouter = router({
   calculator: calculatorRouter,
   adminCalculatorLeads: adminCalculatorLeadsRouter,
   resendWebhook: resendWebhookRouter,
+  leadMagnets: leadMagnetsRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

@@ -18,6 +18,7 @@ import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import AdminCalculatorLeads from "./pages/AdminCalculatorLeads";
+import Resources from "./pages/Resources";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/demo" component={Demo} />
       <Route path={"/solutions/group-homes"} component={GroupHomes} />
       <Route path={"/solutions/icf-id"} component={IcfId} />
+      <Route path={"/resources"} component={Resources} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

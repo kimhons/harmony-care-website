@@ -149,3 +149,58 @@ export const calculatorLeads = mysqlTable("calculatorLeads", {
 
 export type CalculatorLead = typeof calculatorLeads.$inferSelect;
 export type InsertCalculatorLead = typeof calculatorLeads.$inferInsert;
+
+/**
+ * Lead magnets table - downloadable resources for lead generation
+ */
+export const leadMagnets = mysqlTable("leadMagnets", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 200 }).notNull(),
+  description: text("description").notNull(),
+  type: varchar("type", { length: 50 }).notNull(), // "pdf", "checklist", "guide", "calculator", "template"
+  category: varchar("category", { length: 50 }).notNull(), // "roi", "compliance", "staffing", "operations"
+  fileUrl: varchar("fileUrl", { length: 500 }).notNull(), // S3 URL or external link
+  thumbnailUrl: varchar("thumbnailUrl", { length: 500 }), // Preview image
+  fileSize: int("fileSize"), // File size in KB
+  downloadCount: int("downloadCount").default(0).notNull(),
+  isActive: int("isActive").default(1).notNull(), // 0 = hidden, 1 = visible
+  sortOrder: int("sortOrder").default(0).notNull(), // For manual ordering
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type LeadMagnet = typeof leadMagnets.$inferSelect;
+export type InsertLeadMagnet = typeof leadMagnets.$inferInsert;
+
+/**
+ * Lead magnet downloads table - tracks who downloaded what
+ */
+export const leadMagnetDownloads = mysqlTable("leadMagnetDownloads", {
+  id: int("id").autoincrement().primaryKey(),
+  leadMagnetId: int("leadMagnetId").notNull(),
+  
+  // Lead information captured at download
+  email: varchar("email", { length: 320 }).notNull(),
+  name: varchar("name", { length: 200 }),
+  facilityName: varchar("facilityName", { length: 200 }),
+  facilityType: varchar("facilityType", { length: 50 }),
+  residentCount: int("residentCount"),
+  jobTitle: varchar("jobTitle", { length: 100 }),
+  phoneNumber: varchar("phoneNumber", { length: 20 }),
+  
+  // Link to calculator lead if exists
+  calculatorLeadId: int("calculatorLeadId"),
+  
+  // UTM parameters
+  utmSource: varchar("utmSource", { length: 100 }),
+  utmMedium: varchar("utmMedium", { length: 100 }),
+  utmCampaign: varchar("utmCampaign", { length: 100 }),
+  
+  // Metadata
+  ipAddress: varchar("ipAddress", { length: 45 }),
+  userAgent: text("userAgent"),
+  downloadedAt: timestamp("downloadedAt").defaultNow().notNull(),
+});
+
+export type LeadMagnetDownload = typeof leadMagnetDownloads.$inferSelect;
+export type InsertLeadMagnetDownload = typeof leadMagnetDownloads.$inferInsert;

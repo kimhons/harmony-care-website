@@ -57,6 +57,13 @@
       "when": 1764104822941,
       "tag": "0007_great_pestilence",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1764105934656,
+      "tag": "0008_heavy_doorman",
+      "breakpoints": true
     }
   ]
 }

@@ -595,3 +595,19 @@
 - [x] Update sendEmail function to pass tags to Resend
 - [x] Update nurtureEmailService to include lead_id in tags
 - [x] Add email_type and campaign tags for tracking
+
+
+## Lead Magnet Library System - Completed
+- [x] Design database schema for lead magnets (title, description, type, file URL, etc.)
+- [x] Design database schema for lead magnet downloads (tracking who downloaded what)
+- [x] Create backend API for listing available lead magnets
+- [x] Create backend API for downloading resources (with form submission)
+- [x] Create backend API for admin to manage lead magnets
+- [x] Build lead magnet resources (6 resources seeded: ROI guide, compliance checklist, etc.)
+- [x] Create frontend lead magnet library page with grid layout at /resources
+- [x] Build download modal with lead information capture form
+- [x] Integrate download tracking with lead scoring (+15 points per download)
+- [x] Add download history to admin dashboard (analytics API ready)
+- [x] Create lead magnet analytics (most popular resources, conversion rates)
+- [x] Write comprehensive tests for lead magnet system (17 tests passing)
+- [ ] Add lead magnet CTAs to homepage and calculator results
