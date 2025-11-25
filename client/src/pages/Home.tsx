@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, Sparkles, Shield, Brain, Calendar, Users, FileText, TrendingUp, Award, CheckCircle2, Play, ArrowRight, Star, Menu, X } from "lucide-react";
 import { APP_TITLE } from "@/const";
 import { useState } from "react";
+import { Link } from "wouter";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -99,7 +100,7 @@ export default function Home() {
             <div className="hidden md:flex items-center gap-8">
               <a href="#product" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Product</a>
               <a href="#solutions" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Solutions</a>
-              <a href="#pricing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+              <Link href="/pricing"><a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Pricing</a></Link>
               <a href="#resources" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Resources</a>
             </div>
 
@@ -155,7 +156,7 @@ export default function Home() {
                 Solutions
               </a>
               <a
-                href="#pricing"
+                href="/pricing"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-4 py-3 text-base font-medium text-foreground hover:bg-accent/10 rounded-lg transition-colors"
               >
