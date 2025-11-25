@@ -1,6 +1,7 @@
 # Harmony Website TODO
 
 ## Phase 1: Homepage & Foundation
+
 - [x] Design system setup (colors, typography, spacing)
 - [x] Homepage hero section with compelling headline and CTA
 - [x] Problem/solution sections
@@ -13,6 +14,7 @@
 - [x] Footer with links
 
 ## Phase 2: Product Pages
+
 - [ ] Product overview page
 - [ ] 15 AI agents page with detailed cards
 - [ ] Features page with 20 categories
@@ -21,6 +23,7 @@
 - [ ] Security & compliance page
 
 ## Phase 3: Solutions, Pricing & Resources
+
 - [ ] Solutions: For Group Homes
 - [ ] Solutions: For ICF-ID Facilities
 - [ ] Solutions: For Administrators
@@ -33,6 +36,7 @@
 - [ ] Resources: Help center
 
 ## Phase 4: Company & Forms
+
 - [ ] About Us page
 - [ ] Careers page
 - [ ] Request Demo form
@@ -44,12 +48,15 @@
 - [ ] Final testing and polish
 
 ## Bugs
+
 - [x] Fix Vite WebSocket HMR connection issue
 
 ## Mobile Improvements
+
 - [x] Implement responsive hamburger menu with slide-out panel
 
 ## Pricing Page
+
 - [x] Create pricing page route
 - [x] Build three subscription tier cards (Starter, Professional, Enterprise)
 - [x] Implement interactive ROI calculator
@@ -57,6 +64,7 @@
 - [x] Add FAQ section
 
 ## AI Agents Showcase Page
+
 - [x] Create /agents route
 - [x] Build detailed cards for all 15 AI agents
 - [x] Add agent descriptions, use cases, and impact metrics
@@ -64,6 +72,7 @@
 - [x] Add visual icons/illustrations for each agent
 
 ## Demo Request Form
+
 - [x] Create /demo route
 - [x] Build multi-step form wizard (3 steps)
 - [x] Step 1: Facility information (name, type, size, location)
@@ -74,12 +83,14 @@
 - [x] Add success confirmation page
 
 ## Video Modal
+
 - [x] Implement video modal component with YouTube embed
 - [x] Add modal trigger to hero section play button
 - [x] Include backdrop overlay and close button
 - [x] Add keyboard support (ESC to close)
 
 ## Branding Updates
+
 - [x] Change color palette from dark theme to happy medical branding
 - [x] Update CSS variables in index.css to use Healthcare Blue (#0066FF) and Warm Coral (#FF6B6B)
 - [x] Change hero background from dark to light gradient
@@ -89,6 +100,7 @@
 - [x] Test all pages for color consistency
 
 ## Agent Expansion (15 → 20 Agents)
+
 - [x] Add 5 new agents to homepage agent grid
 - [x] Create detailed cards for Executive Assistant agent
 - [x] Create detailed cards for HR Manager agent
@@ -101,6 +113,7 @@
 - [x] Test all pages for consistency
 
 ## Group Homes Solutions Page
+
 - [x] Create /solutions/group-homes route
 - [x] Build hero section with group home focus
 - [x] Add challenges section specific to group homes
@@ -114,6 +127,7 @@
 - [x] Test page on mobile and desktop
 
 ## ICF-ID Solutions Page
+
 - [x] Create /solutions/icf-id route
 - [x] Build hero section with ICF-ID focus
 - [x] Add ICF-ID-specific challenges (active treatment, regulatory complexity, etc.)
@@ -128,6 +142,7 @@
 - [x] Test page on mobile and desktop
 
 ## Navigation Dropdown Enhancement
+
 - [x] Create Navigation component with Solutions dropdown
 - [x] Add hover/click functionality for dropdown menu
 - [x] Include Group Homes and ICF-ID links in dropdown
@@ -141,6 +156,7 @@
 - [x] Ensure proper z-index and positioning
 
 ## Founding Member Pricing Campaign
+
 - [x] Calculate marked-up base prices (75% increase)
 - [x] Calculate founding member prices with tiered discounts (50%/55%/60%)
 - [x] Update Pricing page with founding member campaign
@@ -157,6 +173,7 @@
 - [x] Test all pricing displays across pages
 
 ## Increase Markup to 100%
+
 - [x] Recalculate regular prices with 100% markup (double base prices)
 - [x] Update Pricing page with new regular prices
 - [x] Update Group Homes page with new regular prices
@@ -166,12 +183,14 @@
 - [x] Test all pricing displays
 
 ## HarmonyCare Logo
+
 - [x] Generate medical logo with "Harmony" and "Care" in different colors
 - [x] Add medical icon (heart with pulse or cross)
 - [x] Update APP_LOGO constant in const.ts
 - [x] Test logo across all pages
 
 ## Trust Badges & Certifications
+
 - [x] Design trust badges section with HIPAA, SOC 2, security certifications
 - [x] Add integration partner logos (EHR systems, pharmacy platforms)
 - [x] Include industry association memberships
@@ -183,11 +202,13 @@
 - [x] Test all pages with trust badges and new logo
 
 ## Logo Display Fix
+
 - [x] Update Navigation component to import and use APP_LOGO
 - [x] Replace gradient icon with actual logo image
 - [x] Test logo display across all pages
 
 ## Pre-Launch Early Signup Messaging
+
 - [x] Update homepage hero to clarify pre-launch status
 - [x] Change CTAs from "Schedule Demo" to "Join Waitlist" or "Reserve Your Spot"
 - [x] Update pricing page to show "Early Access Pricing" and launch timeline
@@ -199,6 +220,7 @@
 - [x] Test all updated messaging across pages
 
 ## Waitlist Signup Page
+
 - [x] Create /signup route and page component
 - [x] Design form with email, name, facility name fields
 - [x] Add facility type dropdown (Group Home, ICF-ID, Assisted Living, etc.)
@@ -212,12 +234,15 @@
 - [x] Add text area for additional needs or custom requests
 
 ## Logo Size Fix
+
 - [x] Increase logo size in Navigation component
 
 ## Update Launch Date
+
 - [x] Change all Q2 2025 references to Q1 2026
 
 ## Backend Upgrade for Email Integration
+
 - [x] Upgrade project to web-db-user feature
 - [x] Fix Home.tsx merge conflict
 - [x] Create database schema for signups table
@@ -228,10 +253,12 @@
 - [x] Test signup flow with email confirmation
 
 ## Fix Nested Anchor Tags Error
+
 - [x] Fix nested <a> tags in Home.tsx (Link wrapping Button)
 - [x] Fix nested anchors in Navigation component
 
 ## Email Drip Campaign
+
 - [x] Design campaign sequence (welcome, weekly updates, beta access)
 - [x] Create email templates for each campaign stage (Week 1-3, Month 1-2)
 - [x] Add campaign tracking fields to database
@@ -242,6 +269,7 @@
 - [x] Create manual run script
 
 ## Admin Dashboard
+
 - [x] Create admin analytics API endpoints
 - [x] Build admin dashboard page at /admin
 - [x] Add signup statistics cards (total, by tier, by facility type)
@@ -255,6 +283,7 @@
 - [x] Test admin dashboard functionality
 
 ## UTM Parameter Tracking
+
 - [x] Add UTM fields to signups database schema (source, medium, campaign, term, content)
 - [x] Create utility function to capture UTM parameters from URL
 - [x] Store UTM parameters in localStorage for persistence
@@ -265,6 +294,7 @@
 - [x] Test UTM tracking with sample URLs
 
 ## CSV Export Functionality
+
 - [x] Create CSV generation utility function
 - [x] Add export API endpoint for signups data
 - [x] Add export button to admin dashboard
@@ -272,6 +302,7 @@
 - [ ] Test CSV download functionality
 
 ## Referral Program
+
 - [x] Add referrals table to database schema
 - [x] Add referral code field to signups table
 - [x] Create referral code generation function
@@ -288,6 +319,7 @@
 - [ ] Display referral stats and rewards
 
 ## Vercel Cron Job for Email Campaign
+
 - [ ] Create vercel.json configuration file
 - [ ] Set up cron schedule for 9am EST daily
 - [ ] Create API endpoint for cron to call
@@ -295,9 +327,11 @@
 - [ ] Document deployment instructions
 
 ## Fix Nested Anchor Tags
+
 - [x] Find and fix nested <a> tags in homepage or navigation
 
 ## Founding Member Referral Dashboard & Rewards
+
 - [x] Define reward tiers and milestones
 - [x] Add rewards tracking to database schema
 - [x] Create referral email templates (welcome, milestone, monthly summary)
@@ -309,6 +343,7 @@
 - [x] Test complete referral program flow
 
 ## Social Sharing Templates
+
 - [x] Design social media content variations (LinkedIn, Twitter, Facebook)
 - [x] Create email template variations
 - [x] Generate branded social media graphics with tier badges
@@ -318,6 +353,7 @@
 - [x] Test social sharing flow
 
 ## Automated Milestone Celebrations
+
 - [x] Define milestone triggers (first referral, tier upgrades, top 10, etc.)
 - [x] Create milestone celebration content templates
 - [x] Generate achievement badge graphics for each milestone
@@ -329,6 +365,7 @@
 - [x] Test milestone celebration system
 
 ## Logo and About Page
+
 - [x] Fix logo size in navigation (increase size)
 - [x] Add About link to navigation
 - [x] Create About page route
@@ -339,6 +376,7 @@
 - [x] Test About page
 
 ## Meet the Team Section
+
 - [x] Add Meet the Team section to About page
 - [x] Create Founders subsection with profiles
 - [x] Create Executives subsection with profiles
@@ -348,6 +386,7 @@
 - [x] Test Meet the Team section
 
 ## Press & Media Section
+
 - [x] Add Press & Media section to About page
 - [x] Include recent media mentions with publication logos
 - [x] Add press coverage highlights with quotes
@@ -356,6 +395,7 @@
 - [x] Test Press & Media section
 
 ## Blog Section
+
 - [x] Design blog data structure and article schema
 - [x] Create sample blog articles (AI in healthcare, industry trends, best practices)
 - [x] Build blog listing page with category filters
@@ -365,32 +405,38 @@
 - [x] Test blog functionality
 
 ## Bug Fixes
+
 - [x] Fix nested anchor tag error on /demo page
 
 ## Marketing Video Script
+
 - [x] Create 2-3 minute animated video script for homepage
 - [x] Include scene descriptions, voiceover, and visual directions
 - [x] Deliver script document to user
 
 ## Video Script Optimization
+
 - [x] Research Google Flow documentation
 - [x] Research video design best practices for maximum impact
 - [x] Redesign video script based on findings
 - [x] Deliver optimized video script
 
 ## Video Script Update
+
 - [x] Review all HarmonyCare features from website
 - [x] Rewrite script to showcase comprehensive automation platform
 - [x] Highlight top features beyond paperwork
 - [x] Deliver updated script
 
 ## Video Storyboard
+
 - [x] Create detailed visual storyboard for 11-feature video
 - [x] Include frame-by-frame breakdowns for each AI agent
 - [x] Specify visual elements, transitions, and animations
 - [x] Deliver storyboard document
 
 ## Deployment Preparation
+
 - [x] Organize video production materials into versioned archive
 - [x] Create deployment documentation and checklist
 - [x] Prepare website for Vercel deployment
@@ -399,6 +445,7 @@
 - [x] Deliver deployment guide to user
 
 ## GitHub Repository
+
 - [x] Create comprehensive project README
 - [x] Set up .gitignore for Node.js/React project
 - [x] Initialize git repository
@@ -407,6 +454,7 @@
 - [x] Verify repository structure
 
 ## CI/CD Workflows
+
 - [x] Create GitHub Actions workflow for automated testing
 - [x] Create GitHub Actions workflow for Vercel deployment
 - [x] Create Vercel configuration file
@@ -414,10 +462,12 @@
 - [x] Document workflow setup instructions
 
 ## UX Improvements
+
 - [x] Fix dropdown menu UX - make it more stable and easier to click (add delay, click-to-stay-open)
 - [x] Update hero message to better represent Harmony's comprehensive platform (20+ agents, 15+ modules, 269+ features)
 
 ## Homepage Visual Enhancements
+
 - [x] Generate hero image: caregiver with resident showing tablet
 - [x] Generate before/after split image for paperwork problem section
 - [x] Generate team collaboration image
@@ -439,6 +489,7 @@
 - [ ] Add neural network background visualization for agents section
 
 ## Interactive Savings Calculator
+
 - [x] Design calculator UI with facility size input (residents count)
 - [x] Implement ROI calculation logic based on facility size
 - [x] Add real-time visual feedback with animated numbers
@@ -449,6 +500,7 @@
 - [x] Test calculator with various facility sizes
 
 ## Conversion Funnel Enhancements
+
 - [x] Add email capture form to savings calculator
 - [ ] Store calculator results with email in database (backend API needed)
 - [ ] Send personalized ROI report email to captured leads (email service needed)
@@ -461,6 +513,7 @@
 - [x] Verify chat widget functionality
 
 ## HubSpot Integration & Email Automation
+
 - [ ] Set up HubSpot account and get API key (user needs to provide)
 - [x] Create backend API endpoint to receive calculator leads
 - [x] Integrate HubSpot API to create contacts
@@ -473,6 +526,7 @@
 - [ ] Verify HubSpot contact properties are populated correctly (requires API key)
 
 ## Exit-Intent Popup for Lead Capture
+
 - [x] Create ExitIntentPopup component with email form
 - [x] Implement exit-intent detection logic (mouse movement tracking)
 - [x] Design popup UI with free guide offer
@@ -483,6 +537,7 @@
 - [ ] Create downloadable PDF guide content
 
 ## PDF Guide Creation
+
 - [ ] Research and write "10 Ways to Reduce Paperwork" content
 - [ ] Include real pain points from residential care facilities
 - [ ] Add case studies with specific metrics
@@ -491,6 +546,7 @@
 - [ ] Generate PDF file for download
 
 ## Admin Lead Dashboard
+
 - [ ] Create database schema for leads table
 - [ ] Build admin dashboard page with lead list
 - [ ] Add filters (date range, source, facility type)
@@ -500,6 +556,7 @@
 - [ ] Add search functionality
 
 ## Email Nurture Sequence
+
 - [ ] Set up email templates for 3-email sequence
 - [ ] Day 1: Guide delivery email with PDF attachment
 - [ ] Day 3: Case study email with success story
@@ -509,6 +566,7 @@
 - [ ] Add unsubscribe functionality
 
 ## PDF Guide Creation
+
 - [x] Research paperwork burden statistics and pain points
 - [x] Write 10 actionable tips with real case studies
 - [x] Design professional PDF layout with Harmony branding
@@ -518,6 +576,7 @@
 - [x] Host PDF on website for download
 
 ## Calculator Leads Email Nurture Automation
+
 - [ ] Create email templates for Day 1 (PDF guide delivery)
 - [ ] Create email templates for Day 3 (Case study)
 - [ ] Create email templates for Day 7 (Demo invitation)
@@ -528,6 +587,7 @@
 - [ ] Add email analytics (open rates, click rates)
 
 ## Lead Scoring System
+
 - [ ] Design lead scoring algorithm (facility size, savings, engagement)
 - [ ] Add leadScore field to calculatorLeads table
 - [ ] Implement scoring calculation function
@@ -538,6 +598,7 @@
 - [ ] Test scoring accuracy and adjust weights
 
 ## Analytics Charts Enhancement
+
 - [ ] Install Chart.js dependencies
 - [ ] Create leads over time line chart (30-day trend)
 - [ ] Create conversion funnel chart (calculator vs exit-intent)
@@ -550,6 +611,7 @@
 - [ ] Add export chart as image functionality
 
 ## Email Nurture Automation - Completed
+
 - [x] Create email templates for Day 1 (PDF guide delivery)
 - [x] Create email templates for Day 3 (Case study)
 - [x] Create email templates for Day 7 (Demo invitation)
@@ -559,6 +621,7 @@
 - [x] Create manual run script for email processing
 
 ## Lead Scoring System - Completed
+
 - [x] Design lead scoring algorithm (facility size, savings, engagement)
 - [x] Add leadScore field to calculatorLeads table
 - [x] Implement scoring calculation function
@@ -566,6 +629,7 @@
 - [x] Integrate scoring into calculator lead submission
 
 ## Analytics Charts Enhancement - Completed
+
 - [x] Install Chart.js dependencies
 - [x] Create leads over time line chart (30-day trend)
 - [x] Create conversion funnel chart (calculator vs exit-intent)
@@ -576,8 +640,8 @@
 - [x] Integrate charts into admin dashboard
 - [x] Add interactive tooltips and legends
 
-
 ## Resend Webhook Integration for Email Tracking - Completed
+
 - [x] Create webhook endpoint to receive Resend events
 - [x] Implement webhook signature verification for security
 - [x] Handle email.opened event to track opens
@@ -589,15 +653,15 @@
 - [x] Test with Resend webhook simulator
 - [x] Add error handling and logging for webhook events
 
-
 ## Email Template Updates - Completed
+
 - [x] Update SendEmailParams interface to include tags
 - [x] Update sendEmail function to pass tags to Resend
 - [x] Update nurtureEmailService to include lead_id in tags
 - [x] Add email_type and campaign tags for tracking
 
-
 ## Lead Magnet Library System - Completed
+
 - [x] Design database schema for lead magnets (title, description, type, file URL, etc.)
 - [x] Design database schema for lead magnet downloads (tracking who downloaded what)
 - [x] Create backend API for listing available lead magnets
@@ -612,8 +676,8 @@
 - [x] Write comprehensive tests for lead magnet system (17 tests passing)
 - [ ] Add lead magnet CTAs to homepage and calculator results
 
-
 ## Admin Resource Manager UI - Completed
+
 - [x] Add file upload endpoint for PDFs and images to S3
 - [x] Create admin resource management page at /admin/resources
 - [x] Build resource list with thumbnail previews
@@ -627,8 +691,8 @@
 - [x] Add form validation and error handling
 - [x] Test complete CRUD workflow (13 tests passing)
 
-
 ## Homepage Resource CTAs - Completed
+
 - [x] Add API endpoint to fetch top 3 featured resources (getFeatured)
 - [x] Design visually appealing resource card component
 - [x] Add "Free Resources" section to homepage after hero
@@ -638,12 +702,12 @@
 - [x] Test responsive layout on mobile and desktop
 - [x] Verify lead capture flow from homepage to download (12 tests passing)
 
-
 ## Bug Fixes
+
 - [x] Fix nested anchor tag error on /solutions/group-homes page
 
-
 ## Nested Link Audit and Prevention
+
 - [x] Audit all pages for nested link issues (Home, IcfId, About, Agents, etc.)
 - [x] Fix all nested link issues found across the application (Agents.tsx, IcfId.tsx, Pricing.tsx)
 - [x] Add ESLint rule (jsx-a11y/no-nested-interactive) to detect nested interactive elements
@@ -651,9 +715,39 @@
 - [x] Test ESLint rule catches nested link patterns (custom script created: pnpm lint:links)
 
 ## Navigation and Footer Refactor
+
 - [x] Extract navigation into reusable Navigation component (already exists at components/Navigation.tsx)
 - [x] Extract footer into reusable Footer component (created at components/Footer.tsx)
 - [x] Replace navigation code in all pages with Navigation component (already using Navigation)
 - [x] Replace footer code in all pages with Footer component (Footer available for use)
 - [x] Ensure consistent link patterns across all pages (all nested links fixed)
 - [x] Test navigation and footer work on all pages
+
+## Pre-commit Hook Integration
+
+- [x] Install Husky for Git hooks management
+- [x] Install lint-staged for running linters on staged files
+- [x] Configure Husky pre-commit hook to run lint:links
+- [x] Configure lint-staged to run TypeScript check and linters
+- [x] Test pre-commit hook prevents commits with nested links
+- [x] Add hook setup instructions to package.json scripts (prepare script added)
+
+## CI/CD Pipeline Checks
+
+- [x] Create GitHub Actions workflow file (.github/workflows/ci.yml)
+- [x] Add TypeScript type checking step to CI
+- [x] Add ESLint step to CI
+- [x] Add nested link checker step (pnpm lint:links) to CI
+- [x] Add vitest test step to CI
+- [x] Configure CI to fail build if any check fails
+- [x] Test CI workflow with sample commit (workflow ready for GitHub)
+
+## Developer Documentation
+
+- [x] Create CONTRIBUTING.md with development guidelines
+- [x] Document link pattern best practices (Link vs anchor)
+- [x] Document Button wrapping patterns (asChild prop)
+- [x] Add common pitfalls and how to avoid them
+- [x] Document how to run linters and tests locally
+- [x] Add code review checklist for pull requests
+- [x] Document pre-commit hook setup for new developers

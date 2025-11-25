@@ -1,0 +1,5 @@
+# Run lint-staged to check staged files
+pnpm lint-staged
+
+# Run nested link checker on all files
+pnpm lint:links
