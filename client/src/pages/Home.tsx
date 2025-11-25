@@ -216,13 +216,13 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Hero Section - Dark with Video */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#1a1a2e] to-[#0f0f1a] pt-14">
-        {/* Animated Background Gradient */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-[20%] right-[20%] w-[400px] h-[400px] bg-accent/15 rounded-full blur-[100px] animate-pulse delay-1000"></div>
-          <div className="absolute top-[50%] left-[50%] w-[300px] h-[300px] bg-destructive/10 rounded-full blur-[80px] animate-pulse delay-2000"></div>
+      {/* Hero Section - Happy Medical Theme */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-blue-100/20 pt-14">
+        {/* Animated Background Gradient - Soft Medical Colors */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-[20%] left-[20%] w-[500px] h-[500px] bg-primary/15 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-[20%] right-[20%] w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] animate-pulse delay-1000"></div>
+          <div className="absolute top-[50%] left-[50%] w-[300px] h-[300px] bg-blue-200/20 rounded-full blur-[80px] animate-pulse delay-2000"></div>
         </div>
 
         <div className="container mx-auto px-6 py-20 relative z-10">
@@ -234,11 +234,11 @@ export default function Home() {
             </div>
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 animate-fade-in-up text-foreground">
               Transform Your
               <br />
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Care Facility
+                Resident Care Facility
               </span>
             </h1>
 
@@ -248,18 +248,18 @@ export default function Home() {
 
             {/* Video Container */}
             <div className="relative max-w-4xl mx-auto mb-12 animate-fade-in-up delay-200">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] shadow-2xl shadow-primary/20 border border-white/10">
+              <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-blue-200 shadow-2xl shadow-primary/20 border border-primary/20">
                 {/* Video Thumbnail/Placeholder */}
                 <div 
-                  className="absolute inset-0 bg-gradient-to-br from-primary/30 via-black/40 to-accent/20 flex items-center justify-center group cursor-pointer"
+                  className="absolute inset-0 bg-gradient-to-br from-primary/20 via-blue-100/60 to-accent/15 flex items-center justify-center group cursor-pointer"
                   onClick={() => setVideoModalOpen(true)}
                 >
-                  <div className="w-24 h-24 rounded-full bg-white/95 flex items-center justify-center shadow-2xl transition-transform group-hover:scale-110">
-                    <Play className="w-10 h-10 text-black ml-1" fill="currentColor" />
+                  <div className="w-24 h-24 rounded-full bg-primary flex items-center justify-center shadow-2xl transition-transform group-hover:scale-110">
+                    <Play className="w-10 h-10 text-white ml-1" fill="currentColor" />
                   </div>
                   <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-white font-semibold text-lg">See Harmony Care in Action</p>
-                    <p className="text-white/70 text-sm">2-minute product overview</p>
+                    <p className="text-foreground font-semibold text-lg">See Harmony Care in Action</p>
+                    <p className="text-muted-foreground text-sm">2-minute product overview</p>
                   </div>
                 </div>
               </div>
