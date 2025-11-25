@@ -42,3 +42,6 @@
 - [ ] SEO optimization (meta tags, structured data)
 - [ ] Performance optimization
 - [ ] Final testing and polish
+
+## Bugs
+- [x] Fix Vite WebSocket HMR connection issue
