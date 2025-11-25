@@ -471,3 +471,13 @@
 - [ ] Test lead capture flow with HubSpot (requires API key)
 - [ ] Test email delivery with sample data (requires Resend setup)
 - [ ] Verify HubSpot contact properties are populated correctly (requires API key)
+
+## Exit-Intent Popup for Lead Capture
+- [x] Create ExitIntentPopup component with email form
+- [x] Implement exit-intent detection logic (mouse movement tracking)
+- [x] Design popup UI with free guide offer
+- [x] Add popup to homepage (near calculator section)
+- [x] Store captured emails in database (via calculator API)
+- [x] Add one-time display logic (don't show again after submission/close)
+- [x] Test exit-intent trigger on desktop and mobile
+- [ ] Create downloadable PDF guide content

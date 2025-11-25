@@ -7,8 +7,9 @@ import Navigation from "@/components/Navigation";
 import { CostSavingsLineChart, TimeAllocationCharts, ROIBreakdownChart, EfficiencyGauges } from "@/components/CostSavingsChart";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
-import { ComparisonTable } from "@/components/ComparisonTable";
-import { useState } from "react";
+import { ComparisonTable } from '@/components/ComparisonTable';
+import { ExitIntentPopup } from '@/components/ExitIntentPopup';
+import { useState } from 'react';
 import { Link, useLocation } from "wouter";
 
 export default function Home() {
@@ -604,6 +605,9 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      
+      {/* Exit Intent Popup */}
+      <ExitIntentPopup />
     </div>
   );
 }
