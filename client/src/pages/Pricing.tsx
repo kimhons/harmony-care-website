@@ -30,8 +30,8 @@ export default function Pricing() {
     {
       name: "Starter",
       price: "$52",
-      regularPrice: "$103",
-      discount: "50%",
+      regularPrice: "$118",
+      discount: "56%",
       period: "per resident/month",
       description: "Perfect for small group homes getting started with AI-powered care management",
       residents: "Up to 10 residents",
@@ -57,8 +57,8 @@ export default function Pricing() {
     {
       name: "Professional",
       price: "$62",
-      regularPrice: "$138",
-      discount: "55%",
+      regularPrice: "$158",
+      discount: "61%",
       period: "per resident/month",
       description: "Most popular for mid-sized facilities needing comprehensive automation",
       residents: "11-50 residents",
@@ -84,8 +84,8 @@ export default function Pricing() {
     {
       name: "Enterprise",
       price: "$69",
-      regularPrice: "$173",
-      discount: "60%",
+      regularPrice: "$198",
+      discount: "65%",
       period: "per resident/month",
       description: "For large facilities and multi-site organizations requiring enterprise features",
       residents: "50+ residents",
@@ -156,7 +156,7 @@ export default function Pricing() {
             </span>
           </h1>
           <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Save <strong className="text-foreground">50-60% off</strong> regular pricing forever as a founding member. Plus get <strong className="text-foreground">40% off onboarding</strong> and <strong className="text-foreground">40% off yearly maintenance</strong> fees.
+            Save <strong className="text-foreground">56-65% off</strong> regular pricing forever as a founding member. Plus get <strong className="text-foreground">40% off onboarding</strong> and <strong className="text-foreground">40% off yearly maintenance</strong> fees.
           </p>
           <p className="text-lg text-destructive font-semibold mb-8">
             ⏰ Only 50 founding member spots available - 23 remaining
@@ -264,7 +264,7 @@ export default function Pricing() {
                   <Check className="w-5 h-5 text-green-500" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">50-60% Off Forever</h4>
+                  <h4 className="font-semibold mb-1">56-65% Off Forever</h4>
                   <p className="text-sm text-muted-foreground">Your founding member rate is locked in permanently. Never pay full price, even as we add new features.</p>
                 </div>
               </div>

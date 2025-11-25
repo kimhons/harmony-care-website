@@ -155,3 +155,12 @@
 - [x] Update homepage pricing references
 - [x] Add founding member badges and visual emphasis
 - [x] Test all pricing displays across pages
+
+## Increase Markup to 100%
+- [x] Recalculate regular prices with 100% markup (double base prices)
+- [x] Update Pricing page with new regular prices
+- [x] Update Group Homes page with new regular prices
+- [x] Update ICF-ID page with new regular prices
+- [x] Update homepage pricing references
+- [x] Recalculate savings examples
+- [x] Test all pricing displays

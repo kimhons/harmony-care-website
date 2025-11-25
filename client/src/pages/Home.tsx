@@ -364,11 +364,11 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-4">
-              <span className="text-muted-foreground line-through">$103-$173/resident</span>{" "}
+              <span className="text-muted-foreground line-through">$118-$198/resident</span>{" "}
               <span className="text-primary font-bold">$52-$69/resident/month</span>
             </p>
             <p className="text-lg text-muted-foreground mb-2">
-              <strong className="text-foreground">Save 50-60% off</strong> regular pricing forever + <strong className="text-foreground">40% off onboarding & maintenance</strong>
+              <strong className="text-foreground">Save 56-65% off</strong> regular pricing forever + <strong className="text-foreground">40% off onboarding & maintenance</strong>
             </p>
             <p className="text-sm text-destructive font-semibold mb-12">
               ⏰ Only 23 founding member spots remaining
