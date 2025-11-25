@@ -1,0 +1,23 @@
+CREATE TABLE `calculatorLeads` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`email` varchar(320) NOT NULL,
+	`name` varchar(200),
+	`facilityName` varchar(200),
+	`facilityType` varchar(50) NOT NULL,
+	`residentCount` int NOT NULL,
+	`annualSavings` int NOT NULL,
+	`overtimeSavings` int NOT NULL,
+	`errorSavings` int NOT NULL,
+	`complianceSavings` int NOT NULL,
+	`retentionSavings` int NOT NULL,
+	`source` varchar(50) NOT NULL DEFAULT 'calculator',
+	`utmSource` varchar(100),
+	`utmMedium` varchar(100),
+	`utmCampaign` varchar(100),
+	`utmTerm` varchar(100),
+	`utmContent` varchar(100),
+	`emailSent` int NOT NULL DEFAULT 0,
+	`emailSentAt` timestamp,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `calculatorLeads_id` PRIMARY KEY(`id`)
+);

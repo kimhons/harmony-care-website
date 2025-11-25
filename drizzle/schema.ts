@@ -98,3 +98,42 @@ export const milestoneNotifications = mysqlTable("milestoneNotifications", {
 
 export type MilestoneNotification = typeof milestoneNotifications.$inferSelect;
 export type InsertMilestoneNotification = typeof milestoneNotifications.$inferInsert;
+
+/**
+ * Calculator leads table for ROI calculator submissions
+ */
+export const calculatorLeads = mysqlTable("calculatorLeads", {
+  id: int("id").autoincrement().primaryKey(),
+  email: varchar("email", { length: 320 }).notNull(),
+  name: varchar("name", { length: 200 }),
+  facilityName: varchar("facilityName", { length: 200 }),
+  facilityType: varchar("facilityType", { length: 50 }).notNull(), // "group_home" or "icf_id"
+  residentCount: int("residentCount").notNull(),
+  
+  // Calculated savings data
+  annualSavings: int("annualSavings").notNull(),
+  overtimeSavings: int("overtimeSavings").notNull(),
+  errorSavings: int("errorSavings").notNull(),
+  complianceSavings: int("complianceSavings").notNull(),
+  retentionSavings: int("retentionSavings").notNull(),
+  
+  // Lead source tracking
+  source: varchar("source", { length: 50 }).default("calculator").notNull(), // "calculator" or "exit_intent"
+  
+  // UTM parameters
+  utmSource: varchar("utmSource", { length: 100 }),
+  utmMedium: varchar("utmMedium", { length: 100 }),
+  utmCampaign: varchar("utmCampaign", { length: 100 }),
+  utmTerm: varchar("utmTerm", { length: 100 }),
+  utmContent: varchar("utmContent", { length: 100 }),
+  
+  // Email status
+  emailSent: int("emailSent").default(0).notNull(), // 0 = not sent, 1 = sent
+  emailSentAt: timestamp("emailSentAt"),
+  
+  // Metadata
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type CalculatorLead = typeof calculatorLeads.$inferSelect;
+export type InsertCalculatorLead = typeof calculatorLeads.$inferInsert;

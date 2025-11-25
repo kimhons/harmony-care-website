@@ -481,3 +481,38 @@
 - [x] Add one-time display logic (don't show again after submission/close)
 - [x] Test exit-intent trigger on desktop and mobile
 - [ ] Create downloadable PDF guide content
+
+## PDF Guide Creation
+- [ ] Research and write "10 Ways to Reduce Paperwork" content
+- [ ] Include real pain points from residential care facilities
+- [ ] Add case studies with specific metrics
+- [ ] Include Harmony product mentions naturally
+- [ ] Design PDF with professional layout
+- [ ] Generate PDF file for download
+
+## Admin Lead Dashboard
+- [ ] Create database schema for leads table
+- [ ] Build admin dashboard page with lead list
+- [ ] Add filters (date range, source, facility type)
+- [ ] Implement CSV export functionality
+- [ ] Add lead source tracking (calculator vs exit-intent)
+- [ ] Show conversion metrics and funnel analytics
+- [ ] Add search functionality
+
+## Email Nurture Sequence
+- [ ] Set up email templates for 3-email sequence
+- [ ] Day 1: Guide delivery email with PDF attachment
+- [ ] Day 3: Case study email with success story
+- [ ] Day 7: Demo invitation with calendar link
+- [ ] Implement automated scheduling logic
+- [ ] Test email delivery and timing
+- [ ] Add unsubscribe functionality
+
+## PDF Guide Creation
+- [x] Research paperwork burden statistics and pain points
+- [x] Write 10 actionable tips with real case studies
+- [x] Design professional PDF layout with Harmony branding
+- [x] Include specific pain points for group homes and ICF-ID
+- [x] Add Harmony product mentions and CTAs
+- [x] Convert to PDF format
+- [x] Host PDF on website for download

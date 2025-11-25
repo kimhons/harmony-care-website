@@ -1,6 +1,8 @@
 import { publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
+import { getDb } from "./db";
+import { calculatorLeads } from "../drizzle/schema";
 
 // HubSpot API integration
 const HUBSPOT_API_KEY = process.env.HUBSPOT_API_KEY || '';
@@ -316,6 +318,8 @@ export const calculatorRouter = router({
     .input(
       z.object({
         email: z.string().email(),
+        name: z.string().optional(),
+        facilityName: z.string().optional(),
         residents: z.number().min(1).max(100),
         facilityType: z.enum(['group-home', 'icf-id']),
         annualSavings: z.number(),
@@ -325,12 +329,46 @@ export const calculatorRouter = router({
           complianceSavings: z.number(),
           improvedRetention: z.number(),
         }),
+        source: z.string().optional(),
+        utmSource: z.string().optional(),
+        utmMedium: z.string().optional(),
+        utmCampaign: z.string().optional(),
+        utmTerm: z.string().optional(),
+        utmContent: z.string().optional(),
       })
     )
     .mutation(async ({ input }) => {
       try {
         // Calculate monthly savings
         const monthlySavings = Math.round(input.annualSavings / 12);
+
+        // Store lead in database
+        const db = await getDb();
+        if (!db) {
+          console.warn("Database not available, skipping lead storage");
+        } else {
+          await db.insert(calculatorLeads).values({
+          email: input.email,
+          name: input.name || null,
+          facilityName: input.facilityName || null,
+          facilityType: input.facilityType,
+          residentCount: input.residents,
+          annualSavings: input.annualSavings,
+          overtimeSavings: input.breakdowns.reducedOvertime,
+          errorSavings: input.breakdowns.fewerErrors,
+          complianceSavings: input.breakdowns.complianceSavings,
+          retentionSavings: input.breakdowns.improvedRetention,
+          source: input.source || "calculator",
+          utmSource: input.utmSource || null,
+          utmMedium: input.utmMedium || null,
+          utmCampaign: input.utmCampaign || null,
+          utmTerm: input.utmTerm || null,
+          utmContent: input.utmContent || null,
+          emailSent: 0,
+          });
+          
+          console.log("Calculator lead stored in database");
+        }
 
         // Create/update contact in HubSpot
         const hubspotContact = await createHubSpotContact({
