@@ -19,6 +19,7 @@ import Blog from "./pages/Blog";
 import BlogArticle from "./pages/BlogArticle";
 import AdminCalculatorLeads from "./pages/AdminCalculatorLeads";
 import Resources from "./pages/Resources";
+import AdminResources from "./pages/AdminResources";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -28,6 +29,7 @@ function Router() {
       <Route path={"/signup"} component={Signup} />
       <Route path={"/admin"} component={Admin} />
       <Route path="/admin/calculator-leads" component={AdminCalculatorLeads} />
+      <Route path="/admin/resources" component={AdminResources} />
       <Route path={"/referrals"} component={Referrals} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/about" component={About} />

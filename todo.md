@@ -611,3 +611,18 @@
 - [x] Create lead magnet analytics (most popular resources, conversion rates)
 - [x] Write comprehensive tests for lead magnet system (17 tests passing)
 - [ ] Add lead magnet CTAs to homepage and calculator results
+
+
+## Admin Resource Manager UI - Completed
+- [x] Add file upload endpoint for PDFs and images to S3
+- [x] Create admin resource management page at /admin/resources
+- [x] Build resource list with thumbnail previews
+- [x] Add inline editing for title and description
+- [x] Implement file upload UI with file input
+- [x] Add thumbnail upload and preview
+- [x] Implement drag-and-drop reordering with sortOrder updates (using @dnd-kit)
+- [x] Add delete confirmation dialog
+- [x] Add active/inactive toggle switch
+- [x] Show download statistics per resource
+- [x] Add form validation and error handling
+- [x] Test complete CRUD workflow (13 tests passing)

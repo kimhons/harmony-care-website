@@ -15,6 +15,7 @@ import { calculatorRouter } from "./calculator";
 import { adminCalculatorLeadsRouter } from "./adminCalculatorLeads";
 import { resendWebhookRouter } from "./resendWebhook";
 import { leadMagnetsRouter } from "./leadMagnets";
+import { fileUploadRouter } from "./fileUpload";
 import { signups, referrals } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 
@@ -25,6 +26,7 @@ export const appRouter = router({
   adminCalculatorLeads: adminCalculatorLeadsRouter,
   resendWebhook: resendWebhookRouter,
   leadMagnets: leadMagnetsRouter,
+  fileUpload: fileUploadRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
