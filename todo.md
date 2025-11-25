@@ -112,3 +112,17 @@
 - [x] Include CTA for demo and trial
 - [x] Update navigation to include Solutions link
 - [x] Test page on mobile and desktop
+
+## ICF-ID Solutions Page
+- [x] Create /solutions/icf-id route
+- [x] Build hero section with ICF-ID focus
+- [x] Add ICF-ID-specific challenges (active treatment, regulatory complexity, etc.)
+- [x] Create recommended agents section (10 key agents for ICF-ID)
+- [x] Add real-world use cases for ICF-ID facilities
+- [x] Include pricing information for mid-sized facilities (Professional tier)
+- [x] Add compliance section (CFR 483, active treatment requirements)
+- [x] Create before/after comparison table
+- [x] Add FAQ section for ICF-ID facilities
+- [x] Include CTA for demo and trial
+- [x] Update navigation (ICF-ID accessible via direct URL)
+- [x] Test page on mobile and desktop

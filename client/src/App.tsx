@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import GroupHomes from "./pages/GroupHomes";
+import IcfId from "./pages/IcfId";
 import Pricing from "./pages/Pricing";
 import Agents from "./pages/Agents";
 import Demo from "./pages/Demo";
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/agents" component={Agents} />
       <Route path="/demo" component={Demo} />
       <Route path={"/solutions/group-homes"} component={GroupHomes} />
+      <Route path={"/solutions/icf-id"} component={IcfId} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
