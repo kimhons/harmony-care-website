@@ -98,7 +98,7 @@ export default function Home() {
             </div>
             
             <div className="hidden md:flex items-center gap-8">
-              <a href="#product" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Product</a>
+              <Link href="/agents"><a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">AI Agents</a></Link>
               <a href="#solutions" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Solutions</a>
               <Link href="/pricing"><a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Pricing</a></Link>
               <a href="#resources" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Resources</a>
@@ -142,11 +142,11 @@ export default function Home() {
             {/* Navigation Links */}
             <nav className="flex flex-col gap-1 mb-8">
               <a
-                href="#product"
+                href="/agents"
                 onClick={() => setMobileMenuOpen(false)}
                 className="px-4 py-3 text-base font-medium text-foreground hover:bg-accent/10 rounded-lg transition-colors"
               >
-                Product
+                AI Agents
               </a>
               <a
                 href="#solutions"
@@ -359,10 +359,12 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Button variant="outline" size="lg" className="rounded-full">
-              Explore All 15 Agents
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+            <Link href="/agents">
+              <Button variant="outline" size="lg" className="rounded-full">
+                Explore All 15 Agents
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

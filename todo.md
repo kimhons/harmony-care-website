@@ -55,3 +55,10 @@
 - [x] Implement interactive ROI calculator
 - [x] Add pricing comparison table
 - [x] Add FAQ section
+
+## AI Agents Showcase Page
+- [x] Create /agents route
+- [x] Build detailed cards for all 15 AI agents
+- [x] Add agent descriptions, use cases, and impact metrics
+- [x] Implement filtering/categorization by function
+- [x] Add visual icons/illustrations for each agent
