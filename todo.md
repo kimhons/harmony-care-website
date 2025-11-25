@@ -72,3 +72,9 @@
 - [x] Add form validation and error handling
 - [x] Implement progress indicator
 - [x] Add success confirmation page
+
+## Video Modal
+- [x] Implement video modal component with YouTube embed
+- [x] Add modal trigger to hero section play button
+- [x] Include backdrop overlay and close button
+- [x] Add keyboard support (ESC to close)

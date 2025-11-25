@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Sparkles, Shield, Brain, Calendar, Users, FileText, TrendingUp, Award, CheckCircle2, Play, ArrowRight, Star, Menu, X } from "lucide-react";
 import { APP_TITLE } from "@/const";
+import VideoModal from "@/components/VideoModal";
 import { useState } from "react";
 import { Link } from "wouter";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
   const agents = [
     {
       name: "DocuBot",
@@ -248,7 +250,10 @@ export default function Home() {
             <div className="relative max-w-4xl mx-auto mb-12 animate-fade-in-up delay-200">
               <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a2e] to-[#2d2d44] shadow-2xl shadow-primary/20 border border-white/10">
                 {/* Video Thumbnail/Placeholder */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-black/40 to-accent/20 flex items-center justify-center group cursor-pointer">
+                <div 
+                  className="absolute inset-0 bg-gradient-to-br from-primary/30 via-black/40 to-accent/20 flex items-center justify-center group cursor-pointer"
+                  onClick={() => setVideoModalOpen(true)}
+                >
                   <div className="w-24 h-24 rounded-full bg-white/95 flex items-center justify-center shadow-2xl transition-transform group-hover:scale-110">
                     <Play className="w-10 h-10 text-black ml-1" fill="currentColor" />
                   </div>
@@ -481,6 +486,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={videoModalOpen}
+        onClose={() => setVideoModalOpen(false)}
+        videoId="dQw4w9WgXcQ"
+        title="Harmony Care Product Demo"
+      />
 
       {/* Footer */}
       <footer className="py-12 bg-card border-t border-border">
