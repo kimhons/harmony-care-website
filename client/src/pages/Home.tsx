@@ -9,6 +9,7 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 import { SavingsCalculator } from "@/components/SavingsCalculator";
 import { ComparisonTable } from '@/components/ComparisonTable';
 import { ExitIntentPopup } from '@/components/ExitIntentPopup';
+import { FeaturedResources } from '@/components/FeaturedResources';
 import { useState } from 'react';
 import { Link, useLocation } from "wouter";
 
@@ -214,6 +215,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Featured Resources Section */}
+      <FeaturedResources />
 
       {/* Problem Section */}
       <section className="py-24 bg-card">

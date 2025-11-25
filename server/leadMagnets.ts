@@ -22,6 +22,29 @@ import { trackEngagement } from "./leadScoringService";
 
 export const leadMagnetsRouter = router({
   /**
+   * Get featured lead magnets for homepage
+   * Returns top 3 active magnets by download count
+   */
+  getFeatured: publicProcedure.query(async () => {
+    const db = await getDb();
+    if (!db) {
+      throw new TRPCError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "Database not available",
+      });
+    }
+
+    const magnets = await db
+      .select()
+      .from(leadMagnets)
+      .where(eq(leadMagnets.isActive, 1))
+      .orderBy(desc(leadMagnets.downloadCount), leadMagnets.sortOrder)
+      .limit(3);
+
+    return magnets;
+  }),
+
+  /**
    * Get all active lead magnets for public display
    */
   getAll: publicProcedure.query(async () => {

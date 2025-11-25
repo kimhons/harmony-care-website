@@ -626,3 +626,14 @@
 - [x] Show download statistics per resource
 - [x] Add form validation and error handling
 - [x] Test complete CRUD workflow (13 tests passing)
+
+
+## Homepage Resource CTAs - Completed
+- [x] Add API endpoint to fetch top 3 featured resources (getFeatured)
+- [x] Design visually appealing resource card component
+- [x] Add "Free Resources" section to homepage after hero
+- [x] Include resource thumbnails, titles, descriptions, and download CTAs
+- [x] Add smooth animations and hover effects
+- [x] Link cards to resource download modals
+- [x] Test responsive layout on mobile and desktop
+- [x] Verify lead capture flow from homepage to download (12 tests passing)
