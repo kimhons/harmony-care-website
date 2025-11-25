@@ -11,12 +11,14 @@ import { getCampaignStats } from "./emailCampaign";
 import { validateReferralCode, createReferral, generateUniqueReferralCode } from "./referral";
 import { getReferralAnalytics } from "./referralAnalytics";
 import { checkAndCreateMilestones, getUnviewedMilestones, markMilestoneAsViewed, markMilestoneAsShared, getAllMilestones } from "./milestoneService";
+import { calculatorRouter } from "./calculator";
 import { signups, referrals } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
+  calculator: calculatorRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

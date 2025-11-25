@@ -8,6 +8,7 @@ import { AnimatedCounter } from './AnimatedCounter';
 import { DollarSign, Users, TrendingUp, Clock, Shield, Award, Mail, CheckCircle2 } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { toast } from 'sonner';
+import { trpc } from '@/lib/trpc';
 
 interface CalculatorResults {
   annualSavings: number;
@@ -34,6 +35,18 @@ export function SavingsCalculator() {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.3,
+  });
+
+  // Mutation for submitting lead
+  const submitLeadMutation = trpc.calculator.submitLead.useMutation({
+    onSuccess: () => {
+      setEmailSubmitted(true);
+      toast.success('Success! Check your email for your personalized ROI report.');
+    },
+    onError: (error) => {
+      console.error('Error submitting lead:', error);
+      toast.error('Failed to send report. Please try again.');
+    },
   });
 
   // Calculate ROI based on facility size and type
@@ -272,18 +285,14 @@ export function SavingsCalculator() {
                             toast.error('Please enter a valid email address');
                             return;
                           }
-                          // Store lead data
-                          const leadData = {
+                          // Submit lead to backend
+                          submitLeadMutation.mutate({
                             email,
                             residents,
                             facilityType,
-                            annualSavings: results?.annualSavings,
-                            timestamp: new Date().toISOString(),
-                          };
-                          console.log('Lead captured:', leadData);
-                          // TODO: Send to backend API
-                          setEmailSubmitted(true);
-                          toast.success('Success! Check your email for your personalized ROI report.');
+                            annualSavings: results!.annualSavings,
+                            breakdowns: results!.breakdowns,
+                          });
                         }}
                         className="space-y-4"
                       >

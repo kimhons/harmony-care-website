@@ -459,3 +459,15 @@
 - [x] Test email capture flow end-to-end
 - [x] Test comparison table responsiveness
 - [x] Verify chat widget functionality
+
+## HubSpot Integration & Email Automation
+- [ ] Set up HubSpot account and get API key (user needs to provide)
+- [x] Create backend API endpoint to receive calculator leads
+- [x] Integrate HubSpot API to create contacts
+- [ ] Set up Resend email service for ROI reports (using existing RESEND_API_KEY)
+- [x] Create HTML email template for ROI report
+- [x] Implement email sending logic in backend
+- [x] Connect frontend calculator to backend API
+- [ ] Test lead capture flow with HubSpot (requires API key)
+- [ ] Test email delivery with sample data (requires Resend setup)
+- [ ] Verify HubSpot contact properties are populated correctly (requires API key)
