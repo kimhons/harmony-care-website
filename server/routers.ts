@@ -66,6 +66,25 @@ export const appRouter = router({
         const date = new Date(s.createdAt).toISOString().split('T')[0];
         signupsByDay[date] = (signupsByDay[date] || 0) + 1;
       });
+      
+      // UTM tracking statistics
+      const utmStats = {
+        bySource: signups.reduce((acc: Record<string, number>, s) => {
+          const source = s.utmSource || 'direct';
+          acc[source] = (acc[source] || 0) + 1;
+          return acc;
+        }, {}),
+        byMedium: signups.reduce((acc: Record<string, number>, s) => {
+          const medium = s.utmMedium || 'direct';
+          acc[medium] = (acc[medium] || 0) + 1;
+          return acc;
+        }, {}),
+        byCampaign: signups.reduce((acc: Record<string, number>, s) => {
+          const campaign = s.utmCampaign || 'none';
+          acc[campaign] = (acc[campaign] || 0) + 1;
+          return acc;
+        }, {}),
+      };
 
       return {
         totalSignups,
@@ -76,6 +95,7 @@ export const appRouter = router({
         featureCounts,
         signupsByDay,
         campaignStats,
+        utmStats,
         recentSignups: signups.slice(0, 10).map((s) => ({
           id: s.id,
           name: `${s.firstName} ${s.lastName}`,
@@ -116,6 +136,12 @@ export const appRouter = router({
           tier: z.string().min(1, "Please select a tier"),
           interestedFeatures: z.array(z.string()).optional(),
           additionalNeeds: z.string().optional(),
+          // UTM tracking parameters
+          utmSource: z.string().optional(),
+          utmMedium: z.string().optional(),
+          utmCampaign: z.string().optional(),
+          utmTerm: z.string().optional(),
+          utmContent: z.string().optional(),
         })
       )
       .mutation(async ({ input }) => {

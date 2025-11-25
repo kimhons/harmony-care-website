@@ -47,6 +47,13 @@ export const signups = mysqlTable("signups", {
   lastEmailSent: timestamp("lastEmailSent"),
   emailOptOut: int("emailOptOut").default(0).notNull(), // 0 = opted in, 1 = opted out
   campaignStatus: varchar("campaignStatus", { length: 50 }).default("active").notNull(), // active, paused, completed
+  
+  // UTM tracking for marketing attribution
+  utmSource: varchar("utmSource", { length: 100 }), // e.g., google, facebook, newsletter
+  utmMedium: varchar("utmMedium", { length: 100 }), // e.g., cpc, email, social
+  utmCampaign: varchar("utmCampaign", { length: 100 }), // e.g., founding_member_launch
+  utmTerm: varchar("utmTerm", { length: 100 }), // e.g., care+management+software
+  utmContent: varchar("utmContent", { length: 100 }), // e.g., hero_cta, pricing_button
 });
 
 export type Signup = typeof signups.$inferSelect;

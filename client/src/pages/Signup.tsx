@@ -5,11 +5,17 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { getCurrentUTMParams, initUTMTracking } from "@/lib/utm";
 
 export default function Signup() {
+  // Initialize UTM tracking on mount
+  useEffect(() => {
+    initUTMTracking();
+  }, []);
+  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -60,6 +66,9 @@ export default function Signup() {
     setIsSubmitting(true);
     
     try {
+      // Capture UTM parameters
+      const utmParams = getCurrentUTMParams();
+      
       await signupMutation.mutateAsync({
         firstName: formData.firstName,
         lastName: formData.lastName,
@@ -71,6 +80,7 @@ export default function Signup() {
         tier: formData.tier,
         interestedFeatures: formData.interestedFeatures.length > 0 ? formData.interestedFeatures : undefined,
         additionalNeeds: formData.additionalNeeds || undefined,
+        ...utmParams, // Include UTM tracking data
       });
       
       setSubmitted(true);

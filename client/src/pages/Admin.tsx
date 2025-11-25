@@ -205,6 +205,92 @@ export default function Admin() {
           </CardContent>
         </Card>
         
+        {/* UTM Marketing Attribution */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          {/* Signups by Source */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Signups by Source</CardTitle>
+              <CardDescription>Where founding members are coming from</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {Object.entries(analytics.utmStats.bySource)
+                  .sort(([, a], [, b]) => b - a)
+                  .map(([source, count]) => {
+                    const percentage = ((count / analytics.totalSignups) * 100).toFixed(1);
+                    return (
+                      <div key={source}>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-sm font-medium">{source || 'Direct/Unknown'}</span>
+                          <span className="text-sm text-muted-foreground">{count} ({percentage}%)</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div
+                            className="bg-blue-500 h-2 rounded-full"
+                            style={{ width: `${percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </CardContent>
+          </Card>
+          
+          {/* Signups by Medium */}
+          <Card>
+            <CardHeader>
+              <CardTitle>Signups by Medium</CardTitle>
+              <CardDescription>Marketing channels driving conversions</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {Object.entries(analytics.utmStats.byMedium)
+                  .sort(([, a], [, b]) => b - a)
+                  .map(([medium, count]) => {
+                    const percentage = ((count / analytics.totalSignups) * 100).toFixed(1);
+                    return (
+                      <div key={medium}>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-sm font-medium">{medium || 'Direct/Unknown'}</span>
+                          <span className="text-sm text-muted-foreground">{count} ({percentage}%)</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div
+                            className="bg-green-500 h-2 rounded-full"
+                            style={{ width: `${percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        
+        {/* Top Campaigns */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Top Marketing Campaigns</CardTitle>
+            <CardDescription>Most effective campaigns by signup volume</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {Object.entries(analytics.utmStats.byCampaign)
+                .sort(([, a], [, b]) => b - a)
+                .slice(0, 6)
+                .map(([campaign, count]) => (
+                  <div key={campaign} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                    <span className="text-sm font-medium">{campaign || 'No Campaign'}</span>
+                    <Badge variant="secondary">{count}</Badge>
+                  </div>
+                ))}
+            </div>
+          </CardContent>
+        </Card>
+        
         {/* Top Interested Features */}
         <Card className="mb-8">
           <CardHeader>

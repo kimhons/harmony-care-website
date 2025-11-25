@@ -253,3 +253,13 @@
 - [x] Add interested features analysis
 - [x] Implement admin authentication/authorization (checks user.role === 'admin')
 - [x] Test admin dashboard functionality
+
+## UTM Parameter Tracking
+- [x] Add UTM fields to signups database schema (source, medium, campaign, term, content)
+- [x] Create utility function to capture UTM parameters from URL
+- [x] Store UTM parameters in localStorage for persistence
+- [x] Update signup form to capture and submit UTM data
+- [x] Add UTM analytics section to admin dashboard
+- [x] Create source/medium/campaign breakdown charts
+- [x] Add conversion rate by channel analysis
+- [x] Test UTM tracking with sample URLs
