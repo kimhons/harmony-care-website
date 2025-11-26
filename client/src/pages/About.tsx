@@ -663,66 +663,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Awards & Recognition */}
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold mb-8 text-center">
-                Awards & Recognition
-              </h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="border-primary/20">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-500/10 flex items-center justify-center mx-auto mb-4">
-                      <Award className="w-8 h-8 text-amber-600" />
-                    </div>
-                    <h4 className="font-bold text-lg mb-2">
-                      Best Healthcare AI Innovation
-                    </h4>
-                    <p className="text-sm text-primary mb-2">
-                      HealthTech Awards 2024
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Recognized for transforming residential care through
-                      intelligent automation
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-primary/20">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-500/10 flex items-center justify-center mx-auto mb-4">
-                      <Award className="w-8 h-8 text-blue-600" />
-                    </div>
-                    <h4 className="font-bold text-lg mb-2">
-                      Top 10 Startups to Watch
-                    </h4>
-                    <p className="text-sm text-primary mb-2">TechCrunch 2024</p>
-                    <p className="text-sm text-muted-foreground">
-                      Featured among the most promising healthcare technology
-                      companies
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-primary/20">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-500/20 to-green-500/10 flex items-center justify-center mx-auto mb-4">
-                      <Award className="w-8 h-8 text-green-600" />
-                    </div>
-                    <h4 className="font-bold text-lg mb-2">
-                      Excellence in Care Innovation
-                    </h4>
-                    <p className="text-sm text-primary mb-2">
-                      National Care Association 2024
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Honored for improving caregiver wellbeing and resident
-                      outcomes
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
             {/* Media Coverage */}
             <div>
               <h3 className="text-2xl font-bold mb-8 text-center">

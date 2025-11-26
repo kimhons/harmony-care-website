@@ -857,3 +857,7 @@
 - [x] Update Organization schema with founder information
 - [x] Add Person schema for key executives
 - [x] Update social media links for team members
+
+## Remove Awards & Recognition Section
+
+- [x] Remove Awards & Recognition section from About page
