@@ -11,6 +11,11 @@ import { Button } from "@/components/ui/button";
 import { X, Download, CheckCircle2, Share2 } from "lucide-react";
 import { toast } from "sonner";
 import { trpc } from "@/lib/trpc";
+import {
+  trackShare,
+  trackExitIntentShown,
+  trackExitIntentConversion,
+} from "@/lib/analytics";
 
 interface ResourceExitIntentPopupProps {
   category: "compliance" | "staffing" | "financial" | "medication" | "care";
@@ -100,6 +105,9 @@ export function ResourceExitIntentPopup({
       setSubmitted(true);
       toast.success("Success! Check your email for the quick wins checklist.");
 
+      // Track conversion
+      trackExitIntentConversion(category, email);
+
       // Download the file
       if (result.fileUrl) {
         window.open(result.fileUrl, "_blank");
@@ -135,6 +143,8 @@ export function ResourceExitIntentPopup({
       if (e.clientY <= 0 && !hasShown && !isOpen) {
         setIsOpen(true);
         setHasShown(true);
+        // Track popup impression
+        trackExitIntentShown(category);
       }
     };
 
@@ -305,6 +315,9 @@ export function ResourceExitIntentPopup({
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.origin + "/resources/" + category)}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() =>
+                    trackShare("linkedin", category, resourceTitle)
+                  }
                   className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#004182] text-white rounded-lg font-medium transition-colors"
                 >
                   <svg
@@ -322,6 +335,7 @@ export function ResourceExitIntentPopup({
                   href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`Just got this free ${resourceTitle}! 🎯`)}&url=${encodeURIComponent(window.location.origin + "/resources/" + category)}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackShare("twitter", category, resourceTitle)}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white rounded-lg font-medium transition-colors"
                 >
                   <svg
@@ -337,6 +351,7 @@ export function ResourceExitIntentPopup({
                 {/* Email Share */}
                 <a
                   href={`mailto:?subject=${encodeURIComponent(resourceTitle)}&body=${encodeURIComponent(`I thought you might find this helpful: ${resourceTitle}\n\n${window.location.origin}/resources/${category}`)}`}
+                  onClick={() => trackShare("email", category, resourceTitle)}
                   className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-medium transition-colors"
                 >
                   <svg
