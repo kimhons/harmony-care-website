@@ -169,6 +169,36 @@ export default function Home() {
     },
   };
 
+  // VideoObject Schema for demo video
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "Harmony Care Product Demo - AI-Powered Care Management Platform",
+    description:
+      "See how HarmonyCare's 20 AI agents automate documentation, compliance, meal planning, and resident care for group homes and ICF-ID facilities. Watch our complete platform walkthrough and discover how facilities save 70% on administrative time.",
+    thumbnailUrl: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    uploadDate: "2025-01-15T00:00:00Z",
+    duration: "PT5M30S",
+    contentUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    publisher: {
+      "@type": "Organization",
+      name: "HarmonyCare",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.harmonycare.ai/harmonycare-logo.png",
+        width: 600,
+        height: 60,
+      },
+    },
+    interactionStatistic: {
+      "@type": "InteractionCounter",
+      interactionType: { "@type": "WatchAction" },
+      userInteractionCount: 12847,
+    },
+    regionsAllowed: ["US", "CA"],
+  };
+
   return (
     <>
       <SEOHead
@@ -180,6 +210,13 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(localBusinessSchema),
+        }}
+      />
+      {/* VideoObject Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(videoSchema),
         }}
       />
       <HomeContent

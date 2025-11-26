@@ -148,6 +148,113 @@ describe("Schema Markup Implementation", () => {
     });
   });
 
+  describe("VideoObject Schema", () => {
+    it("should have valid VideoObject schema structure for demo video", () => {
+      const videoSchema = {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: "Harmony Care Product Demo - AI-Powered Care Management Platform",
+        description:
+          "See how HarmonyCare's 20 AI agents automate documentation, compliance, meal planning, and resident care.",
+        thumbnailUrl:
+          "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+        uploadDate: "2025-01-15T00:00:00Z",
+        duration: "PT5M30S",
+        contentUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        publisher: {
+          "@type": "Organization",
+          name: "HarmonyCare",
+          logo: {
+            "@type": "ImageObject",
+            url: "https://www.harmonycare.ai/harmonycare-logo.png",
+            width: 600,
+            height: 60,
+          },
+        },
+        interactionStatistic: {
+          "@type": "InteractionCounter",
+          interactionType: { "@type": "WatchAction" },
+          userInteractionCount: 12847,
+        },
+        regionsAllowed: ["US", "CA"],
+      };
+
+      // Validate required VideoObject fields
+      expect(videoSchema["@context"]).toBe("https://schema.org");
+      expect(videoSchema["@type"]).toBe("VideoObject");
+      expect(videoSchema.name).toBeTruthy();
+      expect(videoSchema.description).toBeTruthy();
+
+      // Validate thumbnail URL
+      expect(videoSchema.thumbnailUrl).toBeTruthy();
+      expect(videoSchema.thumbnailUrl).toMatch(/^https?:\/\/.+/);
+
+      // Validate upload date (ISO 8601 format)
+      expect(videoSchema.uploadDate).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+
+      // Validate duration (ISO 8601 duration format)
+      expect(videoSchema.duration).toMatch(/^PT/);
+
+      // Validate content URLs
+      expect(videoSchema.contentUrl).toBeTruthy();
+      expect(videoSchema.embedUrl).toBeTruthy();
+      expect(videoSchema.contentUrl).toMatch(/^https?:\/\/.+/);
+      expect(videoSchema.embedUrl).toMatch(/^https?:\/\/.+/);
+
+      // Validate publisher
+      expect(videoSchema.publisher).toBeDefined();
+      expect(videoSchema.publisher["@type"]).toBe("Organization");
+      expect(videoSchema.publisher.name).toBe("HarmonyCare");
+      expect(videoSchema.publisher.logo).toBeDefined();
+      expect(videoSchema.publisher.logo["@type"]).toBe("ImageObject");
+
+      // Validate interaction statistics
+      expect(videoSchema.interactionStatistic).toBeDefined();
+      expect(videoSchema.interactionStatistic["@type"]).toBe(
+        "InteractionCounter"
+      );
+      expect(
+        videoSchema.interactionStatistic.userInteractionCount
+      ).toBeGreaterThan(0);
+    });
+
+    it("should have valid ISO 8601 duration format", () => {
+      const durations = [
+        "PT5M30S", // 5 minutes 30 seconds
+        "PT10M", // 10 minutes
+        "PT1H30M", // 1 hour 30 minutes
+        "PT45S", // 45 seconds
+      ];
+
+      durations.forEach(duration => {
+        expect(duration).toMatch(/^PT(\d+H)?(\d+M)?(\d+S)?$/);
+      });
+    });
+
+    it("should include valid YouTube thumbnail URL", () => {
+      const videoId = "dQw4w9WgXcQ";
+      const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
+      expect(thumbnailUrl).toMatch(
+        /^https:\/\/img\.youtube\.com\/vi\/.+\/maxresdefault\.jpg$/
+      );
+    });
+
+    it("should have valid interaction statistics", () => {
+      const interactionStat = {
+        "@type": "InteractionCounter",
+        interactionType: { "@type": "WatchAction" },
+        userInteractionCount: 12847,
+      };
+
+      expect(interactionStat["@type"]).toBe("InteractionCounter");
+      expect(interactionStat.interactionType["@type"]).toBe("WatchAction");
+      expect(interactionStat.userInteractionCount).toBeGreaterThan(0);
+      expect(typeof interactionStat.userInteractionCount).toBe("number");
+    });
+  });
+
   describe("Service Schema", () => {
     it("should have valid Service schema structure for Group Homes", () => {
       const serviceSchema = {
