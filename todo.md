@@ -861,3 +861,11 @@
 ## Remove Awards & Recognition Section
 
 - [x] Remove Awards & Recognition section from About page
+
+## Update Leadership Titles
+
+- [x] Update Kimal's title to Founder, CEO & CTO
+- [x] Update Constance's title to Co-Founder & Chief Product Officer (CPO)
+- [x] Update Mercel's title to Co-Founder & VP of Engineering
+- [x] Update Organization schema with correct founder titles
+- [x] Update all references across the website

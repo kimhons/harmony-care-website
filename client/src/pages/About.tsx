@@ -468,7 +468,9 @@ export default function About() {
                       <h4 className="text-xl font-bold mb-1">
                         Kimal Honour Djam
                       </h4>
-                      <p className="text-sm text-primary mb-3">Founder & CEO</p>
+                      <p className="text-sm text-primary mb-3">
+                        Founder, CEO & CTO
+                      </p>
                       <p className="text-muted-foreground leading-relaxed mb-4">
                         PhD in Medical Physics with extensive healthcare
                         technology experience as a Radiation Oncology Physicist.
@@ -498,7 +500,7 @@ export default function About() {
                       </div>
                       <h4 className="text-xl font-bold mb-1">Constance Bih</h4>
                       <p className="text-sm text-primary mb-3">
-                        Co-Founder & PRO
+                        Co-Founder & Chief Product Officer
                       </p>
                       <p className="text-muted-foreground leading-relaxed mb-4">
                         Career & Business Consultant and humanitarian leader.
@@ -595,15 +597,15 @@ export default function About() {
                         Mercel Vubangsi
                       </h4>
                       <p className="text-sm text-primary mb-2">
-                        VP of Engineering
+                        Co-Founder & VP of Engineering
                       </p>
                       <p className="text-sm text-muted-foreground leading-relaxed mb-3">
                         PhD in Physics and MS in Computer Science. Senior ML
                         Engineer with 7+ years building scalable AI systems for
                         healthcare. Expert in MLOps, cloud computing, and deep
                         learning. Published researcher with 15 years Python
-                        experience. Passionate about applying AI to solve
-                        real-world healthcare challenges.
+                        experience. Leads HarmonyCare's engineering team and
+                        technical infrastructure.
                       </p>
                       <a
                         href="https://linkedin.com/in/mercel-vubangsi-68109b23a"

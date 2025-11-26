@@ -171,7 +171,7 @@ export default function Home() {
       {
         "@type": "Person",
         name: "Kimal Honour Djam",
-        jobTitle: "Founder & CEO",
+        jobTitle: "Founder, CEO & CTO",
         url: "https://kimhons.info",
         description:
           "PhD in Medical Physics with extensive healthcare technology experience. Former Chief Resident at Henry Ford Health and US Army Medical Nuclear Science Officer. Data Science certification from MIT.",
@@ -179,17 +179,15 @@ export default function Home() {
       {
         "@type": "Person",
         name: "Constance Bih",
-        jobTitle: "Co-Founder & PRO",
+        jobTitle: "Co-Founder & Chief Product Officer",
         url: "https://bksolutions.ca",
         description:
-          "Career & Business Consultant and humanitarian leader. Founder of Missy BK Foundation. Recognized as Top 100 Black Women to Watch in Canada (2017).",
+          "Career & Business Consultant and humanitarian leader. Founder of Missy BK Foundation. Recognized as Top 100 Black Women to Watch in Canada (2017). Expert in building inclusive, people-first cultures.",
       },
-    ],
-    employee: [
       {
         "@type": "Person",
         name: "Mercel Vubangsi",
-        jobTitle: "VP of Engineering",
+        jobTitle: "Co-Founder & VP of Engineering",
         url: "https://linkedin.com/in/mercel-vubangsi-68109b23a",
         description:
           "PhD in Physics and MS in Computer Science. Senior ML Engineer with 7+ years building scalable AI systems for healthcare. Expert in MLOps, cloud computing, and deep learning.",
