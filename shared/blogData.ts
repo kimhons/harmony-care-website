@@ -9,7 +9,12 @@ export interface BlogArticle {
     role: string;
     avatar?: string;
   };
-  category: 'AI in Healthcare' | 'Industry Trends' | 'Best Practices' | 'Product Updates' | 'Case Studies';
+  category:
+    | "AI in Healthcare"
+    | "Industry Trends"
+    | "Best Practices"
+    | "Product Updates"
+    | "Case Studies";
   tags: string[];
   publishedAt: string;
   readTime: number; // in minutes
@@ -18,10 +23,11 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
   {
-    id: '1',
-    title: 'How AI is Transforming Residential Care: A Complete Guide',
-    slug: 'ai-transforming-residential-care',
-    excerpt: 'Discover how artificial intelligence is revolutionizing residential care facilities, from reducing administrative burden to enabling proactive, personalized care for residents.',
+    id: "1",
+    title: "How AI is Transforming Residential Care: A Complete Guide",
+    slug: "ai-transforming-residential-care",
+    excerpt:
+      "Discover how artificial intelligence is revolutionizing residential care facilities, from reducing administrative burden to enabling proactive, personalized care for residents.",
     content: `
 # How AI is Transforming Residential Care: A Complete Guide
 
@@ -116,19 +122,26 @@ The question isn't whether AI will transform residential care—it's already hap
 *Ready to explore how AI can transform your facility? [Schedule a demo](/demo) to see HarmonyCare in action.*
     `,
     author: {
-      name: 'Dr. Sarah Chen',
-      role: 'Co-Founder & CEO',
+      name: "Dr. Sarah Chen",
+      role: "Co-Founder & CEO",
     },
-    category: 'AI in Healthcare',
-    tags: ['AI', 'Healthcare Technology', 'Residential Care', 'Digital Transformation'],
-    publishedAt: '2024-03-15',
+    category: "AI in Healthcare",
+    tags: [
+      "AI",
+      "Healthcare Technology",
+      "Residential Care",
+      "Digital Transformation",
+    ],
+    publishedAt: "2024-03-15",
     readTime: 8,
   },
   {
-    id: '2',
-    title: 'The Hidden Cost of Caregiver Burnout: Why Technology is the Solution',
-    slug: 'caregiver-burnout-technology-solution',
-    excerpt: 'Caregiver burnout costs the industry billions annually. Learn how intelligent automation can reduce stress, improve retention, and create sustainable care environments.',
+    id: "2",
+    title:
+      "The Hidden Cost of Caregiver Burnout: Why Technology is the Solution",
+    slug: "caregiver-burnout-technology-solution",
+    excerpt:
+      "Caregiver burnout costs the industry billions annually. Learn how intelligent automation can reduce stress, improve retention, and create sustainable care environments.",
     content: `
 # The Hidden Cost of Caregiver Burnout: Why Technology is the Solution
 
@@ -237,19 +250,25 @@ The facilities that embrace this transformation will attract and retain the best
 *Learn how HarmonyCare can help your facility reduce burnout and improve retention. [Schedule a demo](/demo) today.*
     `,
     author: {
-      name: 'Jennifer Liu',
-      role: 'VP of Product',
+      name: "Jennifer Liu",
+      role: "VP of Product",
     },
-    category: 'Industry Trends',
-    tags: ['Caregiver Burnout', 'Staff Retention', 'Workforce', 'Employee Satisfaction'],
-    publishedAt: '2024-03-10',
+    category: "Industry Trends",
+    tags: [
+      "Caregiver Burnout",
+      "Staff Retention",
+      "Workforce",
+      "Employee Satisfaction",
+    ],
+    publishedAt: "2024-03-10",
     readTime: 7,
   },
   {
-    id: '3',
-    title: '10 Best Practices for Implementing AI in Your Care Facility',
-    slug: 'implementing-ai-best-practices',
-    excerpt: 'A practical guide to successfully introducing AI technology in residential care facilities, from staff buy-in to measuring success.',
+    id: "3",
+    title: "10 Best Practices for Implementing AI in Your Care Facility",
+    slug: "implementing-ai-best-practices",
+    excerpt:
+      "A practical guide to successfully introducing AI technology in residential care facilities, from staff buy-in to measuring success.",
     content: `
 # 10 Best Practices for Implementing AI in Your Care Facility
 
@@ -445,19 +464,20 @@ The key is remembering that technology serves people—not the other way around.
 *Ready to start your AI journey? [Schedule a consultation](/demo) to discuss your facility's specific needs and implementation plan.*
     `,
     author: {
-      name: 'Priya Sharma',
-      role: 'VP of Engineering',
+      name: "Priya Sharma",
+      role: "VP of Engineering",
     },
-    category: 'Best Practices',
-    tags: ['Implementation', 'Change Management', 'Training', 'Best Practices'],
-    publishedAt: '2024-03-05',
+    category: "Best Practices",
+    tags: ["Implementation", "Change Management", "Training", "Best Practices"],
+    publishedAt: "2024-03-05",
     readTime: 9,
   },
   {
-    id: '4',
-    title: 'Understanding HIPAA Compliance in AI-Powered Care Management',
-    slug: 'hipaa-compliance-ai-care-management',
-    excerpt: 'A comprehensive guide to ensuring your AI systems meet HIPAA requirements while delivering powerful care management capabilities.',
+    id: "4",
+    title: "Understanding HIPAA Compliance in AI-Powered Care Management",
+    slug: "hipaa-compliance-ai-care-management",
+    excerpt:
+      "A comprehensive guide to ensuring your AI systems meet HIPAA requirements while delivering powerful care management capabilities.",
     content: `
 # Understanding HIPAA Compliance in AI-Powered Care Management
 
@@ -672,19 +692,21 @@ Done right, HIPAA-compliant AI becomes a competitive advantage—demonstrating t
 *HarmonyCare is built HIPAA-compliant from the ground up. [Learn about our security practices](/demo) and how we protect your residents' privacy.*
     `,
     author: {
-      name: 'Dr. James Patterson',
-      role: 'Chief Medical Officer',
+      name: "Dr. James Patterson",
+      role: "Chief Medical Officer",
     },
-    category: 'Best Practices',
-    tags: ['HIPAA', 'Compliance', 'Data Security', 'Privacy', 'Regulations'],
-    publishedAt: '2024-02-28',
+    category: "Best Practices",
+    tags: ["HIPAA", "Compliance", "Data Security", "Privacy", "Regulations"],
+    publishedAt: "2024-02-28",
     readTime: 10,
   },
   {
-    id: '5',
-    title: 'The ROI of AI in Residential Care: Real Numbers from Real Facilities',
-    slug: 'roi-ai-residential-care',
-    excerpt: 'Detailed analysis of the financial impact of AI implementation in residential care facilities, including cost savings, revenue improvements, and payback periods.',
+    id: "5",
+    title:
+      "The ROI of AI in Residential Care: Real Numbers from Real Facilities",
+    slug: "roi-ai-residential-care",
+    excerpt:
+      "Detailed analysis of the financial impact of AI implementation in residential care facilities, including cost savings, revenue improvements, and payback periods.",
     content: `
 # The ROI of AI in Residential Care: Real Numbers from Real Facilities
 
@@ -933,13 +955,84 @@ The question isn't whether you can afford to implement AI. It's whether you can 
 *Ready to calculate your facility's specific ROI? [Schedule a consultation](/demo) for a customized financial analysis.*
     `,
     author: {
-      name: 'Michael Rodriguez',
-      role: 'Co-Founder & CTO',
+      name: "Michael Rodriguez",
+      role: "Co-Founder & CTO",
     },
-    category: 'Industry Trends',
-    tags: ['ROI', 'Financial Analysis', 'Cost Savings', 'Business Case'],
-    publishedAt: '2024-02-20',
+    category: "Industry Trends",
+    tags: ["ROI", "Financial Analysis", "Cost Savings", "Business Case"],
+    publishedAt: "2024-02-20",
     readTime: 11,
+  },
+  {
+    id: "6",
+    title: "ICF-ID Compliance Software: Complete 2025 Buyer's Guide",
+    slug: "icf-id-compliance-software-guide",
+    excerpt:
+      "Compare ICF-ID compliance software solutions. Learn what features matter, avoid common pitfalls, and reduce survey prep time by 85%. Based on analysis of 2,847 facilities.",
+    content: "",
+    author: {
+      name: "HarmonyCare Team",
+      role: "Healthcare Technology Experts",
+    },
+    category: "Best Practices",
+    tags: [
+      "ICF-ID",
+      "Compliance",
+      "Software Evaluation",
+      "Regulatory Requirements",
+      "Survey Preparation",
+    ],
+    publishedAt: "2025-11-26",
+    readTime: 14,
+    featuredImage: "/og-icf-id-compliance.png",
+  },
+  {
+    id: "7",
+    title:
+      "Residential Care Management Software: 2025 Buyer's Guide for Administrators",
+    slug: "residential-care-management-software-2025",
+    excerpt:
+      "Compare residential care management software for group homes and ICF-ID facilities. Reduce turnover 40%, cut costs 30%, improve care quality. Real data from 500+ facilities.",
+    content: "",
+    author: {
+      name: "HarmonyCare Team",
+      role: "Healthcare Technology Experts",
+    },
+    category: "Industry Trends",
+    tags: [
+      "Care Management",
+      "Software Selection",
+      "ROI Analysis",
+      "Operational Efficiency",
+      "Technology Implementation",
+    ],
+    publishedAt: "2025-11-26",
+    readTime: 15,
+    featuredImage: "/og-residential-care-management.png",
+  },
+  {
+    id: "8",
+    title:
+      "AI for Residential Care Facilities: Practical Applications Beyond the Hype",
+    slug: "ai-residential-care-facilities-guide",
+    excerpt:
+      "How AI solves residential care's biggest problems: 53% turnover, medication errors, compliance violations. Real implementations, measurable results, no hype.",
+    content: "",
+    author: {
+      name: "HarmonyCare Team",
+      role: "Healthcare Technology Experts",
+    },
+    category: "AI in Healthcare",
+    tags: [
+      "Artificial Intelligence",
+      "Healthcare Automation",
+      "Predictive Analytics",
+      "Medication Safety",
+      "Staff Retention",
+    ],
+    publishedAt: "2025-11-26",
+    readTime: 16,
+    featuredImage: "/og-ai-residential-care.png",
   },
 ];
 
@@ -947,7 +1040,9 @@ export function getBlogArticleBySlug(slug: string): BlogArticle | undefined {
   return blogArticles.find(article => article.slug === slug);
 }
 
-export function getBlogArticlesByCategory(category: BlogArticle['category']): BlogArticle[] {
+export function getBlogArticlesByCategory(
+  category: BlogArticle["category"]
+): BlogArticle[] {
   return blogArticles.filter(article => article.category === category);
 }
 

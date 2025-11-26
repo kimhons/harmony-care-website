@@ -997,3 +997,47 @@
 - [ ] Deploy latest version to Vercel production
 - [ ] Verify deployment success
 - [ ] Test production website
+
+## Domain Configuration
+
+- [ ] Update all domain references to harmonycare.ai and harmonycare.io
+  - [ ] Update SEO metadata in Home.tsx
+  - [ ] Update LocalBusiness schema
+  - [ ] Update documentation references
+  - [ ] Configure custom domains in Vercel
+
+## Blog Content Creation
+
+- [x] Draft 3 pillar blog articles for Tier 1 keywords
+  - [x] Article 1: ICF-ID compliance software (2,800+ words)
+  - [x] Article 2: Residential care management software (2,900+ words)
+  - [x] Article 3: AI for residential care facilities (3,100+ words)
+- [x] Integrate articles into blog listing page
+- [x] Create individual blog post pages for all 3 articles
+- [ ] Add Article schema markup to each blog post
+- [ ] Create custom OG images for each article
+- [x] Test all blog links and navigation
+
+## Open Graph Images for Blog Articles
+
+- [ ] Design OG image for ICF-ID compliance software article
+- [ ] Design OG image for residential care management software article
+- [ ] Design OG image for AI for residential care facilities article
+- [ ] Add OG meta tags to BlogArticle.tsx component
+- [ ] Test OG images with social media debuggers
+
+## Open Graph Images for Blog Articles
+
+- [ ] Design OG image for ICF-ID compliance software article
+- [ ] Design OG image for residential care management software article
+- [ ] Design OG image for AI for residential care facilities article
+- [ ] Add OG meta tags to BlogArticle.tsx component
+- [ ] Test OG images with social media debuggers
+
+## Open Graph Images for Blog Articles
+
+- [x] Design OG image for ICF-ID compliance software article
+- [x] Design OG image for residential care management software article
+- [x] Design OG image for AI for residential care facilities article
+- [x] Add OG meta tags to BlogArticle.tsx component
+- [x] Test OG images with browser verification
