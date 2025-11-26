@@ -1,0 +1,8 @@
+{
+  "query": "INSERT INTO leadMagnets (title, description, type, category, fileUrl, fileSize, slug, isActive, createdAt, updatedAt) VALUES (\n  'The Compliance Paradox: Why Following Every Rule is Killing Your ICF-ID Facility',\n  'Discover the contrarian approach to regulatory compliance that reduces deficiencies while cutting administrative costs by 40%. This comprehensive guide reveals why more documentation doesn''t equal better compliance—and what actually works.',\n  'guide',\n  'compliance',\n  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/bCodjuTdXiGvbOAN.pdf',\n  349,\n  'compliance-paradox-guide',\n  1,\n  NOW(),\n  NOW()\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute INSERT INTO leadMagnets (title, description, type, category, fileUrl, fileSize, slug, isActive, createdAt, updatedAt) VALUES (\n  'The Compliance Paradox: Why Following Every Rule is Killing Your ICF-ID Facility',\n  'Discover the contrarian approach to regulatory compliance that reduces deficiencies while cutting administrative costs by 40%. This comprehensive guide reveals why more documentation doesn''t equal better compliance—and what actually works.',\n  'guide',\n  'compliance',\n  'https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/bCodjuTdXiGvbOAN.pdf',\n  349,\n  'compliance-paradox-guide',\n  1,\n  NOW(),\n  NOW()\n);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'slug' in 'field list'"
+  ]
+}

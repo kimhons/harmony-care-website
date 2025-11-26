@@ -877,3 +877,16 @@
 - [x] Ensure all bios are comprehensive and professional
 - [x] Remove duplicate Mercel entry
 - [x] Create unified, cohesive team presentation
+
+## Replace Placeholder Resources with Professional Guides
+
+- [x] Research top 5 pain points in residential care management
+- [x] Create Guide 1: ICF-ID Compliance contrarian approach
+- [x] Create Guide 2: Staffing crisis solutions
+- [x] Create Guide 3: Financial optimization through cost reduction
+- [x] Create Guide 4: Medication management safety
+- [x] Create Guide 5: Person-centered care and active treatment
+- [x] Delete all placeholder test resources from database
+- [x] Upload 5 new professional resource PDFs
+- [x] Update resource metadata and descriptions
+- [x] Test resource downloads and display

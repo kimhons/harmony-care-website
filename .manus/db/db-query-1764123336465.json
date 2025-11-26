@@ -1,0 +1,350 @@
+{
+  "query": "SELECT id, title, category FROM leadMagnets WHERE title LIKE '%Test%' OR title LIKE '%Updated Title%' OR title = 'Medication Compliance Checklist (2024)';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, category FROM leadMagnets WHERE title LIKE '%Test%' OR title LIKE '%Updated Title%' OR title = 'Medication Compliance Checklist (2024)';",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Updated Title",
+      "category": "roi"
+    },
+    {
+      "id": "2",
+      "title": "Medication Compliance Checklist (2024)",
+      "category": "compliance"
+    },
+    {
+      "id": "7",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "30001",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "30002",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "60001",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "60002",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "90001",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "90002",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "90003",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "90004",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "90005",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "90006",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "90007",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "90008",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "90009",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "90010",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "90011",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120001",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120002",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120003",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120004",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120005",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120006",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120007",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120008",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120009",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120010",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120011",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120012",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120013",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120014",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120015",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120016",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120017",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120018",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120019",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120020",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120021",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120022",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120023",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120024",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120025",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120026",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120027",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120028",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120029",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120030",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120031",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120032",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "120033",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "120034",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "150001",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "150002",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "150003",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "150004",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "150005",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "150006",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "150007",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "150008",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "150009",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "150010",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "150011",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "150012",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "180001",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "180002",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    },
+    {
+      "id": "180003",
+      "title": "New Test Resource",
+      "category": "operations"
+    },
+    {
+      "id": "180004",
+      "title": "Test Resource via Upload",
+      "category": "roi"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tcategory\n1\tUpdated Title\troi\n2\tMedication Compliance Checklist (2024)\tcompliance\n7\tNew Test Resource\toperations\n30001\tTest Resource via Upload\troi\n30002\tTest Resource via Upload\troi\n60001\tNew Test Resource\toperations\n60002\tTest Resource via Upload\troi\n90001\tNew Test Resource\toperations\n90002\tNew Test Resource\toperations\n90003\tTest Resource via Upload\troi\n90004\tNew Test Resource\toperations\n90005\tTest Resource via Upload\troi\n90006\tNew Test Resource\toperations\n90007\tTest Resource via Upload\troi\n90008\tNew Test Resource\toperations\n90009\tTest Resource via Upload\troi\n90010\tNew Test Resource\toperations\n90011\tTest Resource via Upload\troi\n120001\tNew Test Resource\toperations\n120002\tTest Resource via Upload\troi\n120003\tNew Test Resource\toperations\n120004\tTest Resource via Upload\troi\n120005\tNew Test Resource\toperations\n120006\tTest Resource via Upload\troi\n120007\tNew Test Resource\toperations\n120008\tTest Resource via Upload\troi\n120009\tNew Test Resource\toperations\n120010\tTest Resource via Upload\troi\n120011\tNew Test Resource\toperations\n120012\tTest Resource via Upload\troi\n120013\tNew Test Resource\toperations\n120014\tTest Resource via Upload\troi\n120015\tNew Test Resource\toperations\n120016\tTest Resource via Upload\troi\n120017\tNew Test Resource\toperations\n120018\tTest Resource via Upload\troi\n120019\tNew Test Resource\toperations\n120020\tTest Resource via Upload\troi\n120021\tNew Test Resource\toperations\n120022\tTest Resource via Upload\troi\n120023\tNew Test Resource\toperations\n120024\tTest Resource via Upload\troi\n120025\tNew Test Resource\toperations\n120026\tTest Resource via Upload\troi\n120027\tNew Test Resource\toperations\n120028\tTest Resource via Upload\troi\n120029\tNew Test Resource\toperations\n120030\tTest Resource via Upload\troi\n120031\tNew Test Resource\toperations\n120032\tTest Resource via Upload\troi\n120033\tNew Test Resource\toperations\n120034\tTest Resource via Upload\troi\n150001\tNew Test Resource\toperations\n150002\tTest Resource via Upload\troi\n150003\tNew Test Resource\toperations\n150004\tTest Resource via Upload\troi\n150005\tNew Test Resource\toperations\n150006\tTest Resource via Upload\troi\n150007\tNew Test Resource\toperations\n150008\tTest Resource via Upload\troi\n150009\tNew Test Resource\toperations\n150010\tTest Resource via Upload\troi\n150011\tNew Test Resource\toperations\n150012\tTest Resource via Upload\troi\n180001\tNew Test Resource\toperations\n180002\tTest Resource via Upload\troi\n180003\tNew Test Resource\toperations\n180004\tTest Resource via Upload\troi\n",
+  "stderr": "",
+  "execution_time_ms": 49
+}

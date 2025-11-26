@@ -1,0 +1,442 @@
+{
+  "query": "SELECT id, title, category, downloadCount FROM leadMagnets ORDER BY createdAt DESC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, category, downloadCount FROM leadMagnets ORDER BY createdAt DESC;",
+  "rows": [
+    {
+      "id": "180004",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "180003",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "180002",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "180001",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150012",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150011",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150010",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150009",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150008",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150007",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150006",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150005",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150003",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150004",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150001",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "150002",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120034",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120033",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120032",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120031",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120030",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120029",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120028",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120027",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120026",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120025",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120024",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120023",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120022",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120021",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120020",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120019",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120018",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120017",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120016",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120015",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120014",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120013",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120012",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120011",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120010",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120009",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120008",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120007",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120006",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120005",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120004",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120003",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120002",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "120001",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90011",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90010",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90008",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90009",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90007",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90006",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90005",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90004",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90002",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90003",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "90001",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "60002",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "60001",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "30002",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "30001",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "7",
+      "title": "New Test Resource",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "1",
+      "title": "Updated Title",
+      "category": "roi",
+      "downloadCount": "235"
+    },
+    {
+      "id": "6",
+      "title": "State Licensing Requirements Matrix",
+      "category": "compliance",
+      "downloadCount": "0"
+    },
+    {
+      "id": "5",
+      "title": "Family Communication Templates",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "4",
+      "title": "Medication Error Prevention Guide",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "3",
+      "title": "Staffing Optimization Playbook",
+      "category": "staffing",
+      "downloadCount": "0"
+    },
+    {
+      "id": "2",
+      "title": "Medication Compliance Checklist (2024)",
+      "category": "compliance",
+      "downloadCount": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tcategory\tdownloadCount\n180004\tTest Resource via Upload\troi\t0\n180003\tNew Test Resource\toperations\t0\n180002\tTest Resource via Upload\troi\t0\n180001\tNew Test Resource\toperations\t0\n150012\tTest Resource via Upload\troi\t0\n150011\tNew Test Resource\toperations\t0\n150010\tTest Resource via Upload\troi\t0\n150009\tNew Test Resource\toperations\t0\n150008\tTest Resource via Upload\troi\t0\n150007\tNew Test Resource\toperations\t0\n150006\tTest Resource via Upload\troi\t0\n150005\tNew Test Resource\toperations\t0\n150003\tNew Test Resource\toperations\t0\n150004\tTest Resource via Upload\troi\t0\n150001\tNew Test Resource\toperations\t0\n150002\tTest Resource via Upload\troi\t0\n120034\tTest Resource via Upload\troi\t0\n120033\tNew Test Resource\toperations\t0\n120032\tTest Resource via Upload\troi\t0\n120031\tNew Test Resource\toperations\t0\n120030\tTest Resource via Upload\troi\t0\n120029\tNew Test Resource\toperations\t0\n120028\tTest Resource via Upload\troi\t0\n120027\tNew Test Resource\toperations\t0\n120026\tTest Resource via Upload\troi\t0\n120025\tNew Test Resource\toperations\t0\n120024\tTest Resource via Upload\troi\t0\n120023\tNew Test Resource\toperations\t0\n120022\tTest Resource via Upload\troi\t0\n120021\tNew Test Resource\toperations\t0\n120020\tTest Resource via Upload\troi\t0\n120019\tNew Test Resource\toperations\t0\n120018\tTest Resource via Upload\troi\t0\n120017\tNew Test Resource\toperations\t0\n120016\tTest Resource via Upload\troi\t0\n120015\tNew Test Resource\toperations\t0\n120014\tTest Resource via Upload\troi\t0\n120013\tNew Test Resource\toperations\t0\n120012\tTest Resource via Upload\troi\t0\n120011\tNew Test Resource\toperations\t0\n120010\tTest Resource via Upload\troi\t0\n120009\tNew Test Resource\toperations\t0\n120008\tTest Resource via Upload\troi\t0\n120007\tNew Test Resource\toperations\t0\n120006\tTest Resource via Upload\troi\t0\n120005\tNew Test Resource\toperations\t0\n120004\tTest Resource via Upload\troi\t0\n120003\tNew Test Resource\toperations\t0\n120002\tTest Resource via Upload\troi\t0\n120001\tNew Test Resource\toperations\t0\n90011\tTest Resource via Upload\troi\t0\n90010\tNew Test Resource\toperations\t0\n90008\tNew Test Resource\toperations\t0\n90009\tTest Resource via Upload\troi\t0\n90007\tTest Resource via Upload\troi\t0\n90006\tNew Test Resource\toperations\t0\n90005\tTest Resource via Upload\troi\t0\n90004\tNew Test Resource\toperations\t0\n90002\tNew Test Resource\toperations\t0\n90003\tTest Resource via Upload\troi\t0\n90001\tNew Test Resource\toperations\t0\n60002\tTest Resource via Upload\troi\t0\n60001\tNew Test Resource\toperations\t0\n30002\tTest Resource via Upload\troi\t0\n30001\tTest Resource via Upload\troi\t0\n7\tNew Test Resource\toperations\t0\n1\tUpdated Title\troi\t235\n6\tState Licensing Requirements Matrix\tcompliance\t0\n5\tFamily Communication Templates\toperations\t0\n4\tMedication Error Prevention Guide\toperations\t0\n3\tStaffing Optimization Playbook\tstaffing\t0\n2\tMedication Compliance Checklist (2024)\tcompliance\t0\n",
+  "stderr": "",
+  "execution_time_ms": 51
+}

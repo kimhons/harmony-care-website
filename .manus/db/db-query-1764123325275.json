@@ -1,0 +1,130 @@
+{
+  "query": "SELECT id, title, category, type FROM leadMagnets ORDER BY id ASC LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, category, type FROM leadMagnets ORDER BY id ASC LIMIT 20;",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Updated Title",
+      "category": "roi",
+      "type": "pdf"
+    },
+    {
+      "id": "2",
+      "title": "Medication Compliance Checklist (2024)",
+      "category": "compliance",
+      "type": "pdf"
+    },
+    {
+      "id": "3",
+      "title": "Staffing Optimization Playbook",
+      "category": "staffing",
+      "type": "pdf"
+    },
+    {
+      "id": "4",
+      "title": "Medication Error Prevention Guide",
+      "category": "operations",
+      "type": "pdf"
+    },
+    {
+      "id": "5",
+      "title": "Family Communication Templates",
+      "category": "operations",
+      "type": "template"
+    },
+    {
+      "id": "6",
+      "title": "State Licensing Requirements Matrix",
+      "category": "compliance",
+      "type": "checklist"
+    },
+    {
+      "id": "7",
+      "title": "New Test Resource",
+      "category": "operations",
+      "type": "pdf"
+    },
+    {
+      "id": "30001",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "type": "pdf"
+    },
+    {
+      "id": "30002",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "type": "pdf"
+    },
+    {
+      "id": "60001",
+      "title": "New Test Resource",
+      "category": "operations",
+      "type": "pdf"
+    },
+    {
+      "id": "60002",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "type": "pdf"
+    },
+    {
+      "id": "90001",
+      "title": "New Test Resource",
+      "category": "operations",
+      "type": "pdf"
+    },
+    {
+      "id": "90002",
+      "title": "New Test Resource",
+      "category": "operations",
+      "type": "pdf"
+    },
+    {
+      "id": "90003",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "type": "pdf"
+    },
+    {
+      "id": "90004",
+      "title": "New Test Resource",
+      "category": "operations",
+      "type": "pdf"
+    },
+    {
+      "id": "90005",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "type": "pdf"
+    },
+    {
+      "id": "90006",
+      "title": "New Test Resource",
+      "category": "operations",
+      "type": "pdf"
+    },
+    {
+      "id": "90007",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "type": "pdf"
+    },
+    {
+      "id": "90008",
+      "title": "New Test Resource",
+      "category": "operations",
+      "type": "pdf"
+    },
+    {
+      "id": "90009",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "type": "pdf"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tcategory\ttype\n1\tUpdated Title\troi\tpdf\n2\tMedication Compliance Checklist (2024)\tcompliance\tpdf\n3\tStaffing Optimization Playbook\tstaffing\tpdf\n4\tMedication Error Prevention Guide\toperations\tpdf\n5\tFamily Communication Templates\toperations\ttemplate\n6\tState Licensing Requirements Matrix\tcompliance\tchecklist\n7\tNew Test Resource\toperations\tpdf\n30001\tTest Resource via Upload\troi\tpdf\n30002\tTest Resource via Upload\troi\tpdf\n60001\tNew Test Resource\toperations\tpdf\n60002\tTest Resource via Upload\troi\tpdf\n90001\tNew Test Resource\toperations\tpdf\n90002\tNew Test Resource\toperations\tpdf\n90003\tTest Resource via Upload\troi\tpdf\n90004\tNew Test Resource\toperations\tpdf\n90005\tTest Resource via Upload\troi\tpdf\n90006\tNew Test Resource\toperations\tpdf\n90007\tTest Resource via Upload\troi\tpdf\n90008\tNew Test Resource\toperations\tpdf\n90009\tTest Resource via Upload\troi\tpdf\n",
+  "stderr": "",
+  "execution_time_ms": 49
+}
