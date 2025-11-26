@@ -29,11 +29,141 @@ import { useState } from "react";
 import { Link } from "wouter";
 
 export default function IcfId() {
+  // Service Schema for ICF-ID
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "HarmonyCare ICF-ID Management Software",
+    description:
+      "Comprehensive AI platform for ICF-ID facilities managing complex care needs. Ensure 42 CFR Part 483 compliance, automate ISP documentation, track behavioral interventions, and maintain person-centered care standards.",
+    provider: {
+      "@type": "Organization",
+      name: "HarmonyCare",
+      url: "https://www.harmonycare.ai",
+    },
+    serviceType: "Healthcare Software",
+    areaServed: [
+      {
+        "@type": "Country",
+        name: "United States",
+      },
+      {
+        "@type": "Country",
+        name: "Canada",
+      },
+    ],
+    audience: {
+      "@type": "Audience",
+      audienceType:
+        "ICF-ID Facilities, Intermediate Care Facilities for Individuals with Intellectual Disabilities",
+    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Professional Plan",
+        price: "62",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "62",
+          priceCurrency: "USD",
+          unitText: "per resident per month",
+        },
+        description:
+          "For ICF-ID facilities with 11-50 residents. Includes all 20 AI agents with advanced compliance monitoring.",
+        availability: "https://schema.org/PreOrder",
+        availabilityStarts: "2026-01-01",
+      },
+      {
+        "@type": "Offer",
+        name: "Enterprise Plan",
+        price: "69",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "69",
+          priceCurrency: "USD",
+          unitText: "per resident per month",
+        },
+        description:
+          "For ICF-ID facilities with 50+ residents. Includes custom integrations, dedicated account management, and white-label options.",
+        availability: "https://schema.org/PreOrder",
+        availabilityStarts: "2026-01-01",
+      },
+    ],
+  };
+
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How does Harmony ensure compliance with 42 CFR Part 483?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Guardian continuously monitors all operations against federal ICF-ID regulations, providing real-time alerts for any gaps. The system is updated automatically when regulations change, and generates survey-ready documentation packages on demand. Every feature is designed with CFR compliance built-in.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can Harmony help with active treatment documentation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely! Compass integrates active treatment directly into ISPs with measurable goals, and DocuBot allows staff to document active treatment delivery in real-time via voice. The system automatically tracks progress toward goals and alerts when activities are missed.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What's the implementation timeline for a 30-resident ICF-ID?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Most ICF-ID facilities are fully operational within 3-4 weeks. We provide white-glove migration support including ISP import, staff training (on-site or virtual), and dedicated QIDP training. You'll start seeing compliance improvements from week one.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does Harmony integrate with our existing EHR or pharmacy system?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! We offer API integrations with major EHR systems, pharmacy platforms, and state reporting portals. Our team handles the technical integration, and we can build custom integrations for your specific systems.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How does pricing work for larger ICF-ID facilities?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "ICF-ID facilities typically use our Professional plan at $79/resident/month for 11-50 residents, or Enterprise plan at $99/resident/month for 50+ residents. Enterprise includes custom integrations, dedicated account management, and white-label options.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can Harmony help us prepare for our annual survey?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! Guardian maintains continuous survey readiness by monitoring all compliance areas 24/7. When a survey is announced, it generates a complete documentation package in minutes, identifies any gaps, and provides remediation guidance. Many facilities report zero deficiencies after implementing Harmony.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <SEOHead
         title="ICF-ID Solutions - Specialized AI for Intermediate Care Facilities"
         description="Comprehensive AI platform for ICF-ID facilities managing complex care needs. Ensure HCBS compliance, automate ISP documentation, track behavioral interventions, and maintain person-centered care standards with 20 specialized agents."
+      />
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <IcfIdContent />
     </>

@@ -28,11 +28,140 @@ import { useState } from "react";
 import { Link } from "wouter";
 
 export default function GroupHomes() {
+  // Service Schema for Group Homes
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "HarmonyCare Group Home Management Software",
+    description:
+      "AI-powered management platform for group homes managing 4-10 residents. Automate documentation, meal planning, medication tracking, and compliance.",
+    provider: {
+      "@type": "Organization",
+      name: "HarmonyCare",
+      url: "https://www.harmonycare.ai",
+    },
+    serviceType: "Healthcare Software",
+    areaServed: [
+      {
+        "@type": "Country",
+        name: "United States",
+      },
+      {
+        "@type": "Country",
+        name: "Canada",
+      },
+    ],
+    audience: {
+      "@type": "Audience",
+      audienceType: "Group Homes, Residential Care Facilities",
+    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Starter Plan",
+        price: "52",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "52",
+          priceCurrency: "USD",
+          unitText: "per resident per month",
+        },
+        description:
+          "For group homes with 1-10 residents. Includes 5 core AI agents.",
+        availability: "https://schema.org/PreOrder",
+        availabilityStarts: "2026-01-01",
+      },
+      {
+        "@type": "Offer",
+        name: "Professional Plan",
+        price: "62",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "62",
+          priceCurrency: "USD",
+          unitText: "per resident per month",
+        },
+        description:
+          "For group homes with 11-50 residents. Includes all 20 AI agents.",
+        availability: "https://schema.org/PreOrder",
+        availabilityStarts: "2026-01-01",
+      },
+    ],
+  };
+
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is Harmony Care affordable for small group homes?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely! Our Starter plan is designed specifically for group homes with up to 10 residents at just $59/resident/month. For a 6-resident home, that's only $354/month—less than most point solutions, and you get the complete platform.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does implementation take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Most group homes are fully operational within 2-3 weeks. We provide white-glove migration support, staff training, and data import assistance. You'll start seeing time savings from day one.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do we need technical expertise to use Harmony?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No! Harmony is designed for direct care staff with minimal tech experience. Voice-to-text documentation, mobile-first design, and intuitive interfaces mean your team can start using it immediately.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What if we only have 3-4 residents?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We offer flexible pricing for smaller homes. Contact our team for custom pricing that fits your budget while still providing access to essential AI agents.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can we start with just a few agents and add more later?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! Our Starter plan includes 5 core agents (DocuBot, Sentinel, Guardian, Compass, Nexus). You can upgrade to Professional anytime to unlock all 20 agents.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What happens to our existing documentation?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We migrate your existing care plans, resident records, and documentation into Harmony at no extra cost. Your data remains accessible and compliant throughout the transition.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <SEOHead
         title="Group Home Solutions - AI-Powered Management for Residential Care Homes"
         description="Purpose-built AI solutions for group homes managing 4-8 residents. Automate documentation, meal planning, medication tracking, and compliance. Reduce administrative burden by 70% while improving care quality."
+      />
+      {/* Service Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GroupHomesContent />
     </>

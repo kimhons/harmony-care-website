@@ -25,11 +25,72 @@ import { useState } from "react";
 import { Link } from "wouter";
 
 export default function Pricing() {
+  // FAQ Schema
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How does the pricing work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Pricing is based on the number of residents in your facility. You pay a simple per-resident monthly fee with no hidden costs. All features within your tier are included.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I switch plans later?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! You can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is there a long-term contract?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. All plans are month-to-month with no long-term commitment. You can cancel anytime with 30 days notice.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What's included in the free trial?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The 30-day free trial includes full access to all features in the Professional tier, including all 20 AI agents, integrations, and priority support.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you offer discounts for multiple facilities?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! Enterprise customers with multiple facilities receive volume discounts. Contact our sales team for custom pricing.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What happens to our data if we cancel?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can export all your data at any time. After cancellation, we retain your data for 90 days in case you want to return, then permanently delete it.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <SEOHead
         title="Pricing - Transparent Per-Resident Pricing for Care Facilities"
         description="Simple, transparent pricing starting at $59/resident/month. Calculate your ROI with 70% time savings and 100% compliance. Founding member discounts available for Q1 2026 launch."
+      />
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <PricingContent />
     </>
