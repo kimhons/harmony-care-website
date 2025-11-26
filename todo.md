@@ -1041,3 +1041,10 @@
 - [x] Design OG image for AI for residential care facilities article
 - [x] Add OG meta tags to BlogArticle.tsx component
 - [x] Test OG images with browser verification
+
+## Article Schema Markup Implementation
+
+- [x] Create ArticleSchema component with JSON-LD structured data
+- [x] Integrate Article schema into BlogArticle component
+- [x] Test schema markup in browser
+- [x] Verify all required schema properties are included

@@ -17,6 +17,7 @@ import { Link, useRoute } from "wouter";
 import { Streamdown } from "streamdown";
 import { toast } from "sonner";
 import { SEOHead } from "@/components/SEOHead";
+import { ArticleSchema } from "@/components/ArticleSchema";
 
 export default function BlogArticle() {
   const [, params] = useRoute("/blog/:slug");
@@ -144,6 +145,16 @@ export default function BlogArticle() {
           author: article.author.name,
           tags: article.tags,
         }}
+      />
+      <ArticleSchema
+        title={article.title}
+        description={article.excerpt}
+        image={article.featuredImage}
+        author={article.author}
+        publishedAt={article.publishedAt}
+        tags={article.tags}
+        slug={article.slug}
+        readTime={article.readTime}
       />
       <div className="min-h-screen flex flex-col bg-gradient-to-b from-background via-background to-accent/5">
         <Navigation />
