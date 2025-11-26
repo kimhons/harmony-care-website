@@ -869,3 +869,11 @@
 - [x] Update Mercel's title to Co-Founder & VP of Engineering
 - [x] Update Organization schema with correct founder titles
 - [x] Update all references across the website
+
+## Restructure Leadership Team Section
+
+- [x] Merge Founders and Executive Team into single Leadership Team section
+- [x] Add LinkedIn profile links for all three founders
+- [x] Ensure all bios are comprehensive and professional
+- [x] Remove duplicate Mercel entry
+- [x] Create unified, cohesive team presentation

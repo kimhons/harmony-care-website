@@ -455,10 +455,12 @@ export default function About() {
               </p>
             </div>
 
-            {/* Founders */}
+            {/* Leadership Team */}
             <div className="mb-16">
-              <h3 className="text-2xl font-bold mb-8 text-center">Founders</h3>
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-8 text-center">
+                Leadership Team
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
                 <Card>
                   <CardContent className="p-6">
                     <div className="flex flex-col items-center text-center">
@@ -480,14 +482,25 @@ export default function About() {
                         and technology to transform healthcare operations while
                         maintaining human-centered care.
                       </p>
-                      <a
-                        href="https://kimhons.info"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline text-sm"
-                      >
-                        Learn More →
-                      </a>
+                      <div className="flex gap-3 items-center justify-center">
+                        <a
+                          href="https://kimhons.info"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-sm"
+                        >
+                          Website →
+                        </a>
+                        <span className="text-muted-foreground">|</span>
+                        <a
+                          href="https://linkedin.com/in/honour-djam-07278741"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-sm"
+                        >
+                          LinkedIn →
+                        </a>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -511,78 +524,25 @@ export default function About() {
                         for community impact. Expert in helping organizations
                         build inclusive, people-first cultures.
                       </p>
-                      <a
-                        href="https://bksolutions.ca"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline text-sm"
-                      >
-                        Learn More →
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Executives */}
-            <div className="mb-16">
-              <h3 className="text-2xl font-bold mb-8 text-center">
-                Executive Team
-              </h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4">
-                        <Shield className="w-12 h-12 text-primary" />
+                      <div className="flex gap-3 items-center justify-center">
+                        <a
+                          href="https://bksolutions.ca"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-sm"
+                        >
+                          Website →
+                        </a>
+                        <span className="text-muted-foreground">|</span>
+                        <a
+                          href="https://linkedin.com/in/missy-bk-6980958b"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-sm"
+                        >
+                          LinkedIn →
+                        </a>
                       </div>
-                      <h4 className="text-lg font-bold mb-1">Jennifer Liu</h4>
-                      <p className="text-sm text-primary mb-2">VP of Product</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                        Former product leader at healthcare SaaS companies.
-                        Expert in designing intuitive interfaces for clinical
-                        workflows. Spent 200+ hours shadowing caregivers to
-                        understand their needs.
-                      </p>
-                      <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline text-xs"
-                      >
-                        LinkedIn →
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4">
-                        <Heart className="w-12 h-12 text-primary" />
-                      </div>
-                      <h4 className="text-lg font-bold mb-1">
-                        Dr. James Patterson
-                      </h4>
-                      <p className="text-sm text-primary mb-2">
-                        Chief Medical Officer
-                      </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                        Board-certified physician with 20 years in geriatric
-                        care. Former medical director at multiple ICF-ID
-                        facilities. Ensures clinical accuracy and resident
-                        safety in every AI decision.
-                      </p>
-                      <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline text-xs"
-                      >
-                        LinkedIn →
-                      </a>
                     </div>
                   </CardContent>
                 </Card>
@@ -611,7 +571,7 @@ export default function About() {
                         href="https://linkedin.com/in/mercel-vubangsi-68109b23a"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary hover:underline text-xs"
+                        className="text-primary hover:underline text-sm"
                       >
                         LinkedIn →
                       </a>
