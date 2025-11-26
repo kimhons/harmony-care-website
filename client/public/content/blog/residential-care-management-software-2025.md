@@ -225,7 +225,7 @@ Software subscription fees represent only part of the true cost. Calculate total
 
 Facilities implementing effective management software report measurable returns across multiple dimensions:
 
-**Staff Turnover Reduction**: Reducing documentation burden and providing tools that help staff succeed improves job satisfaction. Facilities report **10-20% reduction in turnover** after implementing user-friendly management software. At a replacement cost of **$3,000-5,000 per direct care worker**, this saves **$18,000-60,000 annually** for a typical 30-resident facility.
+**Staff Turnover Reduction**: Reducing documentation burden and providing tools that help staff succeed improves job satisfaction. Facilities report **10-20% reduction in turnover** after implementing user-friendly management software. At a replacement cost of **$3,000-5,000 per direct care worker**, this saves **$18,000-60,000 annually** for a typical 30-resident facility. For compliance-specific benefits, see our [ICF-ID compliance software guide](/blog/icf-id-compliance-software-guide).
 
 **Overtime Cost Savings**: Data-driven scheduling and workflow optimization reduce unnecessary overtime. Facilities report **15-25% reduction in overtime costs**, translating to **$15,000-40,000 annual savings** for typical facilities.
 
@@ -249,7 +249,7 @@ For most residential care facilities, effective management software pays for its
 
 The next generation of management software leverages artificial intelligence to move from reactive problem-solving to proactive risk prevention. These systems analyze patterns across thousands of data points to identify emerging issues before they become crises.
 
-**Predictive Capabilities**:
+**Predictive Capabilities**: Learn more about [AI applications in residential care](/blog/ai-residential-care-facilities-guide).
 
 **Staff Turnover Risk**: AI algorithms identify employees at elevated risk of leaving based on scheduling patterns, incident involvement, training gaps, and other factors. Early intervention through schedule adjustments, additional support, or targeted retention efforts prevents departures.
 
@@ -286,6 +286,8 @@ The financial case for modern management software is compelling, with typical pa
 Facilities still relying on paper-based systems or legacy software face mounting risks as operating margins compress and regulatory scrutiny intensifies. The question is no longer whether to implement modern management software, but which platform best fits your facility's specific needs and how quickly you can complete the transition.
 
 The residential care facilities that thrive over the next decade will be those that embrace technology not as a replacement for human caring, but as a tool that frees staff to focus on what matters most—providing excellent care that honors the dignity and individuality of every resident.
+
+**Related Reading**: Dive deeper into specific technology solutions with our guides on [ICF-ID compliance software](/blog/icf-id-compliance-software-guide) and [practical AI applications for care facilities](/blog/ai-residential-care-facilities-guide).
 
 ---
 
