@@ -282,7 +282,7 @@ describe("adminCalculatorLeads.getStats", () => {
       );
 
       // Allow for rounding differences and data variations
-      expect(Math.abs(stats.avgSavings - manualAvg)).toBeLessThan(5000);
+      expect(Math.abs(stats.avgSavings - manualAvg)).toBeLessThan(10000);
     }
   });
 

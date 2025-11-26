@@ -807,3 +807,11 @@
 - [x] Create Google Search Console setup documentation
 - [x] Test schema markup with Google Rich Results Test
 - [x] Verify all structured data validates correctly
+
+## Multi-Search Engine Visibility
+
+- [x] Create Bing Webmaster Tools setup guide
+- [x] Create Yandex Webmaster setup guide
+- [x] Document sitemap submission for Bing
+- [x] Document sitemap submission for Yandex
+- [x] Provide verification instructions for both platforms
