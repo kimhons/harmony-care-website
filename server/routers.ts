@@ -5,28 +5,44 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { createSignup, getAllSignups, getDb } from "./db";
 import { sendWelcomeEmail } from "./email";
-import { sendReferralWelcomeEmail, sendReferralSuccessEmail, sendMilestoneEmail } from "./referralEmails";
+import {
+  sendReferralWelcomeEmail,
+  sendReferralSuccessEmail,
+  sendMilestoneEmail,
+} from "./referralEmails";
 import { getCurrentTier, REWARD_TIERS } from "../shared/referralRewards";
 import { getCampaignStats } from "./emailCampaign";
-import { validateReferralCode, createReferral, generateUniqueReferralCode } from "./referral";
+import {
+  validateReferralCode,
+  createReferral,
+  generateUniqueReferralCode,
+} from "./referral";
 import { getReferralAnalytics } from "./referralAnalytics";
-import { checkAndCreateMilestones, getUnviewedMilestones, markMilestoneAsViewed, markMilestoneAsShared, getAllMilestones } from "./milestoneService";
+import {
+  checkAndCreateMilestones,
+  getUnviewedMilestones,
+  markMilestoneAsViewed,
+  markMilestoneAsShared,
+  getAllMilestones,
+} from "./milestoneService";
 import { calculatorRouter } from "./calculator";
 import { adminCalculatorLeadsRouter } from "./adminCalculatorLeads";
 import { resendWebhookRouter } from "./resendWebhook";
 import { leadMagnetsRouter } from "./leadMagnets";
 import { fileUploadRouter } from "./fileUpload";
+import { newsletterRouter } from "./newsletter";
 import { signups, referrals } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
+  // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   calculator: calculatorRouter,
   adminCalculatorLeads: adminCalculatorLeadsRouter,
   resendWebhook: resendWebhookRouter,
   leadMagnets: leadMagnetsRouter,
   fileUpload: fileUploadRouter,
+  newsletter: newsletterRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
@@ -41,8 +57,8 @@ export const appRouter = router({
   admin: router({
     analytics: publicProcedure.query(async ({ ctx }) => {
       // TODO: Add admin auth check
-      if (!ctx.user || ctx.user.role !== 'admin') {
-        throw new Error('Unauthorized');
+      if (!ctx.user || ctx.user.role !== "admin") {
+        throw new Error("Unauthorized");
       }
 
       const signups = await getAllSignups();
@@ -54,50 +70,61 @@ export const appRouter = router({
         acc[s.tier] = (acc[s.tier] || 0) + 1;
         return acc;
       }, {});
-      const signupsByFacilityType = signups.reduce((acc: Record<string, number>, s) => {
-        acc[s.facilityType] = (acc[s.facilityType] || 0) + 1;
-        return acc;
-      }, {});
-      const totalResidents = signups.reduce((sum, s) => sum + s.residentCount, 0);
-      const avgResidentsPerFacility = totalSignups > 0 ? Math.round(totalResidents / totalSignups) : 0;
+      const signupsByFacilityType = signups.reduce(
+        (acc: Record<string, number>, s) => {
+          acc[s.facilityType] = (acc[s.facilityType] || 0) + 1;
+          return acc;
+        },
+        {}
+      );
+      const totalResidents = signups.reduce(
+        (sum, s) => sum + s.residentCount,
+        0
+      );
+      const avgResidentsPerFacility =
+        totalSignups > 0 ? Math.round(totalResidents / totalSignups) : 0;
 
       // Interested features analysis
       const featureCounts: Record<string, number> = {};
-      signups.forEach((s) => {
+      signups.forEach(s => {
         if (s.interestedFeatures) {
           try {
             const features = JSON.parse(s.interestedFeatures);
             features.forEach((f: string) => {
               featureCounts[f] = (featureCounts[f] || 0) + 1;
             });
-          } catch {}
+          } catch {
+            // Ignore JSON parse errors for malformed data
+          }
         }
       });
 
       // Signup trend (last 30 days)
       const thirtyDaysAgo = new Date();
       thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-      const recentSignups = signups.filter((s) => new Date(s.createdAt) >= thirtyDaysAgo);
+      const recentSignups = signups.filter(
+        s => new Date(s.createdAt) >= thirtyDaysAgo
+      );
       const signupsByDay: Record<string, number> = {};
-      recentSignups.forEach((s) => {
-        const date = new Date(s.createdAt).toISOString().split('T')[0];
+      recentSignups.forEach(s => {
+        const date = new Date(s.createdAt).toISOString().split("T")[0];
         signupsByDay[date] = (signupsByDay[date] || 0) + 1;
       });
-      
+
       // UTM tracking statistics
       const utmStats = {
         bySource: signups.reduce((acc: Record<string, number>, s) => {
-          const source = s.utmSource || 'direct';
+          const source = s.utmSource || "direct";
           acc[source] = (acc[source] || 0) + 1;
           return acc;
         }, {}),
         byMedium: signups.reduce((acc: Record<string, number>, s) => {
-          const medium = s.utmMedium || 'direct';
+          const medium = s.utmMedium || "direct";
           acc[medium] = (acc[medium] || 0) + 1;
           return acc;
         }, {}),
         byCampaign: signups.reduce((acc: Record<string, number>, s) => {
-          const campaign = s.utmCampaign || 'none';
+          const campaign = s.utmCampaign || "none";
           acc[campaign] = (acc[campaign] || 0) + 1;
           return acc;
         }, {}),
@@ -117,7 +144,7 @@ export const appRouter = router({
         campaignStats,
         utmStats,
         referralAnalytics,
-        recentSignups: signups.slice(0, 10).map((s) => ({
+        recentSignups: signups.slice(0, 10).map(s => ({
           id: s.id,
           name: `${s.firstName} ${s.lastName}`,
           email: s.email,
@@ -131,29 +158,31 @@ export const appRouter = router({
 
     signups: publicProcedure.query(async ({ ctx }) => {
       // TODO: Add admin auth check
-      if (!ctx.user || ctx.user.role !== 'admin') {
-        throw new Error('Unauthorized');
+      if (!ctx.user || ctx.user.role !== "admin") {
+        throw new Error("Unauthorized");
       }
 
       const signups = await getAllSignups();
-      return signups.map((s) => ({
+      return signups.map(s => ({
         ...s,
-        interestedFeatures: s.interestedFeatures ? JSON.parse(s.interestedFeatures) : [],
+        interestedFeatures: s.interestedFeatures
+          ? JSON.parse(s.interestedFeatures)
+          : [],
       }));
     }),
-    
+
     exportCSV: publicProcedure.query(async ({ ctx }) => {
-      if (!ctx.user || ctx.user.role !== 'admin') {
-        throw new Error('Unauthorized');
+      if (!ctx.user || ctx.user.role !== "admin") {
+        throw new Error("Unauthorized");
       }
-      
-      const { generateSignupsCSV } = await import('./csvExport');
+
+      const { generateSignupsCSV } = await import("./csvExport");
       const signups = await getAllSignups();
       const csvContent = generateSignupsCSV(signups);
-      
+
       return {
         csv: csvContent,
-        filename: `signups_${new Date().toISOString().split('T')[0]}.csv`,
+        filename: `signups_${new Date().toISOString().split("T")[0]}.csv`,
       };
     }),
   }),
@@ -188,7 +217,7 @@ export const appRouter = router({
         if (input.referralCode) {
           referrerSignupId = await validateReferralCode(input.referralCode);
           if (!referrerSignupId) {
-            throw new Error('Invalid referral code');
+            throw new Error("Invalid referral code");
           }
         }
 
@@ -216,7 +245,7 @@ export const appRouter = router({
               referralCode: input.referralCode!,
             });
           } catch (referralError) {
-            console.error('[Signup] Failed to create referral:', referralError);
+            console.error("[Signup] Failed to create referral:", referralError);
             // Don't fail the signup if referral tracking fails
           }
         }
@@ -231,10 +260,10 @@ export const appRouter = router({
             tier: input.tier,
           });
         } catch (emailError) {
-          console.error('[Signup] Failed to send welcome email:', emailError);
+          console.error("[Signup] Failed to send welcome email:", emailError);
           // Don't fail the signup if email fails
         }
-        
+
         // Send referral welcome email with their code
         try {
           await sendReferralWelcomeEmail({
@@ -243,9 +272,12 @@ export const appRouter = router({
             referralCode: ownReferralCode,
           });
         } catch (emailError) {
-          console.error('[Signup] Failed to send referral welcome email:', emailError);
+          console.error(
+            "[Signup] Failed to send referral welcome email:",
+            emailError
+          );
         }
-        
+
         // If they used a referral code, notify the referrer
         if (referrerSignupId && newSignupId) {
           try {
@@ -257,18 +289,18 @@ export const appRouter = router({
                 .from(signups)
                 .where(eq(signups.id, referrerSignupId))
                 .limit(1);
-              
+
               if (referrerData.length > 0) {
                 const referrer = referrerData[0];
-                
+
                 // Count total referrals for referrer
                 const referrerReferrals = await db
                   .select()
                   .from(referrals)
                   .where(eq(referrals.referrerSignupId, referrerSignupId));
-                
+
                 const totalReferrals = referrerReferrals.length;
-                
+
                 // Send success notification
                 await sendReferralSuccessEmail({
                   referrerEmail: referrer.email,
@@ -276,19 +308,23 @@ export const appRouter = router({
                   referredName: `${input.firstName} ${input.lastName}`,
                   totalReferrals,
                 });
-                
+
                 // Check for milestone achievements (tier upgrades, leaderboard, etc.)
                 await checkAndCreateMilestones(referrerSignupId);
               }
             }
           } catch (emailError) {
-            console.error('[Signup] Failed to send referrer notification:', emailError);
+            console.error(
+              "[Signup] Failed to send referrer notification:",
+              emailError
+            );
           }
         }
 
         return {
           success: true,
-          message: "Thank you for signing up! Check your email for confirmation.",
+          message:
+            "Thank you for signing up! Check your email for confirmation.",
         };
       }),
   }),
@@ -301,44 +337,44 @@ export const appRouter = router({
         return {
           valid: referrerSignupId !== null,
           message: referrerSignupId
-            ? 'Valid referral code! You\'ll both receive exclusive rewards.'
-            : 'Invalid referral code. Please check and try again.',
+            ? "Valid referral code! You'll both receive exclusive rewards."
+            : "Invalid referral code. Please check and try again.",
         };
       }),
-    
+
     myReferrals: publicProcedure.query(async ({ ctx }) => {
       if (!ctx.user) {
-        throw new Error('Unauthorized');
+        throw new Error("Unauthorized");
       }
-      
+
       // Get user's signup record to find their referral code
       const db = await getDb();
       if (!db) {
-        throw new Error('Database not available');
+        throw new Error("Database not available");
       }
-      
+
       const userSignup = await db
         .select()
         .from(signups)
-        .where(eq(signups.email, ctx.user.email || ''))
+        .where(eq(signups.email, ctx.user.email || ""))
         .limit(1);
-      
+
       if (userSignup.length === 0) {
-        throw new Error('Signup record not found');
+        throw new Error("Signup record not found");
       }
-      
+
       const signup = userSignup[0];
-      const referralCode = signup.ownReferralCode || '';
-      
+      const referralCode = signup.ownReferralCode || "";
+
       // Get all referrals made by this user
       const userReferrals = await db
         .select()
         .from(referrals)
         .where(eq(referrals.referrerSignupId, signup.id));
-      
+
       // Get details of referred users
       const referredUsers = await Promise.all(
-        userReferrals.map(async (ref) => {
+        userReferrals.map(async ref => {
           const referred = await db
             .select({
               name: signups.firstName,
@@ -349,72 +385,72 @@ export const appRouter = router({
             .from(signups)
             .where(eq(signups.id, ref.referredSignupId))
             .limit(1);
-          
+
           return referred[0];
         })
       );
-      
+
       return {
         referralCode,
         totalReferrals: userReferrals.length,
         referredUsers: referredUsers.filter(Boolean),
       };
     }),
-    
+
     milestones: publicProcedure.query(async ({ ctx }) => {
       if (!ctx.user) {
-        throw new Error('Unauthorized');
+        throw new Error("Unauthorized");
       }
-      
+
       // Get user's signup record
       const db = await getDb();
       if (!db) {
-        throw new Error('Database not available');
+        throw new Error("Database not available");
       }
-      
+
       const userSignup = await db
         .select()
         .from(signups)
-        .where(eq(signups.email, ctx.user.email || ''))
+        .where(eq(signups.email, ctx.user.email || ""))
         .limit(1);
-      
+
       if (userSignup.length === 0) {
-        throw new Error('Signup record not found');
+        throw new Error("Signup record not found");
       }
-      
+
       const signup = userSignup[0];
-      
+
       // Get all milestone notifications
       const allMilestones = await getAllMilestones(signup.id);
       const unviewedMilestones = await getUnviewedMilestones(signup.id);
-      
+
       return {
         all: allMilestones,
         unviewed: unviewedMilestones,
       };
     }),
-    
+
     markViewed: publicProcedure
       .input(z.object({ notificationId: z.number() }))
       .mutation(async ({ input, ctx }) => {
         if (!ctx.user) {
-          throw new Error('Unauthorized');
+          throw new Error("Unauthorized");
         }
-        
+
         await markMilestoneAsViewed(input.notificationId);
-        
+
         return { success: true };
       }),
-    
+
     markShared: publicProcedure
       .input(z.object({ notificationId: z.number() }))
       .mutation(async ({ input, ctx }) => {
         if (!ctx.user) {
-          throw new Error('Unauthorized');
+          throw new Error("Unauthorized");
         }
-        
+
         await markMilestoneAsShared(input.notificationId);
-        
+
         return { success: true };
       }),
   }),

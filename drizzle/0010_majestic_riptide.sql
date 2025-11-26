@@ -1,0 +1,21 @@
+CREATE TABLE `newsletterSubscribers` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`email` varchar(320) NOT NULL,
+	`name` varchar(200),
+	`source` varchar(100) NOT NULL,
+	`status` varchar(20) NOT NULL DEFAULT 'active',
+	`utmSource` varchar(100),
+	`utmMedium` varchar(100),
+	`utmCampaign` varchar(100),
+	`nurtureSequence` text,
+	`lastNurtureEmail` varchar(50),
+	`lastNurtureEmailSentAt` timestamp,
+	`nurtureCompleted` int NOT NULL DEFAULT 0,
+	`emailOpens` int NOT NULL DEFAULT 0,
+	`emailClicks` int NOT NULL DEFAULT 0,
+	`lastEngagementAt` timestamp,
+	`subscribedAt` timestamp NOT NULL DEFAULT (now()),
+	`unsubscribedAt` timestamp,
+	CONSTRAINT `newsletterSubscribers_id` PRIMARY KEY(`id`),
+	CONSTRAINT `newsletterSubscribers_email_unique` UNIQUE(`email`)
+);

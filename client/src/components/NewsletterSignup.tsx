@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
+import { trpc } from "@/lib/trpc";
 
 interface NewsletterSignupProps {
   source?: string; // Track where the signup came from (e.g., "blog-article")
@@ -17,6 +18,8 @@ export function NewsletterSignup({ source = "blog" }: NewsletterSignupProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubscribed, setIsSubscribed] = useState(false);
 
+  const subscribeMutation = trpc.newsletter.subscribe.useMutation();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -28,22 +31,15 @@ export function NewsletterSignup({ source = "blog" }: NewsletterSignupProps) {
     setIsSubmitting(true);
 
     try {
-      // TODO: Integrate with your email service provider (Resend, Mailchimp, etc.)
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const result = await subscribeMutation.mutateAsync({
+        email,
+        source,
+      });
 
-      // Store subscription in localStorage for demo purposes
-      localStorage.setItem(
-        `newsletter_${email}`,
-        JSON.stringify({
-          email,
-          source,
-          subscribedAt: new Date().toISOString(),
-        })
-      );
-
-      setIsSubscribed(true);
-      toast.success("Successfully subscribed to our newsletter!");
+      if (result.success) {
+        setIsSubscribed(true);
+        toast.success(result.message);
+      }
 
       // Reset form after 3 seconds
       setTimeout(() => {

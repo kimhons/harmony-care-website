@@ -222,3 +222,40 @@ export const leadMagnetDownloads = mysqlTable("leadMagnetDownloads", {
 
 export type LeadMagnetDownload = typeof leadMagnetDownloads.$inferSelect;
 export type InsertLeadMagnetDownload = typeof leadMagnetDownloads.$inferInsert;
+
+/**
+ * Newsletter subscribers table - tracks blog newsletter signups
+ */
+export const newsletterSubscribers = mysqlTable("newsletterSubscribers", {
+  id: int("id").autoincrement().primaryKey(),
+  email: varchar("email", { length: 320 }).notNull().unique(),
+  name: varchar("name", { length: 200 }),
+
+  // Subscription metadata
+  source: varchar("source", { length: 100 }).notNull(), // blog article slug or "homepage"
+  status: varchar("status", { length: 20 }).default("active").notNull(), // active, unsubscribed
+
+  // UTM parameters
+  utmSource: varchar("utmSource", { length: 100 }),
+  utmMedium: varchar("utmMedium", { length: 100 }),
+  utmCampaign: varchar("utmCampaign", { length: 100 }),
+
+  // Email nurture sequence tracking
+  nurtureSequence: text("nurtureSequence"), // JSON array: [{type: 'welcome', sentAt: timestamp}, ...]
+  lastNurtureEmail: varchar("lastNurtureEmail", { length: 50 }), // 'welcome', 'day2', 'day5', 'day8', 'day12'
+  lastNurtureEmailSentAt: timestamp("lastNurtureEmailSentAt"),
+  nurtureCompleted: int("nurtureCompleted").default(0).notNull(), // 0 = in progress, 1 = completed
+
+  // Engagement tracking
+  emailOpens: int("emailOpens").default(0).notNull(),
+  emailClicks: int("emailClicks").default(0).notNull(),
+  lastEngagementAt: timestamp("lastEngagementAt"),
+
+  // Timestamps
+  subscribedAt: timestamp("subscribedAt").defaultNow().notNull(),
+  unsubscribedAt: timestamp("unsubscribedAt"),
+});
+
+export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+export type InsertNewsletterSubscriber =
+  typeof newsletterSubscribers.$inferInsert;

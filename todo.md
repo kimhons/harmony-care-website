@@ -1064,3 +1064,19 @@
 - [x] Integrate newsletter form into BlogArticle footer
 - [x] Add email validation and submission handling
 - [x] Test newsletter signup functionality
+
+## Automated Email Nurture Sequence for Blog Subscribers
+
+- [x] Design 5-email nurture sequence strategy with timing and content
+- [x] Create database schema for newsletter subscriptions
+- [x] Implement backend API for newsletter signup
+- [x] Create email templates for nurture sequence
+  - [x] Email 1: Welcome + Best Content Overview (Day 0)
+  - [x] Email 2: Top Blog Article + Case Study (Day 2)
+  - [x] Email 3: Industry Insights + ROI Calculator (Day 5)
+  - [x] Email 4: Customer Success Story (Day 8)
+  - [x] Email 5: Product Demo Invitation (Day 12)
+- [x] Set up automated email scheduling system
+- [x] Integrate with Resend API for email delivery
+- [x] Test complete nurture sequence flow
+- [x] Add unsubscribe functionality
