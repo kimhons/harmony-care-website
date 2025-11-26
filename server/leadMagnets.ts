@@ -2,16 +2,21 @@ import { publicProcedure, adminProcedure, router } from "./_core/trpc";
 import { z } from "zod";
 import { TRPCError } from "@trpc/server";
 import { getDb } from "./db";
-import { leadMagnets, leadMagnetDownloads, calculatorLeads } from "../drizzle/schema";
+import {
+  leadMagnets,
+  leadMagnetDownloads,
+  calculatorLeads,
+} from "../drizzle/schema";
 import { eq, desc, and, sql } from "drizzle-orm";
 import { trackEngagement } from "./leadScoringService";
+import { sendDay1Email } from "./resourceNurtureService";
 
 /**
  * Lead Magnet Library System
- * 
+ *
  * Provides downloadable resources (PDFs, checklists, guides) to capture
  * detailed lead information and boost engagement scores.
- * 
+ *
  * Features:
  * - Public library of lead magnets
  * - Gated downloads with lead capture form
@@ -82,10 +87,7 @@ export const leadMagnetsRouter = router({
       const magnets = await db
         .select()
         .from(leadMagnets)
-        .where(and(
-          eq(leadMagnets.id, input.id),
-          eq(leadMagnets.isActive, 1)
-        ))
+        .where(and(eq(leadMagnets.id, input.id), eq(leadMagnets.isActive, 1)))
         .limit(1);
 
       if (magnets.length === 0) {
@@ -100,7 +102,7 @@ export const leadMagnetsRouter = router({
 
   /**
    * Download a lead magnet (with lead capture)
-   * 
+   *
    * This endpoint:
    * 1. Validates and stores lead information
    * 2. Links to existing calculator lead if email matches
@@ -164,7 +166,9 @@ export const leadMagnetsRouter = router({
         // Track engagement for existing lead (+15 points for download)
         try {
           await trackEngagement(calculatorLeadId, "resource_download");
-          console.log(`[LeadMagnet] Tracked download for calculator lead ${calculatorLeadId}`);
+          console.log(
+            `[LeadMagnet] Tracked download for calculator lead ${calculatorLeadId}`
+          );
         } catch (error) {
           console.error(`[LeadMagnet] Error tracking engagement:`, error);
           // Don't fail download if engagement tracking fails
@@ -172,11 +176,12 @@ export const leadMagnetsRouter = router({
       }
 
       // Get IP address and user agent from request
-      const ipAddress = ctx.req.ip || ctx.req.headers["x-forwarded-for"] || "unknown";
+      const ipAddress =
+        ctx.req.ip || ctx.req.headers["x-forwarded-for"] || "unknown";
       const userAgent = ctx.req.headers["user-agent"] || "unknown";
 
       // Record download
-      await db.insert(leadMagnetDownloads).values({
+      const result = await db.insert(leadMagnetDownloads).values({
         leadMagnetId: input.leadMagnetId,
         email: input.email,
         name: input.name || null,
@@ -189,9 +194,14 @@ export const leadMagnetsRouter = router({
         utmSource: input.utmSource || null,
         utmMedium: input.utmMedium || null,
         utmCampaign: input.utmCampaign || null,
-        ipAddress: typeof ipAddress === "string" ? ipAddress : ipAddress?.[0] || "unknown",
+        ipAddress:
+          typeof ipAddress === "string"
+            ? ipAddress
+            : ipAddress?.[0] || "unknown",
         userAgent: typeof userAgent === "string" ? userAgent : "unknown",
       });
+
+      const downloadId = Number((result as any).insertId);
 
       // Increment download count
       await db
@@ -201,7 +211,14 @@ export const leadMagnetsRouter = router({
         })
         .where(eq(leadMagnets.id, input.leadMagnetId));
 
-      console.log(`[LeadMagnet] Download recorded: ${magnet.title} by ${input.email}`);
+      console.log(
+        `[LeadMagnet] Download recorded: ${magnet.title} by ${input.email}`
+      );
+
+      // Send Day 1 nurture email asynchronously (don't block download)
+      sendDay1Email(downloadId).catch(error => {
+        console.error(`[LeadMagnet] Error sending Day 1 email:`, error);
+      });
 
       return {
         success: true,
@@ -302,10 +319,7 @@ export const leadMagnetsRouter = router({
 
       const { id, ...updates } = input;
 
-      await db
-        .update(leadMagnets)
-        .set(updates)
-        .where(eq(leadMagnets.id, id));
+      await db.update(leadMagnets).set(updates).where(eq(leadMagnets.id, id));
 
       return {
         success: true,
@@ -357,19 +371,22 @@ export const leadMagnetsRouter = router({
     // Calculate statistics
     const totalDownloads = downloads.length;
     const uniqueEmails = new Set(downloads.map(d => d.email)).size;
-    
+
     // Downloads by magnet
-    const downloadsByMagnet = magnets.map(magnet => ({
-      id: magnet.id,
-      title: magnet.title,
-      downloads: downloads.filter(d => d.leadMagnetId === magnet.id).length,
-    })).sort((a, b) => b.downloads - a.downloads);
+    const downloadsByMagnet = magnets
+      .map(magnet => ({
+        id: magnet.id,
+        title: magnet.title,
+        downloads: downloads.filter(d => d.leadMagnetId === magnet.id).length,
+      }))
+      .sort((a, b) => b.downloads - a.downloads);
 
     // Downloads by category
     const downloadsByCategory: Record<string, number> = {};
     magnets.forEach(magnet => {
       const count = downloads.filter(d => d.leadMagnetId === magnet.id).length;
-      downloadsByCategory[magnet.category] = (downloadsByCategory[magnet.category] || 0) + count;
+      downloadsByCategory[magnet.category] =
+        (downloadsByCategory[magnet.category] || 0) + count;
     });
 
     // Recent downloads
@@ -386,10 +403,13 @@ export const leadMagnetsRouter = router({
     });
 
     // Conversion rate (downloads with calculator lead link)
-    const downloadsWithLead = downloads.filter(d => d.calculatorLeadId !== null).length;
-    const conversionRate = totalDownloads > 0 
-      ? Math.round((downloadsWithLead / totalDownloads) * 100) 
-      : 0;
+    const downloadsWithLead = downloads.filter(
+      d => d.calculatorLeadId !== null
+    ).length;
+    const conversionRate =
+      totalDownloads > 0
+        ? Math.round((downloadsWithLead / totalDownloads) * 100)
+        : 0;
 
     return {
       totalDownloads,
@@ -429,18 +449,20 @@ export const leadMagnetsRouter = router({
         .offset(input.offset);
 
       if (input.leadMagnetId) {
-        query = query.where(eq(leadMagnetDownloads.leadMagnetId, input.leadMagnetId)) as any;
+        query = query.where(
+          eq(leadMagnetDownloads.leadMagnetId, input.leadMagnetId)
+        ) as any;
       }
 
       const downloads = await query;
 
       // Get total count
       const countQuery = input.leadMagnetId
-        ? db.select({ count: sql<number>`count(*)` })
+        ? db
+            .select({ count: sql<number>`count(*)` })
             .from(leadMagnetDownloads)
             .where(eq(leadMagnetDownloads.leadMagnetId, input.leadMagnetId))
-        : db.select({ count: sql<number>`count(*)` })
-            .from(leadMagnetDownloads);
+        : db.select({ count: sql<number>`count(*)` }).from(leadMagnetDownloads);
 
       const countResult = await countQuery;
       const total = Number(countResult[0]?.count || 0);

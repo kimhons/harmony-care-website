@@ -890,3 +890,37 @@
 - [x] Upload 5 new professional resource PDFs
 - [x] Update resource metadata and descriptions
 - [x] Test resource downloads and display
+
+## Resource Marketing Enhancement
+
+### Phase 1: Professional Thumbnail Images
+
+- [x] Generate thumbnail for Compliance Paradox guide
+- [x] Generate thumbnail for Staffing Optimization guide
+- [x] Generate thumbnail for Financial Optimization guide
+- [x] Generate thumbnail for Medication Management guide
+- [x] Generate thumbnail for Person-Centered Care guide
+- [x] Upload all thumbnails to S3 storage
+- [x] Update leadMagnets database with thumbnail URLs
+
+### Phase 2: Email Nurture Sequence
+
+- [x] Create email template for Day 1: Resource delivery confirmation
+- [x] Create email template for Day 3: Related insights and case study
+- [x] Create email template for Day 7: Demo invitation with urgency
+- [x] Build resourceNurtureService for automated email scheduling
+- [x] Add database tracking fields for nurture sequence progress
+- [x] Create manual run script for testing
+- [x] Write comprehensive tests for nurture logic
+
+### Phase 3: Dedicated Landing Pages
+
+- [x] Create landing page for Compliance Paradox guide
+- [x] Create landing page for Staffing Optimization guide
+- [x] Create landing page for Financial Optimization guide
+- [x] Create landing page for Medication Management guide
+- [x] Create landing page for Person-Centered Care guide
+- [x] Add SEO metadata and structured data to all pages
+- [x] Implement social proof and testimonials
+- [x] Add related resources recommendations
+- [x] Update routes and navigation

@@ -20,6 +20,13 @@ import BlogArticle from "./pages/BlogArticle";
 import AdminCalculatorLeads from "./pages/AdminCalculatorLeads";
 import Resources from "./pages/Resources";
 import AdminResources from "./pages/AdminResources";
+import {
+  ComplianceParadoxLanding,
+  StaffingOptimizationLanding,
+  FinancialOptimizationLanding,
+  MedicationManagementLanding,
+  PersonCenteredCareLanding,
+} from "./pages/resources";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -40,6 +47,26 @@ function Router() {
       <Route path={"/solutions/group-homes"} component={GroupHomes} />
       <Route path={"/solutions/icf-id"} component={IcfId} />
       <Route path={"/resources"} component={Resources} />
+      <Route
+        path="/resources/compliance-paradox"
+        component={ComplianceParadoxLanding}
+      />
+      <Route
+        path="/resources/staffing-optimization"
+        component={StaffingOptimizationLanding}
+      />
+      <Route
+        path="/resources/financial-optimization"
+        component={FinancialOptimizationLanding}
+      />
+      <Route
+        path="/resources/medication-management"
+        component={MedicationManagementLanding}
+      />
+      <Route
+        path="/resources/active-treatment-trap"
+        component={PersonCenteredCareLanding}
+      />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

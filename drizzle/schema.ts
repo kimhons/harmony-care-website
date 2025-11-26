@@ -1,4 +1,11 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar } from "drizzle-orm/mysql-core";
+import {
+  int,
+  mysqlEnum,
+  mysqlTable,
+  text,
+  timestamp,
+  varchar,
+} from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -41,20 +48,22 @@ export const signups = mysqlTable("signups", {
   interestedFeatures: text("interestedFeatures"), // JSON array of selected features
   additionalNeeds: text("additionalNeeds"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
-  
+
   // Email campaign tracking
   emailsSent: text("emailsSent"), // JSON array of sent email types and timestamps
   lastEmailSent: timestamp("lastEmailSent"),
   emailOptOut: int("emailOptOut").default(0).notNull(), // 0 = opted in, 1 = opted out
-  campaignStatus: varchar("campaignStatus", { length: 50 }).default("active").notNull(), // active, paused, completed
-  
+  campaignStatus: varchar("campaignStatus", { length: 50 })
+    .default("active")
+    .notNull(), // active, paused, completed
+
   // UTM tracking for marketing attribution
   utmSource: varchar("utmSource", { length: 100 }), // e.g., google, facebook, newsletter
   utmMedium: varchar("utmMedium", { length: 100 }), // e.g., cpc, email, social
   utmCampaign: varchar("utmCampaign", { length: 100 }), // e.g., founding_member_launch
   utmTerm: varchar("utmTerm", { length: 100 }), // e.g., care+management+software
   utmContent: varchar("utmContent", { length: 100 }), // e.g., hero_cta, pricing_button
-  
+
   // Referral tracking
   referralCode: varchar("referralCode", { length: 20 }), // Referral code used during signup
   ownReferralCode: varchar("ownReferralCode", { length: 20 }).unique(), // Unique code for this user to share
@@ -71,7 +80,9 @@ export const referrals = mysqlTable("referrals", {
   referrerSignupId: int("referrerSignupId").notNull(), // ID of the person who referred
   referredSignupId: int("referredSignupId").notNull(), // ID of the person who was referred
   referralCode: varchar("referralCode", { length: 20 }).notNull(), // Code that was used
-  rewardStatus: varchar("rewardStatus", { length: 50 }).default("pending").notNull(), // pending, applied, claimed
+  rewardStatus: varchar("rewardStatus", { length: 50 })
+    .default("pending")
+    .notNull(), // pending, applied, claimed
   rewardType: varchar("rewardType", { length: 50 }), // discount, credit, upgrade
   rewardValue: varchar("rewardValue", { length: 100 }), // e.g., "10%", "$50", "free_month"
   createdAt: timestamp("createdAt").defaultNow().notNull(),
@@ -97,7 +108,8 @@ export const milestoneNotifications = mysqlTable("milestoneNotifications", {
 });
 
 export type MilestoneNotification = typeof milestoneNotifications.$inferSelect;
-export type InsertMilestoneNotification = typeof milestoneNotifications.$inferInsert;
+export type InsertMilestoneNotification =
+  typeof milestoneNotifications.$inferInsert;
 
 /**
  * Calculator leads table for ROI calculator submissions
@@ -109,40 +121,40 @@ export const calculatorLeads = mysqlTable("calculatorLeads", {
   facilityName: varchar("facilityName", { length: 200 }),
   facilityType: varchar("facilityType", { length: 50 }).notNull(), // "group_home" or "icf_id"
   residentCount: int("residentCount").notNull(),
-  
+
   // Calculated savings data
   annualSavings: int("annualSavings").notNull(),
   overtimeSavings: int("overtimeSavings").notNull(),
   errorSavings: int("errorSavings").notNull(),
   complianceSavings: int("complianceSavings").notNull(),
   retentionSavings: int("retentionSavings").notNull(),
-  
+
   // Lead source tracking
   source: varchar("source", { length: 50 }).default("calculator").notNull(), // "calculator" or "exit_intent"
-  
+
   // UTM parameters
   utmSource: varchar("utmSource", { length: 100 }),
   utmMedium: varchar("utmMedium", { length: 100 }),
   utmCampaign: varchar("utmCampaign", { length: 100 }),
   utmTerm: varchar("utmTerm", { length: 100 }),
   utmContent: varchar("utmContent", { length: 100 }),
-  
+
   // Email status
   emailSent: int("emailSent").default(0).notNull(), // 0 = not sent, 1 = sent
   emailSentAt: timestamp("emailSentAt"),
-  
+
   // Email nurture sequence tracking
   nurtureSequence: text("nurtureSequence"), // JSON array of sent emails: [{type: 'day1', sentAt: timestamp}, ...]
   lastNurtureEmail: varchar("lastNurtureEmail", { length: 50 }), // 'day1', 'day3', 'day7'
   lastNurtureEmailSentAt: timestamp("lastNurtureEmailSentAt"),
   nurtureCompleted: int("nurtureCompleted").default(0).notNull(), // 0 = in progress, 1 = completed
-  
+
   // Lead scoring
   leadScore: int("leadScore").default(0).notNull(), // 0-100 score based on facility size, savings, engagement
   leadTier: varchar("leadTier", { length: 20 }).default("cold").notNull(), // 'hot', 'warm', 'cold'
   engagementScore: int("engagementScore").default(0).notNull(), // Email opens, clicks, demo requests
   lastEngagementAt: timestamp("lastEngagementAt"),
-  
+
   // Metadata
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
@@ -178,7 +190,7 @@ export type InsertLeadMagnet = typeof leadMagnets.$inferInsert;
 export const leadMagnetDownloads = mysqlTable("leadMagnetDownloads", {
   id: int("id").autoincrement().primaryKey(),
   leadMagnetId: int("leadMagnetId").notNull(),
-  
+
   // Lead information captured at download
   email: varchar("email", { length: 320 }).notNull(),
   name: varchar("name", { length: 200 }),
@@ -187,19 +199,25 @@ export const leadMagnetDownloads = mysqlTable("leadMagnetDownloads", {
   residentCount: int("residentCount"),
   jobTitle: varchar("jobTitle", { length: 100 }),
   phoneNumber: varchar("phoneNumber", { length: 20 }),
-  
+
   // Link to calculator lead if exists
   calculatorLeadId: int("calculatorLeadId"),
-  
+
   // UTM parameters
   utmSource: varchar("utmSource", { length: 100 }),
   utmMedium: varchar("utmMedium", { length: 100 }),
   utmCampaign: varchar("utmCampaign", { length: 100 }),
-  
+
   // Metadata
   ipAddress: varchar("ipAddress", { length: 45 }),
   userAgent: text("userAgent"),
   downloadedAt: timestamp("downloadedAt").defaultNow().notNull(),
+
+  // Email nurture sequence tracking
+  nurtureSequence: text("nurtureSequence"), // JSON array of sent emails with timestamps
+  lastNurtureEmail: varchar("lastNurtureEmail", { length: 50 }), // day1, day3, day7
+  lastNurtureEmailSentAt: timestamp("lastNurtureEmailSentAt"),
+  nurtureCompleted: int("nurtureCompleted").default(0).notNull(), // 0 = in progress, 1 = completed
 });
 
 export type LeadMagnetDownload = typeof leadMagnetDownloads.$inferSelect;
