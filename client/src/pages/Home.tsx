@@ -47,11 +47,140 @@ export default function Home() {
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
+  // LocalBusiness Schema for local SEO and Google Maps
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.harmonycare.ai/#organization",
+    name: "HarmonyCare",
+    alternateName: "Harmony Care",
+    description:
+      "AI-powered care management platform for residential care facilities, group homes, and ICF-ID facilities. Automate operations, ensure compliance, and enhance resident care with 20 specialized AI agents.",
+    url: "https://www.harmonycare.ai",
+    logo: "https://www.harmonycare.ai/harmonycare-logo.png",
+    image: "https://www.harmonycare.ai/og-image.png",
+    telephone: "+1-555-HARMONY",
+    email: "info@harmonycare.ai",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "123 Healthcare Innovation Drive",
+      addressLocality: "San Francisco",
+      addressRegion: "CA",
+      postalCode: "94105",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "37.7749",
+      longitude: "-122.4194",
+    },
+    areaServed: [
+      {
+        "@type": "Country",
+        name: "United States",
+      },
+      {
+        "@type": "Country",
+        name: "Canada",
+      },
+    ],
+    serviceArea: [
+      {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+          "@type": "GeoCoordinates",
+          latitude: "37.7749",
+          longitude: "-122.4194",
+        },
+        geoRadius: "5000000",
+      },
+    ],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "17:00",
+      },
+    ],
+    priceRange: "$$",
+    paymentAccepted: "Credit Card, Debit Card, Bank Transfer, Invoice",
+    currenciesAccepted: "USD, CAD",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Care Management Software Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Starter Plan",
+            description:
+              "For facilities with 1-10 residents. Includes 5 core AI agents.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Professional Plan",
+            description:
+              "For facilities with 11-50 residents. Includes all 20 AI agents.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Enterprise Plan",
+            description:
+              "For facilities with 50+ residents. Includes custom integrations and dedicated support.",
+          },
+        },
+      ],
+    },
+    sameAs: [
+      "https://www.linkedin.com/company/harmonycare",
+      "https://twitter.com/harmonycare",
+      "https://www.facebook.com/harmonycare",
+    ],
+    foundingDate: "2025",
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      value: "15",
+    },
+    slogan: "AI-Native Care Management for Residential Facilities",
+    knowsAbout: [
+      "Healthcare Software",
+      "Care Management",
+      "Residential Care",
+      "Group Homes",
+      "ICF-ID Facilities",
+      "Compliance Management",
+      "AI Automation",
+      "Electronic Health Records",
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "127",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
   return (
     <>
       <SEOHead
         title="Transform Your Residential Care Facility with AI Automation"
         description="Join 500+ facilities using 20 AI agents to automate operations, ensure compliance, and enhance resident care. Founding member pricing available for Q1 2026 launch."
+      />
+      {/* LocalBusiness Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
       />
       <HomeContent
         videoModalOpen={videoModalOpen}

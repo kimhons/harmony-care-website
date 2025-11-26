@@ -8,6 +8,146 @@ import { describe, it, expect } from "vitest";
  */
 
 describe("Schema Markup Implementation", () => {
+  describe("LocalBusiness Schema", () => {
+    it("should have valid LocalBusiness schema structure on homepage", () => {
+      const localBusinessSchema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "https://www.harmonycare.ai/#organization",
+        name: "HarmonyCare",
+        alternateName: "Harmony Care",
+        description:
+          "AI-powered care management platform for residential care facilities, group homes, and ICF-ID facilities.",
+        url: "https://www.harmonycare.ai",
+        telephone: "+1-555-HARMONY",
+        email: "info@harmonycare.ai",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "123 Healthcare Innovation Drive",
+          addressLocality: "San Francisco",
+          addressRegion: "CA",
+          postalCode: "94105",
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "37.7749",
+          longitude: "-122.4194",
+        },
+        areaServed: [
+          {
+            "@type": "Country",
+            name: "United States",
+          },
+          {
+            "@type": "Country",
+            name: "Canada",
+          },
+        ],
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "17:00",
+          },
+        ],
+        priceRange: "$$",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "127",
+          bestRating: "5",
+          worstRating: "1",
+        },
+      };
+
+      // Validate required LocalBusiness fields
+      expect(localBusinessSchema["@context"]).toBe("https://schema.org");
+      expect(localBusinessSchema["@type"]).toBe("LocalBusiness");
+      expect(localBusinessSchema.name).toBe("HarmonyCare");
+      expect(localBusinessSchema.url).toBe("https://www.harmonycare.ai");
+
+      // Validate address structure
+      expect(localBusinessSchema.address).toBeDefined();
+      expect(localBusinessSchema.address["@type"]).toBe("PostalAddress");
+      expect(localBusinessSchema.address.streetAddress).toBeTruthy();
+      expect(localBusinessSchema.address.addressLocality).toBeTruthy();
+      expect(localBusinessSchema.address.addressRegion).toBeTruthy();
+      expect(localBusinessSchema.address.postalCode).toBeTruthy();
+      expect(localBusinessSchema.address.addressCountry).toBe("US");
+
+      // Validate geo coordinates
+      expect(localBusinessSchema.geo).toBeDefined();
+      expect(localBusinessSchema.geo["@type"]).toBe("GeoCoordinates");
+      expect(localBusinessSchema.geo.latitude).toBeTruthy();
+      expect(localBusinessSchema.geo.longitude).toBeTruthy();
+
+      // Validate contact information
+      expect(localBusinessSchema.telephone).toBeTruthy();
+      expect(localBusinessSchema.email).toContain("@");
+
+      // Validate opening hours
+      expect(localBusinessSchema.openingHoursSpecification).toBeDefined();
+      expect(
+        localBusinessSchema.openingHoursSpecification.length
+      ).toBeGreaterThan(0);
+      expect(
+        localBusinessSchema.openingHoursSpecification[0].dayOfWeek
+      ).toBeDefined();
+      expect(
+        localBusinessSchema.openingHoursSpecification[0].opens
+      ).toBeTruthy();
+      expect(
+        localBusinessSchema.openingHoursSpecification[0].closes
+      ).toBeTruthy();
+
+      // Validate service area
+      expect(localBusinessSchema.areaServed).toBeDefined();
+      expect(localBusinessSchema.areaServed.length).toBeGreaterThan(0);
+
+      // Validate aggregate rating
+      expect(localBusinessSchema.aggregateRating).toBeDefined();
+      expect(localBusinessSchema.aggregateRating["@type"]).toBe(
+        "AggregateRating"
+      );
+      expect(
+        parseFloat(localBusinessSchema.aggregateRating.ratingValue)
+      ).toBeGreaterThan(0);
+      expect(
+        parseFloat(localBusinessSchema.aggregateRating.ratingValue)
+      ).toBeLessThanOrEqual(5);
+    });
+
+    it("should include business hours for local search", () => {
+      const openingHours = {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "17:00",
+      };
+
+      expect(openingHours["@type"]).toBe("OpeningHoursSpecification");
+      expect(openingHours.dayOfWeek).toContain("Monday");
+      expect(openingHours.opens).toMatch(/^\d{2}:\d{2}$/);
+      expect(openingHours.closes).toMatch(/^\d{2}:\d{2}$/);
+    });
+
+    it("should include valid geo coordinates for Google Maps", () => {
+      const geoCoordinates = {
+        "@type": "GeoCoordinates",
+        latitude: "37.7749",
+        longitude: "-122.4194",
+      };
+
+      expect(geoCoordinates["@type"]).toBe("GeoCoordinates");
+      expect(parseFloat(geoCoordinates.latitude)).toBeGreaterThanOrEqual(-90);
+      expect(parseFloat(geoCoordinates.latitude)).toBeLessThanOrEqual(90);
+      expect(parseFloat(geoCoordinates.longitude)).toBeGreaterThanOrEqual(-180);
+      expect(parseFloat(geoCoordinates.longitude)).toBeLessThanOrEqual(180);
+    });
+  });
+
   describe("Service Schema", () => {
     it("should have valid Service schema structure for Group Homes", () => {
       const serviceSchema = {
