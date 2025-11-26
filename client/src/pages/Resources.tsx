@@ -19,11 +19,18 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Download, FileText, CheckSquare, BookOpen, Loader2 } from "lucide-react";
+import { SEOHead } from "@/components/SEOHead";
+import {
+  Download,
+  FileText,
+  CheckSquare,
+  BookOpen,
+  Loader2,
+} from "lucide-react";
 
 /**
  * Resources Page - Lead Magnet Library
- * 
+ *
  * Displays downloadable resources with gated access.
  * Captures lead information and tracks downloads for engagement scoring.
  */
@@ -39,6 +46,18 @@ interface DownloadFormData {
 }
 
 export default function Resources() {
+  return (
+    <>
+      <SEOHead
+        title="Free Resources - ROI Guides, Compliance Checklists & Care Playbooks"
+        description="Download free resources for residential care facilities: ROI calculators, compliance checklists, staffing optimization guides, and care management playbooks. Expert insights to transform your facility operations."
+      />
+      <ResourcesContent />
+    </>
+  );
+}
+
+function ResourcesContent() {
   const [selectedMagnet, setSelectedMagnet] = useState<number | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
@@ -62,7 +81,7 @@ export default function Resources() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!selectedMagnet) return;
 
     setIsDownloading(true);
@@ -74,7 +93,9 @@ export default function Resources() {
         name: formData.name || undefined,
         facilityName: formData.facilityName || undefined,
         facilityType: formData.facilityType || undefined,
-        residentCount: formData.residentCount ? parseInt(formData.residentCount) : undefined,
+        residentCount: formData.residentCount
+          ? parseInt(formData.residentCount)
+          : undefined,
         jobTitle: formData.jobTitle || undefined,
         phoneNumber: formData.phoneNumber || undefined,
       });
@@ -127,7 +148,9 @@ export default function Resources() {
     };
 
     return (
-      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${colors[category] || "bg-gray-100 text-gray-800"}`}>
+      <span
+        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${colors[category] || "bg-gray-100 text-gray-800"}`}
+      >
         {category.charAt(0).toUpperCase() + category.slice(1)}
       </span>
     );
@@ -143,8 +166,8 @@ export default function Resources() {
               Free Resources for Care Facilities
             </h1>
             <p className="text-lg md:text-xl opacity-90">
-              Download expert guides, checklists, and tools to optimize your facility's
-              medication management, compliance, and operations.
+              Download expert guides, checklists, and tools to optimize your
+              facility's medication management, compliance, and operations.
             </p>
           </div>
         </div>
@@ -158,8 +181,11 @@ export default function Resources() {
           </div>
         ) : magnets && magnets.length > 0 ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {magnets.map((magnet) => (
-              <Card key={magnet.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+            {magnets.map(magnet => (
+              <Card
+                key={magnet.id}
+                className="overflow-hidden hover:shadow-lg transition-shadow"
+              >
                 {/* Thumbnail */}
                 {magnet.thumbnailUrl && (
                   <div className="h-48 overflow-hidden bg-muted">
@@ -174,23 +200,27 @@ export default function Resources() {
                 {/* Content */}
                 <div className="p-6 space-y-4">
                   <div className="flex items-start justify-between gap-3">
-                    <div className="flex-shrink-0">
-                      {getIcon(magnet.type)}
-                    </div>
+                    <div className="flex-shrink-0">{getIcon(magnet.type)}</div>
                     <div className="flex-1">
                       {getCategoryBadge(magnet.category)}
                     </div>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">{magnet.title}</h3>
+                    <h3 className="text-xl font-semibold mb-2">
+                      {magnet.title}
+                    </h3>
                     <p className="text-sm text-muted-foreground line-clamp-3">
                       {magnet.description}
                     </p>
                   </div>
 
                   <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>{magnet.fileSize ? `${Math.round(magnet.fileSize / 1024)} MB` : "PDF"}</span>
+                    <span>
+                      {magnet.fileSize
+                        ? `${Math.round(magnet.fileSize / 1024)} MB`
+                        : "PDF"}
+                    </span>
                     <span>{magnet.downloadCount} downloads</span>
                   </div>
 
@@ -207,7 +237,9 @@ export default function Resources() {
           </div>
         ) : (
           <div className="text-center py-20">
-            <p className="text-muted-foreground">No resources available at the moment.</p>
+            <p className="text-muted-foreground">
+              No resources available at the moment.
+            </p>
           </div>
         )}
       </div>
@@ -233,7 +265,9 @@ export default function Resources() {
                 type="email"
                 required
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 placeholder="you@facility.com"
               />
             </div>
@@ -243,7 +277,9 @@ export default function Resources() {
               <Input
                 id="name"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 placeholder="John Smith"
               />
             </div>
@@ -253,7 +289,9 @@ export default function Resources() {
               <Input
                 id="facilityName"
                 value={formData.facilityName}
-                onChange={(e) => setFormData({ ...formData, facilityName: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, facilityName: e.target.value })
+                }
                 placeholder="Sunrise Care Home"
               />
             </div>
@@ -263,7 +301,9 @@ export default function Resources() {
                 <Label htmlFor="facilityType">Facility Type</Label>
                 <Select
                   value={formData.facilityType}
-                  onValueChange={(value) => setFormData({ ...formData, facilityType: value })}
+                  onValueChange={value =>
+                    setFormData({ ...formData, facilityType: value })
+                  }
                 >
                   <SelectTrigger id="facilityType">
                     <SelectValue placeholder="Select type" />
@@ -271,7 +311,9 @@ export default function Resources() {
                   <SelectContent>
                     <SelectItem value="group_home">Group Home</SelectItem>
                     <SelectItem value="icf_id">ICF-ID</SelectItem>
-                    <SelectItem value="assisted_living">Assisted Living</SelectItem>
+                    <SelectItem value="assisted_living">
+                      Assisted Living
+                    </SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
@@ -283,7 +325,9 @@ export default function Resources() {
                   id="residentCount"
                   type="number"
                   value={formData.residentCount}
-                  onChange={(e) => setFormData({ ...formData, residentCount: e.target.value })}
+                  onChange={e =>
+                    setFormData({ ...formData, residentCount: e.target.value })
+                  }
                   placeholder="6"
                 />
               </div>
@@ -294,7 +338,9 @@ export default function Resources() {
               <Input
                 id="jobTitle"
                 value={formData.jobTitle}
-                onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, jobTitle: e.target.value })
+                }
                 placeholder="Administrator"
               />
             </div>
@@ -305,7 +351,9 @@ export default function Resources() {
                 id="phoneNumber"
                 type="tel"
                 value={formData.phoneNumber}
-                onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+                onChange={e =>
+                  setFormData({ ...formData, phoneNumber: e.target.value })
+                }
                 placeholder="(555) 123-4567"
               />
             </div>
