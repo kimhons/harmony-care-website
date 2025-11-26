@@ -405,21 +405,27 @@ function HomeContent({
 
             {/* Headline */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 animate-fade-in-up text-foreground">
-              Transform Your
+              Stop Drowning in Paperwork.
               <br />
               <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Resident Care Facility
+                Start Delivering Care.
               </span>
             </h1>
-
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-in-up delay-100">
-              Join the founding members securing exclusive early access to
-              Harmony - the first AI-native platform that transforms every
-              aspect of care management. With 20+ autonomous agents working 24/7
-              across admissions, clinical care, compliance, billing, and
-              operations, we're not just reducing paperwork by 70% - we're
-              reimagining what's possible when caregivers can focus entirely on
-              residents. <strong>Launching Q1 2026.</strong>
+              <strong className="text-foreground">
+                53% staff turnover. -17% operating margins. 60% of time lost to
+                documentation.
+              </strong>
+              <br />
+              Your facility is hemorrhaging money while staff burn out and
+              residents wait for care.
+              <br />
+              <span className="text-foreground font-semibold">
+                20 AI agents eliminate the chaos
+              </span>{" "}
+              - automating compliance, medication management, staffing, billing,
+              and operations so your team can focus on what matters: resident
+              care.
             </p>
 
             {/* Hero Image */}
@@ -498,17 +504,23 @@ function HomeContent({
       <section className="py-24 bg-card">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Caregivers Shouldn't Spend
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Your Facility is in
               <br />
               <span className="text-destructive">
-                60% of Their Time on Paperwork
+                Survival Mode. Not Care Mode.
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12">
-              While you're drowning in documentation, compliance violations, and
-              staffing crises, your residents need care—not administrators
-              buried in forms.
+              <strong className="text-foreground">
+                579 nursing homes closed since the pandemic.
+              </strong>{" "}
+              45% cannot sustain losses beyond 1 year. While you are drowning in
+              documentation, compliance violations, and staffing crises,
+              <strong className="text-foreground">
+                your residents are waiting
+              </strong>{" "}
+              - not for better care, but for any care at all.
             </p>
 
             {/* Before/After Image */}
@@ -523,26 +535,26 @@ function HomeContent({
             <div className="grid md:grid-cols-3 gap-8 mt-16">
               <div className="p-6 rounded-xl bg-background border border-border hover:shadow-lg transition-shadow">
                 <div className="text-4xl font-bold text-destructive mb-2">
-                  <AnimatedCounter end={60} suffix="%" />
+                  <AnimatedCounter end={53} suffix="%" />
                 </div>
                 <p className="text-muted-foreground">
-                  Time spent on paperwork instead of caring
+                  Annual staff turnover - double hospital rates
                 </p>
               </div>
               <div className="p-6 rounded-xl bg-background border border-border hover:shadow-lg transition-shadow">
                 <div className="text-4xl font-bold text-destructive mb-2">
-                  $<AnimatedCounter end={50} suffix="K+" />
+                  -<AnimatedCounter end={17} suffix="%" />
                 </div>
                 <p className="text-muted-foreground">
-                  Lost annually to compliance violations
+                  Average operating margin across sector
                 </p>
               </div>
               <div className="p-6 rounded-xl bg-background border border-border hover:shadow-lg transition-shadow">
                 <div className="text-4xl font-bold text-destructive mb-2">
-                  <AnimatedCounter end={50} suffix="%+" />
+                  <AnimatedCounter end={27} suffix="%" />
                 </div>
                 <p className="text-muted-foreground">
-                  Staff turnover from burnout
+                  Residents experience medication errors
                 </p>
               </div>
             </div>
@@ -561,15 +573,16 @@ function HomeContent({
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              20 AI Agents Working
+              20 AI Agents Solving
               <br />
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                24/7 For Your Facility
+                Your 100 Biggest Problems
               </span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Autonomous AI agents that observe, reason, act, and
-              learn—transforming every aspect of care management.
+              From catastrophic staff turnover to medication errors to
+              compliance nightmares - autonomous AI agents that eliminate the
+              chaos keeping you from delivering care.
             </p>
           </div>
 
@@ -619,13 +632,16 @@ function HomeContent({
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Everything You Need,
+                Every Crisis. Every Violation.
                 <br />
-                <span className="text-primary">Nothing You Don't</span>
+                <span className="text-primary">
+                  Every Fire You Fight Daily.
+                </span>
               </h2>
               <p className="text-xl text-muted-foreground">
-                200+ features across 20 categories, all designed for residential
-                care.
+                200+ features targeting the exact pain points killing your
+                facility - staffing shortages, medication errors, compliance
+                violations, billing chaos, and operational nightmares.
               </p>
             </div>
 
@@ -885,11 +901,11 @@ function HomeContent({
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Transform
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+              Stop Hemorrhaging Money.
               <br />
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Your Facility?
+                Start Saving Lives.
               </span>
             </h2>
             <p className="text-xl text-muted-foreground mb-12">
