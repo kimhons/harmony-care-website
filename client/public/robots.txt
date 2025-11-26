@@ -1,0 +1,15 @@
+# robots.txt for www.harmonycare.ai
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.harmonycare.ai/sitemap.xml
+
+# Disallow admin and API routes
+Disallow: /admin
+Disallow: /api/
+Disallow: /trpc/
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
