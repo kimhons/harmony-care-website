@@ -18,6 +18,7 @@ import { Streamdown } from "streamdown";
 import { toast } from "sonner";
 import { SEOHead } from "@/components/SEOHead";
 import { ArticleSchema } from "@/components/ArticleSchema";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 export default function BlogArticle() {
   const [, params] = useRoute("/blog/:slug");
@@ -342,6 +343,13 @@ export default function BlogArticle() {
             )}
           </div>
         </article>
+
+        {/* Newsletter Signup */}
+        <section className="py-16 bg-background">
+          <div className="container max-w-4xl">
+            <NewsletterSignup source={`blog-${article.slug}`} />
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="py-16 bg-accent/10">

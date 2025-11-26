@@ -1057,3 +1057,10 @@
 - [x] Implement internal linking between blog articles
 - [x] Add contextual links from blog posts to product pages
 - [x] Test all internal links and sitemap generation
+
+## Newsletter Signup Form
+
+- [x] Create NewsletterSignup component for blog articles
+- [x] Integrate newsletter form into BlogArticle footer
+- [x] Add email validation and submission handling
+- [x] Test newsletter signup functionality
