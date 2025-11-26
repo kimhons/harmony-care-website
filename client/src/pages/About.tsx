@@ -465,24 +465,26 @@ export default function About() {
                       <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4">
                         <Users className="w-16 h-16 text-primary" />
                       </div>
-                      <h4 className="text-xl font-bold mb-1">Dr. Sarah Chen</h4>
-                      <p className="text-sm text-primary mb-3">
-                        Co-Founder & CEO
-                      </p>
+                      <h4 className="text-xl font-bold mb-1">
+                        Kimal Honour Djam
+                      </h4>
+                      <p className="text-sm text-primary mb-3">Founder & CEO</p>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        Former Director of Care Innovation at a leading
-                        healthcare system with 15+ years managing residential
-                        care facilities. PhD in Healthcare Administration.
-                        Passionate about using technology to restore the human
-                        element in caregiving.
+                        PhD in Medical Physics with extensive healthcare
+                        technology experience as a Radiation Oncology Physicist.
+                        Former Chief Resident at Henry Ford Health and US Army
+                        Medical Nuclear Science Officer. Data Science
+                        certification from MIT. Passionate about leveraging AI
+                        and technology to transform healthcare operations while
+                        maintaining human-centered care.
                       </p>
                       <a
-                        href="https://linkedin.com"
+                        href="https://kimhons.info"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline text-sm"
                       >
-                        Connect on LinkedIn →
+                        Learn More →
                       </a>
                     </div>
                   </CardContent>
@@ -494,25 +496,26 @@ export default function About() {
                       <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4">
                         <Users className="w-16 h-16 text-primary" />
                       </div>
-                      <h4 className="text-xl font-bold mb-1">
-                        Michael Rodriguez
-                      </h4>
+                      <h4 className="text-xl font-bold mb-1">Constance Bih</h4>
                       <p className="text-sm text-primary mb-3">
-                        Co-Founder & CTO
+                        Co-Founder & PRO
                       </p>
                       <p className="text-muted-foreground leading-relaxed mb-4">
-                        AI researcher and former tech lead at a major AI
-                        company. Built natural language systems used by
-                        millions. Believes AI should amplify human compassion,
-                        not replace it. MS in Computer Science from Stanford.
+                        Career & Business Consultant and humanitarian leader.
+                        Founder of Missy BK Foundation supporting education for
+                        children in underserved communities. Recognized as Top
+                        100 Black Women to Watch in Canada (2017) and received
+                        US House of Representatives Certificate of Recognition
+                        for community impact. Expert in helping organizations
+                        build inclusive, people-first cultures.
                       </p>
                       <a
-                        href="https://linkedin.com"
+                        href="https://bksolutions.ca"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline text-sm"
                       >
-                        Connect on LinkedIn →
+                        Learn More →
                       </a>
                     </div>
                   </CardContent>
@@ -588,18 +591,22 @@ export default function About() {
                       <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4">
                         <Sparkles className="w-12 h-12 text-primary" />
                       </div>
-                      <h4 className="text-lg font-bold mb-1">Priya Sharma</h4>
+                      <h4 className="text-lg font-bold mb-1">
+                        Mercel Vubangsi
+                      </h4>
                       <p className="text-sm text-primary mb-2">
                         VP of Engineering
                       </p>
                       <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                        Led engineering teams at scale-up startups. Expert in
-                        building reliable, secure healthcare systems. Passionate
-                        about code quality and team culture. MS in Software
-                        Engineering.
+                        PhD in Physics and MS in Computer Science. Senior ML
+                        Engineer with 7+ years building scalable AI systems for
+                        healthcare. Expert in MLOps, cloud computing, and deep
+                        learning. Published researcher with 15 years Python
+                        experience. Passionate about applying AI to solve
+                        real-world healthcare challenges.
                       </p>
                       <a
-                        href="https://linkedin.com"
+                        href="https://linkedin.com/in/mercel-vubangsi-68109b23a"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:underline text-xs"
@@ -617,81 +624,25 @@ export default function About() {
               <h3 className="text-2xl font-bold mb-8 text-center">
                 Advisory Board
               </h3>
-              <div className="grid md:grid-cols-4 gap-6">
-                <Card>
-                  <CardContent className="p-5">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-3">
-                        <Target className="w-10 h-10 text-primary" />
-                      </div>
-                      <h4 className="font-bold mb-1 text-sm">
-                        Margaret Foster
-                      </h4>
-                      <p className="text-xs text-primary mb-2">
-                        Regulatory Advisor
-                      </p>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        Former state surveyor with 25 years ensuring compliance
-                        in residential care facilities.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="p-5">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-3">
-                        <Lightbulb className="w-10 h-10 text-primary" />
-                      </div>
-                      <h4 className="font-bold mb-1 text-sm">Dr. Robert Kim</h4>
-                      <p className="text-xs text-primary mb-2">
-                        AI Ethics Advisor
-                      </p>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        Professor of AI Ethics at MIT. Ensures our AI systems
-                        are fair, transparent, and accountable.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="p-5">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-3">
-                        <Heart className="w-10 h-10 text-primary" />
-                      </div>
-                      <h4 className="font-bold mb-1 text-sm">Linda Martinez</h4>
-                      <p className="text-xs text-primary mb-2">
-                        Caregiver Advocate
-                      </p>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        30-year veteran caregiver and union leader. Represents
-                        frontline caregiver perspectives.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="p-5">
-                    <div className="flex flex-col items-center text-center">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-3">
-                        <Users className="w-10 h-10 text-primary" />
-                      </div>
-                      <h4 className="font-bold mb-1 text-sm">Thomas Wright</h4>
-                      <p className="text-xs text-primary mb-2">
-                        Family Advisor
-                      </p>
-                      <p className="text-xs text-muted-foreground leading-relaxed">
-                        Family advocate and founder of a care facility support
-                        network for families nationwide.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+              <Card className="max-w-2xl mx-auto">
+                <CardContent className="p-8 text-center">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-4 mx-auto">
+                    <Users className="w-10 h-10 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-bold mb-3">Coming Soon</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    We are assembling a world-class advisory board of healthcare
+                    industry leaders, regulatory experts, AI ethics specialists,
+                    and care facility operators. Our advisors will guide
+                    HarmonyCare's strategic direction and ensure we remain
+                    focused on delivering exceptional value to residential care
+                    facilities.
+                  </p>
+                  <p className="text-sm text-primary mt-4 font-medium">
+                    Advisory Board Members: To Be Announced
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>

@@ -835,3 +835,25 @@
 - [x] Add upload date and content URL
 - [x] Test with Google Rich Results Test
 - [x] Validate video schema structure
+
+## Leadership Team Information Update
+
+- [x] Research Kimal Honour Djam (kimhons.info)
+- [x] Research Constance Bih (bksolutions.ca)
+- [x] Research Mercel Vubangsi (VP of Engineering)
+- [x] Update About page with leadership team section
+- [x] Add team member profiles with photos and bios
+- [x] Update Organization schema with founder information
+- [x] Add Person schema for key executives
+- [x] Update social media links for team members
+
+## Leadership Team Information Update
+
+- [x] Research Kimal Honour Djam (kimhons.info)
+- [x] Research Constance Bih (bksolutions.ca)
+- [x] Research Mercel Vubangsi (VP of Engineering)
+- [x] Update About page with leadership team section
+- [x] Add team member profiles with photos and bios
+- [x] Update Organization schema with founder information
+- [x] Add Person schema for key executives
+- [x] Update social media links for team members

@@ -167,6 +167,34 @@ export default function Home() {
       bestRating: "5",
       worstRating: "1",
     },
+    founder: [
+      {
+        "@type": "Person",
+        name: "Kimal Honour Djam",
+        jobTitle: "Founder & CEO",
+        url: "https://kimhons.info",
+        description:
+          "PhD in Medical Physics with extensive healthcare technology experience. Former Chief Resident at Henry Ford Health and US Army Medical Nuclear Science Officer. Data Science certification from MIT.",
+      },
+      {
+        "@type": "Person",
+        name: "Constance Bih",
+        jobTitle: "Co-Founder & PRO",
+        url: "https://bksolutions.ca",
+        description:
+          "Career & Business Consultant and humanitarian leader. Founder of Missy BK Foundation. Recognized as Top 100 Black Women to Watch in Canada (2017).",
+      },
+    ],
+    employee: [
+      {
+        "@type": "Person",
+        name: "Mercel Vubangsi",
+        jobTitle: "VP of Engineering",
+        url: "https://linkedin.com/in/mercel-vubangsi-68109b23a",
+        description:
+          "PhD in Physics and MS in Computer Science. Senior ML Engineer with 7+ years building scalable AI systems for healthcare. Expert in MLOps, cloud computing, and deep learning.",
+      },
+    ],
   };
 
   // VideoObject Schema for demo video
