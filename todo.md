@@ -980,3 +980,20 @@
 - [x] Test analytics events in browser console
 - [x] Document analytics events for reporting
 - [x] Save checkpoint
+
+## Google Analytics 4 Property Setup
+
+- [ ] User creates GA4 property in Google Analytics
+- [ ] User provides GA4 measurement ID (G-XXXXXXXXXX)
+- [ ] Add GA4 tracking script to client/index.html
+- [ ] Configure VITE_GA4_MEASUREMENT_ID environment variable
+- [ ] Test GA4 integration in development
+- [ ] Verify events in GA4 Real-Time reports
+- [ ] Save checkpoint
+
+## Vercel Deployment
+
+- [x] Check current Vercel projects and deployments
+- [ ] Deploy latest version to Vercel production
+- [ ] Verify deployment success
+- [ ] Test production website
