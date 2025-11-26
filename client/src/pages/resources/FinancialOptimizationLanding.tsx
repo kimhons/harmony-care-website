@@ -12,6 +12,8 @@ export default function FinancialOptimizationLanding() {
   return (
     <ResourceLandingTemplate
       leadMagnetId={3}
+      exitIntentLeadMagnetId={8}
+      category="financial"
       title="Stop Chasing Reimbursement: A Guide to Cost-Cutting in Residential Care"
       subtitle="The contrarian approach to financial sustainability: reduce costs by $127K annually without chasing higher reimbursement rates or cutting care quality."
       badge="📘 Free Professional Guide"

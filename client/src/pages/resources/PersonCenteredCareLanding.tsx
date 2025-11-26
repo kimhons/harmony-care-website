@@ -12,6 +12,8 @@ export default function PersonCenteredCareLanding() {
   return (
     <ResourceLandingTemplate
       leadMagnetId={5}
+      exitIntentLeadMagnetId={10}
+      category="care"
       title="The Active Treatment Trap: Person-Centered Care in ICF-ID Facilities"
       subtitle="How to satisfy active treatment requirements while delivering truly person-centered care that achieves 94% family satisfaction."
       badge="📘 Free Professional Guide"

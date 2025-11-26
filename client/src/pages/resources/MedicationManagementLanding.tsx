@@ -12,6 +12,8 @@ export default function MedicationManagementLanding() {
   return (
     <ResourceLandingTemplate
       leadMagnetId={4}
+      exitIntentLeadMagnetId={9}
+      category="medication"
       title="Medication Management 2.0: AI-Powered Medication Safety Guide"
       subtitle="How residential care facilities are achieving zero medication errors using AI-powered safety protocols and automated verification systems."
       badge="📘 Free Professional Guide"

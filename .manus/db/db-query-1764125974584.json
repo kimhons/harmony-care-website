@@ -1,0 +1,35 @@
+{
+  "query": "SELECT id, title, category FROM leadMagnets WHERE type = 'checklist' ORDER BY category",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, category FROM leadMagnets WHERE type = 'checklist' ORDER BY category",
+  "rows": [
+    {
+      "id": "240010",
+      "title": "Person-Centered Care Quick Wins Checklist",
+      "category": "care"
+    },
+    {
+      "id": "240006",
+      "title": "Compliance Quick Wins Checklist",
+      "category": "compliance"
+    },
+    {
+      "id": "240008",
+      "title": "Financial Quick Wins Checklist",
+      "category": "financial"
+    },
+    {
+      "id": "240009",
+      "title": "Medication Safety Quick Wins Checklist",
+      "category": "medication"
+    },
+    {
+      "id": "240007",
+      "title": "Staffing Quick Wins Checklist",
+      "category": "staffing"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tcategory\n240010\tPerson-Centered Care Quick Wins Checklist\tcare\n240006\tCompliance Quick Wins Checklist\tcompliance\n240008\tFinancial Quick Wins Checklist\tfinancial\n240009\tMedication Safety Quick Wins Checklist\tmedication\n240007\tStaffing Quick Wins Checklist\tstaffing\n",
+  "stderr": "",
+  "execution_time_ms": 88
+}

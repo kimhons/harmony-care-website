@@ -924,3 +924,37 @@
 - [x] Implement social proof and testimonials
 - [x] Add related resources recommendations
 - [x] Update routes and navigation
+
+## Exit-Intent Popup Implementation
+
+### Phase 1: Exit-Intent Popup Component
+
+- [x] Create ExitIntentPopup component with professional design
+- [x] Implement exit-intent detection logic (mouse movement tracking)
+- [x] Add email capture form with validation
+- [x] Design responsive popup layout with brand colors
+- [x] Add close/dismiss functionality with cookie tracking
+
+### Phase 2: Quick Wins Lead Magnet Content
+
+- [x] Create "Compliance Quick Wins" checklist for compliance category
+- [x] Create "Staffing Quick Wins" checklist for staffing category
+- [x] Create "Financial Quick Wins" checklist for financial category
+- [x] Create "Medication Safety Quick Wins" checklist for medication category
+- [x] Create "Person-Centered Care Quick Wins" checklist for care category
+- [x] Store quick wins content in database as new lead magnet type
+
+### Phase 3: Integration
+
+- [x] Add exit-intent popup to ResourceLandingTemplate
+- [x] Implement cookie-based "already shown" tracking
+- [x] Connect popup form to lead magnet download endpoint
+- [x] Add analytics tracking for popup impressions and conversions
+- [x] Test popup on all 5 landing pages
+
+### Phase 4: Testing & Deployment
+
+- [x] Test exit-intent detection on desktop and mobile
+- [x] Verify email capture and lead magnet delivery
+- [x] Test cookie persistence (don't show again)
+- [x] Run all tests and save checkpoint

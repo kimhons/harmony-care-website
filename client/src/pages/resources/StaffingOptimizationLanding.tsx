@@ -12,6 +12,8 @@ export default function StaffingOptimizationLanding() {
   return (
     <ResourceLandingTemplate
       leadMagnetId={2}
+      exitIntentLeadMagnetId={7}
+      category="staffing"
       title="The Staffing Crisis Myth: Residential Care Staffing Solutions"
       subtitle="Why the staffing shortage isn't what you think—and how facilities are reducing overtime by 35% while improving care quality."
       badge="📘 Free Professional Guide"
