@@ -1,0 +1,220 @@
+{
+  "query": "SELECT id, title, description, category FROM leadMagnets WHERE title LIKE '%Test%' OR title LIKE '%Updated%' OR title LIKE '%Upload%'",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, description, category FROM leadMagnets WHERE title LIKE '%Test%' OR title LIKE '%Updated%' OR title LIKE '%Upload%'",
+  "rows": [
+    {
+      "id": "210002",
+      "title": "Updated Title",
+      "description": "This description was updated via admin UI",
+      "category": "staffing"
+    },
+    {
+      "id": "360001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "360002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "360003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "360004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "390001",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "390002",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "420001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "420002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "450001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "450002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "450003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "450004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "450005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "450006",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "450007",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "450008",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "480001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "480002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "480003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "480004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "480005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "480006",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "510001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "510002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "510003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "510004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "540001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "540002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "540003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "540004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "540005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "540006",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    },
+    {
+      "id": "540007",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations"
+    },
+    {
+      "id": "540008",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tdescription\tcategory\n210002\tUpdated Title\tThis description was updated via admin UI\tstaffing\n360001\tNew Test Resource\tTest description for new resource\toperations\n360002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n360003\tNew Test Resource\tTest description for new resource\toperations\n360004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n390001\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n390002\tNew Test Resource\tTest description for new resource\toperations\n420001\tNew Test Resource\tTest description for new resource\toperations\n420002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n450001\tNew Test Resource\tTest description for new resource\toperations\n450002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n450003\tNew Test Resource\tTest description for new resource\toperations\n450004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n450005\tNew Test Resource\tTest description for new resource\toperations\n450006\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n450007\tNew Test Resource\tTest description for new resource\toperations\n450008\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n480001\tNew Test Resource\tTest description for new resource\toperations\n480002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n480003\tNew Test Resource\tTest description for new resource\toperations\n480004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n480005\tNew Test Resource\tTest description for new resource\toperations\n480006\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n510001\tNew Test Resource\tTest description for new resource\toperations\n510002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n510003\tNew Test Resource\tTest description for new resource\toperations\n510004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n540001\tNew Test Resource\tTest description for new resource\toperations\n540002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n540003\tNew Test Resource\tTest description for new resource\toperations\n540004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n540005\tNew Test Resource\tTest description for new resource\toperations\n540006\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n540007\tNew Test Resource\tTest description for new resource\toperations\n540008\tTest Resource via Upload\tThis resource was created through the upload flow\troi\n",
+  "stderr": "",
+  "execution_time_ms": 62
+}

@@ -1091,3 +1091,12 @@
 - [x] Add email type breakdown (Welcome, Day 2, Day 5, Day 8, Day 12)
 - [x] Add lead tier engagement comparison
 - [x] Write tests for email engagement analytics
+
+## Website Polish and Cleanup
+
+- [x] Fix "Updated Title" resource to have proper title and description
+- [x] Remove or replace test resources ("Test Resource via Upload")
+- [x] Add thumbnails to all blog articles
+- [x] Verify all resource thumbnails are displaying correctly
+- [x] Final website review and polish
+- [ ] Deploy to Vercel

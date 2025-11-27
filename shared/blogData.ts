@@ -134,6 +134,7 @@ The question isn't whether AI will transform residential care—it's already hap
     ],
     publishedAt: "2024-03-15",
     readTime: 8,
+    featuredImage: "/blog-ai-care-technology.jpg",
   },
   {
     id: "2",
@@ -262,6 +263,7 @@ The facilities that embrace this transformation will attract and retain the best
     ],
     publishedAt: "2024-03-10",
     readTime: 7,
+    featuredImage: "/blog-caregiver-burnout.jpg",
   },
   {
     id: "3",
@@ -471,6 +473,7 @@ The key is remembering that technology serves people—not the other way around.
     tags: ["Implementation", "Change Management", "Training", "Best Practices"],
     publishedAt: "2024-03-05",
     readTime: 9,
+    featuredImage: "/blog-best-practices.jpg",
   },
   {
     id: "4",
@@ -699,6 +702,7 @@ Done right, HIPAA-compliant AI becomes a competitive advantage—demonstrating t
     tags: ["HIPAA", "Compliance", "Data Security", "Privacy", "Regulations"],
     publishedAt: "2024-02-28",
     readTime: 10,
+    featuredImage: "/blog-hipaa-compliance.jpg",
   },
   {
     id: "5",
@@ -962,6 +966,7 @@ The question isn't whether you can afford to implement AI. It's whether you can 
     tags: ["ROI", "Financial Analysis", "Cost Savings", "Business Case"],
     publishedAt: "2024-02-20",
     readTime: 11,
+    featuredImage: "/blog-roi-analytics.jpg",
   },
   {
     id: "6",

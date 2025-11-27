@@ -1,0 +1,406 @@
+{
+  "query": "SELECT id, title, description, category, thumbnailUrl, fileUrl, downloadCount FROM leadMagnets ORDER BY sortOrder, id",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, description, category, thumbnailUrl, fileUrl, downloadCount FROM leadMagnets ORDER BY sortOrder, id",
+  "rows": [
+    {
+      "id": "450006",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "210002",
+      "title": "Updated Title",
+      "description": "This description was updated via admin UI",
+      "category": "staffing",
+      "thumbnailUrl": "/thumbnails/staffing-crisis-thumb.png",
+      "fileUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/haviBeATEijsWZbm.pdf",
+      "downloadCount": "120"
+    },
+    {
+      "id": "450007",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450008",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480006",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "510001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "510002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "510003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "510004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540006",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540007",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540008",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "240006",
+      "title": "Compliance Quick Wins Checklist",
+      "description": "5 immediate actions to reduce violations by 20% in 30 days. Proven strategies from facilities that passed their surveys with zero deficiencies.",
+      "category": "compliance",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/compliance-quick-wins-checklist.txt",
+      "downloadCount": "0"
+    },
+    {
+      "id": "240007",
+      "title": "Staffing Quick Wins Checklist",
+      "description": "3 proven tactics to reduce overtime costs by 15% this month. Implemented by facilities that cut overtime budgets by $48K annually.",
+      "category": "staffing",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/staffing-quick-wins-checklist.txt",
+      "downloadCount": "0"
+    },
+    {
+      "id": "240008",
+      "title": "Financial Quick Wins Checklist",
+      "description": "Find $10K+ in hidden savings in 30 days. Cost-cutting strategies that don't compromise care quality.",
+      "category": "financial",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/financial-quick-wins-checklist.txt",
+      "downloadCount": "0"
+    },
+    {
+      "id": "240009",
+      "title": "Medication Safety Quick Wins Checklist",
+      "description": "Eliminate common medication errors in 30 days. Safety protocols that reduce liability and improve resident outcomes.",
+      "category": "medication",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/medication-quick-wins-checklist.txt",
+      "downloadCount": "0"
+    },
+    {
+      "id": "240010",
+      "title": "Person-Centered Care Quick Wins Checklist",
+      "description": "Boost family satisfaction scores by 20% in 30 days. Strategies that create meaningful resident engagement and quality of life.",
+      "category": "care",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/care-quick-wins-checklist.txt",
+      "downloadCount": "0"
+    },
+    {
+      "id": "210003",
+      "title": "Stop Chasing Reimbursement: The Cost-Cutting Revolution in Residential Care",
+      "description": "Why revenue maximization is a losing strategy. This contrarian financial guide shows how radical cost reduction through technology delivers 20-30% margins—without touching reimbursement rates.",
+      "category": "roi",
+      "thumbnailUrl": "/thumbnails/cost-cutting-revolution-thumb.png",
+      "fileUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/TiNIUTCBcLpZMVqK.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "210004",
+      "title": "Medication Management 2.0: Why Your Current System is Dangerous",
+      "description": "Up to 27% of residents experience medication errors. Discover why manual processes virtually guarantee mistakes—and how AI-powered systems achieve 99.9% accuracy while reducing administration time by 50%.",
+      "category": "compliance",
+      "thumbnailUrl": "/thumbnails/medication-management-thumb.png",
+      "fileUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/lXbPAksDixAkhFte.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "210005",
+      "title": "The Active Treatment Trap: Rethinking Person-Centered Care in ICF-ID",
+      "description": "More programming doesn't equal better outcomes. Learn the data-driven approach to person-centered care that reduces structured hours by 45% while increasing goal achievement by 107%.",
+      "category": "operations",
+      "thumbnailUrl": "/thumbnails/active-treatment-trap-thumb.png",
+      "fileUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/sOaWeCIdTBtUtFzZ.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "330001",
+      "title": "The ICF-ID Compliance Paradox: Why Perfect Documentation Still Gets You Cited",
+      "description": "Discover the contrarian approach to regulatory compliance that reduces survey prep time by 85% while achieving zero deficiencies. Based on analysis of 2,847 survey reports.",
+      "category": "compliance",
+      "thumbnailUrl": "/thumbnails/compliance-paradox-thumb.png",
+      "fileUrl": "https://harmonycare-resources.s3.amazonaws.com/guides/icf-id-compliance-guide.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "360001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "360002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "1"
+    },
+    {
+      "id": "360003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "360004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "390001",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "390002",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "420001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "420002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png",
+      "fileUrl": "https://example.com/test-upload.pdf",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL",
+      "fileUrl": "https://example.com/new-resource.pdf",
+      "downloadCount": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tdescription\tcategory\tthumbnailUrl\tfileUrl\tdownloadCount\n450006\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n210002\tUpdated Title\tThis description was updated via admin UI\tstaffing\t/thumbnails/staffing-crisis-thumb.png\thttps://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/haviBeATEijsWZbm.pdf\t120\n450007\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n450008\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n480001\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n480002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n480003\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n480004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n480005\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n480006\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n510001\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n510002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n510003\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n510004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n540001\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n540002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n540003\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n540004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n540005\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n540006\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n540007\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n540008\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n240006\tCompliance Quick Wins Checklist\t5 immediate actions to reduce violations by 20% in 30 days. Proven strategies from facilities that passed their surveys with zero deficiencies.\tcompliance\tNULL\thttps://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/compliance-quick-wins-checklist.txt\t0\n240007\tStaffing Quick Wins Checklist\t3 proven tactics to reduce overtime costs by 15% this month. Implemented by facilities that cut overtime budgets by $48K annually.\tstaffing\tNULL\thttps://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/staffing-quick-wins-checklist.txt\t0\n240008\tFinancial Quick Wins Checklist\tFind $10K+ in hidden savings in 30 days. Cost-cutting strategies that don't compromise care quality.\tfinancial\tNULL\thttps://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/financial-quick-wins-checklist.txt\t0\n240009\tMedication Safety Quick Wins Checklist\tEliminate common medication errors in 30 days. Safety protocols that reduce liability and improve resident outcomes.\tmedication\tNULL\thttps://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/medication-quick-wins-checklist.txt\t0\n240010\tPerson-Centered Care Quick Wins Checklist\tBoost family satisfaction scores by 20% in 30 days. Strategies that create meaningful resident engagement and quality of life.\tcare\tNULL\thttps://d2xsxph8kpxj0f.cloudfront.net/310419663028725899/GC5X5TPdNGfhjqPDyVt4dB/resources/care-quick-wins-checklist.txt\t0\n210003\tStop Chasing Reimbursement: The Cost-Cutting Revolution in Residential Care\tWhy revenue maximization is a losing strategy. This contrarian financial guide shows how radical cost reduction through technology delivers 20-30% margins—without touching reimbursement rates.\troi\t/thumbnails/cost-cutting-revolution-thumb.png\thttps://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/TiNIUTCBcLpZMVqK.pdf\t0\n210004\tMedication Management 2.0: Why Your Current System is Dangerous\tUp to 27% of residents experience medication errors. Discover why manual processes virtually guarantee mistakes—and how AI-powered systems achieve 99.9% accuracy while reducing administration time by 50%.\tcompliance\t/thumbnails/medication-management-thumb.png\thttps://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/lXbPAksDixAkhFte.pdf\t0\n210005\tThe Active Treatment Trap: Rethinking Person-Centered Care in ICF-ID\tMore programming doesn't equal better outcomes. Learn the data-driven approach to person-centered care that reduces structured hours by 45% while increasing goal achievement by 107%.\toperations\t/thumbnails/active-treatment-trap-thumb.png\thttps://files.manuscdn.com/user_upload_by_module/session_file/310419663028725899/sOaWeCIdTBtUtFzZ.pdf\t0\n330001\tThe ICF-ID Compliance Paradox: Why Perfect Documentation Still Gets You Cited\tDiscover the contrarian approach to regulatory compliance that reduces survey prep time by 85% while achieving zero deficiencies. Based on analysis of 2,847 survey reports.\tcompliance\t/thumbnails/compliance-paradox-thumb.png\thttps://harmonycare-resources.s3.amazonaws.com/guides/icf-id-compliance-guide.pdf\t0\n360001\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n360002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t1\n360003\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n360004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n390001\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n390002\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n420001\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n420002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n450001\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n450002\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n450003\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n450004\tTest Resource via Upload\tThis resource was created through the upload flow\troi\thttps://example.com/test-thumbnail.png\thttps://example.com/test-upload.pdf\t0\n450005\tNew Test Resource\tTest description for new resource\toperations\tNULL\thttps://example.com/new-resource.pdf\t0\n",
+  "stderr": "",
+  "execution_time_ms": 63
+}

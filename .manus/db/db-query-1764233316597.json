@@ -1,0 +1,60 @@
+{
+  "query": "SELECT id, title, description FROM leadMagnets WHERE title = 'Updated Title' OR title = 'Test Resource via Upload' LIMIT 10",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, description FROM leadMagnets WHERE title = 'Updated Title' OR title = 'Test Resource via Upload' LIMIT 10",
+  "rows": [
+    {
+      "id": "210002",
+      "title": "Updated Title",
+      "description": "This description was updated via admin UI"
+    },
+    {
+      "id": "360002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    },
+    {
+      "id": "360004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    },
+    {
+      "id": "390001",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    },
+    {
+      "id": "420002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    },
+    {
+      "id": "450002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    },
+    {
+      "id": "450004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    },
+    {
+      "id": "450006",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    },
+    {
+      "id": "450008",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    },
+    {
+      "id": "480002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tdescription\n210002\tUpdated Title\tThis description was updated via admin UI\n360002\tTest Resource via Upload\tThis resource was created through the upload flow\n360004\tTest Resource via Upload\tThis resource was created through the upload flow\n390001\tTest Resource via Upload\tThis resource was created through the upload flow\n420002\tTest Resource via Upload\tThis resource was created through the upload flow\n450002\tTest Resource via Upload\tThis resource was created through the upload flow\n450004\tTest Resource via Upload\tThis resource was created through the upload flow\n450006\tTest Resource via Upload\tThis resource was created through the upload flow\n450008\tTest Resource via Upload\tThis resource was created through the upload flow\n480002\tTest Resource via Upload\tThis resource was created through the upload flow\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}
