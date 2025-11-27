@@ -31,6 +31,7 @@ import { resendWebhookRouter } from "./resendWebhook";
 import { leadMagnetsRouter } from "./leadMagnets";
 import { fileUploadRouter } from "./fileUpload";
 import { newsletterRouter } from "./newsletter";
+import { emailEngagementRouter } from "./emailEngagement";
 import { signups, referrals } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 
@@ -43,6 +44,7 @@ export const appRouter = router({
   leadMagnets: leadMagnetsRouter,
   fileUpload: fileUploadRouter,
   newsletter: newsletterRouter,
+  emailEngagement: emailEngagementRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

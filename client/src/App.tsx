@@ -20,6 +20,7 @@ import BlogArticle from "./pages/BlogArticle";
 import AdminCalculatorLeads from "./pages/AdminCalculatorLeads";
 import Resources from "./pages/Resources";
 import AdminResources from "./pages/AdminResources";
+import EmailEngagement from "./pages/EmailEngagement";
 import {
   ComplianceParadoxLanding,
   StaffingOptimizationLanding,
@@ -37,6 +38,7 @@ function Router() {
       <Route path={"/admin"} component={Admin} />
       <Route path="/admin/calculator-leads" component={AdminCalculatorLeads} />
       <Route path="/admin/resources" component={AdminResources} />
+      <Route path="/admin/email-engagement" component={EmailEngagement} />
       <Route path={"/referrals"} component={Referrals} />
       <Route path="/pricing" component={Pricing} />
       <Route path="/about" component={About} />

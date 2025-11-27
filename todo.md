@@ -1080,3 +1080,14 @@
 - [x] Integrate with Resend API for email delivery
 - [x] Test complete nurture sequence flow
 - [x] Add unsubscribe functionality
+
+## Email Engagement Tracking Dashboard
+
+- [x] Create TRPC endpoints for email engagement analytics
+- [x] Build email engagement metrics aggregation (open rates, click rates, by email type)
+- [x] Add nurture sequence performance tracking (completion rates, drop-off analysis)
+- [x] Create admin dashboard UI for email engagement
+- [x] Add charts for email performance over time
+- [x] Add email type breakdown (Welcome, Day 2, Day 5, Day 8, Day 12)
+- [x] Add lead tier engagement comparison
+- [x] Write tests for email engagement analytics
