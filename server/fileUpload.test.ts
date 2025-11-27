@@ -10,7 +10,8 @@ describe("File Upload System", () => {
       const caller = fileUploadRouter.createCaller(mockContext as any);
 
       // Create a small test PDF (base64)
-      const testPdfData = "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFI+PgplbmRvYmoKMiAwIG9iago8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDE+PgplbmRvYmoKMyAwIG9iago8PC9UeXBlL1BhZ2UvTWVkaWFCb3hbMCAwIDMgM10+PgplbmRvYmoKeHJlZgowIDQKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4gCjAwMDAwMDAwNTMgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNC9Sb290IDEgMCBSPj4Kc3RhcnR4cmVmCjE0OAolRU9G";
+      const testPdfData =
+        "JVBERi0xLjQKJeLjz9MKMSAwIG9iago8PC9UeXBlL0NhdGFsb2cvUGFnZXMgMiAwIFI+PgplbmRvYmoKMiAwIG9iago8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDE+PgplbmRvYmoKMyAwIG9iago8PC9UeXBlL1BhZ2UvTWVkaWFCb3hbMCAwIDMgM10+PgplbmRvYmoKeHJlZgowIDQKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4gCjAwMDAwMDAwNTMgMDAwMDAgbiAKMDAwMDAwMDEwMiAwMDAwMCBuIAp0cmFpbGVyCjw8L1NpemUgNC9Sb290IDEgMCBSPj4Kc3RhcnR4cmVmCjE0OAolRU9G";
 
       const result = await caller.uploadFile({
         fileName: "test-resource.pdf",
@@ -34,7 +35,8 @@ describe("File Upload System", () => {
       const caller = fileUploadRouter.createCaller(mockContext as any);
 
       // Create a small test image (1x1 PNG, base64)
-      const testImageData = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==";
+      const testImageData =
+        "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==";
 
       const result = await caller.uploadFile({
         fileName: "test-thumbnail.png",
@@ -146,8 +148,10 @@ describe("File Upload System", () => {
       expect(result.success).toBe(true);
 
       // Verify update
-      const updated = await caller.getById({ id: firstMagnet.id });
-      expect(updated.sortOrder).toBe(newSortOrder);
+      const allMagnets = await caller.adminGetAll();
+      const updated = allMagnets.find(m => m.id === firstMagnet.id);
+      expect(updated).toBeDefined();
+      expect(updated?.sortOrder).toBe(newSortOrder);
     });
 
     it("should toggle resource active status", async () => {
@@ -174,7 +178,7 @@ describe("File Upload System", () => {
 
       // Verify toggle
       const allMagnets = await caller.adminGetAll();
-      const updated = allMagnets.find((m) => m.id === magnet.id);
+      const updated = allMagnets.find(m => m.id === magnet.id);
       expect(updated?.isActive).toBe(newStatus);
 
       // Toggle back
@@ -307,7 +311,7 @@ describe("File Upload System", () => {
       const caller = leadMagnetsRouter.createCaller(mockContext as any);
 
       const magnets = await caller.adminGetAll();
-      
+
       if (magnets.length < 2) {
         console.log("Need at least 2 magnets to test reordering");
         return;
@@ -330,8 +334,8 @@ describe("File Upload System", () => {
 
       // Verify new order
       const reordered = await caller.adminGetAll();
-      const first = reordered.find((m) => m.id === secondId);
-      const second = reordered.find((m) => m.id === firstId);
+      const first = reordered.find(m => m.id === secondId);
+      const second = reordered.find(m => m.id === firstId);
 
       expect(first?.sortOrder).toBe(0);
       expect(second?.sortOrder).toBe(1);
