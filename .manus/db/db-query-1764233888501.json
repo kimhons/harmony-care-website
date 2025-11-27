@@ -1,0 +1,178 @@
+{
+  "query": "SELECT id, title, description, type, category, downloadCount FROM leadMagnets WHERE title LIKE '%Test%' OR description LIKE '%upload flow%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, description, type, category, downloadCount FROM leadMagnets WHERE title LIKE '%Test%' OR description LIKE '%upload flow%';",
+  "rows": [
+    {
+      "id": "360001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "360003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "390002",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "420001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "450007",
+      "title": "New Test Resource",
+      "description": "This description was updated via admin UI",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "480005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "510001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "510003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540005",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "540007",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "570001",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "570002",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "type": "pdf",
+      "category": "roi",
+      "downloadCount": "0"
+    },
+    {
+      "id": "570003",
+      "title": "New Test Resource",
+      "description": "Test description for new resource",
+      "type": "pdf",
+      "category": "operations",
+      "downloadCount": "0"
+    },
+    {
+      "id": "570004",
+      "title": "Test Resource via Upload",
+      "description": "This resource was created through the upload flow",
+      "type": "pdf",
+      "category": "roi",
+      "downloadCount": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tdescription\ttype\tcategory\tdownloadCount\n360001\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n360003\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n390002\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n420001\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n450001\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n450003\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n450005\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n450007\tNew Test Resource\tThis description was updated via admin UI\tpdf\toperations\t0\n480001\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n480003\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n480005\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n510001\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n510003\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n540001\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n540003\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n540005\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n540007\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n570001\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n570002\tTest Resource via Upload\tThis resource was created through the upload flow\tpdf\troi\t0\n570003\tNew Test Resource\tTest description for new resource\tpdf\toperations\t0\n570004\tTest Resource via Upload\tThis resource was created through the upload flow\tpdf\troi\t0\n",
+  "stderr": "",
+  "execution_time_ms": 62
+}
