@@ -1,0 +1,70 @@
+{
+  "query": "SELECT id, title, category FROM leadMagnets WHERE isActive = 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, category FROM leadMagnets WHERE isActive = 1;",
+  "rows": [
+    {
+      "id": "210002",
+      "title": "Staffing Crisis Solution Guide",
+      "category": "staffing"
+    },
+    {
+      "id": "210003",
+      "title": "Stop Chasing Reimbursement: The Cost-Cutting Revolution in Residential Care",
+      "category": "roi"
+    },
+    {
+      "id": "210004",
+      "title": "Medication Management 2.0: Why Your Current System is Dangerous",
+      "category": "compliance"
+    },
+    {
+      "id": "210005",
+      "title": "The Active Treatment Trap: Rethinking Person-Centered Care in ICF-ID",
+      "category": "operations"
+    },
+    {
+      "id": "240006",
+      "title": "Compliance Quick Wins Checklist",
+      "category": "compliance"
+    },
+    {
+      "id": "240007",
+      "title": "Staffing Quick Wins Checklist",
+      "category": "staffing"
+    },
+    {
+      "id": "240008",
+      "title": "Financial Quick Wins Checklist",
+      "category": "financial"
+    },
+    {
+      "id": "240010",
+      "title": "Person-Centered Care Quick Wins Checklist",
+      "category": "care"
+    },
+    {
+      "id": "330001",
+      "title": "The ICF-ID Compliance Paradox: Why Perfect Documentation Still Gets You Cited",
+      "category": "compliance"
+    },
+    {
+      "id": "630001",
+      "title": "Medication Management Excellence Guide",
+      "category": "medication"
+    },
+    {
+      "id": "630002",
+      "title": "Financial Optimization Playbook",
+      "category": "roi"
+    },
+    {
+      "id": "630003",
+      "title": "Family Communication Mastery Guide",
+      "category": "roi"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tcategory\n210002\tStaffing Crisis Solution Guide\tstaffing\n210003\tStop Chasing Reimbursement: The Cost-Cutting Revolution in Residential Care\troi\n210004\tMedication Management 2.0: Why Your Current System is Dangerous\tcompliance\n210005\tThe Active Treatment Trap: Rethinking Person-Centered Care in ICF-ID\toperations\n240006\tCompliance Quick Wins Checklist\tcompliance\n240007\tStaffing Quick Wins Checklist\tstaffing\n240008\tFinancial Quick Wins Checklist\tfinancial\n240010\tPerson-Centered Care Quick Wins Checklist\tcare\n330001\tThe ICF-ID Compliance Paradox: Why Perfect Documentation Still Gets You Cited\tcompliance\n630001\tMedication Management Excellence Guide\tmedication\n630002\tFinancial Optimization Playbook\troi\n630003\tFamily Communication Mastery Guide\troi\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

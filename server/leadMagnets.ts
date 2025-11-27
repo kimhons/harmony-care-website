@@ -28,7 +28,7 @@ import { sendDay1Email } from "./resourceNurtureService";
 export const leadMagnetsRouter = router({
   /**
    * Get featured lead magnets for homepage
-   * Returns top 3 active magnets by download count
+   * Returns top 6 active magnets by download count
    */
   getFeatured: publicProcedure.query(async () => {
     const db = await getDb();
@@ -44,7 +44,7 @@ export const leadMagnetsRouter = router({
       .from(leadMagnets)
       .where(eq(leadMagnets.isActive, 1))
       .orderBy(desc(leadMagnets.downloadCount), leadMagnets.sortOrder)
-      .limit(3);
+      .limit(6);
 
     return magnets;
   }),

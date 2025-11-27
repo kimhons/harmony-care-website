@@ -1100,3 +1100,16 @@
 - [x] Verify all resource thumbnails are displaying correctly
 - [x] Final website review and polish
 - [ ] Deploy to Vercel
+
+## Add Three New Resource Guides to Homepage
+
+- [x] Create Medication Management Excellence Guide (comprehensive content)
+- [x] Create Financial Optimization Playbook (comprehensive content)
+- [x] Create Family Communication Mastery Guide (comprehensive content)
+- [x] Generate professional thumbnail for Medication Management guide
+- [x] Generate professional thumbnail for Financial Optimization guide
+- [x] Generate professional thumbnail for Family Communication guide
+- [x] Upload all three resources to S3
+- [x] Add resources to database with proper metadata
+- [x] Verify homepage displays all 6 featured resources
+- [x] Run tests to ensure everything works

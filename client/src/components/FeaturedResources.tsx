@@ -18,7 +18,7 @@ import { toast } from "sonner";
 
 /**
  * Featured Resources Section
- * 
+ *
  * Displays top 3 lead magnets on homepage to drive early-funnel lead capture.
  * Features:
  * - Eye-catching card layout with thumbnails
@@ -100,7 +100,9 @@ function DownloadModal({ isOpen, onClose, magnet }: DownloadModalProps) {
               id="email"
               type="email"
               value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              onChange={e =>
+                setFormData({ ...formData, email: e.target.value })
+              }
               placeholder="your.email@facility.com"
               required
             />
@@ -111,7 +113,7 @@ function DownloadModal({ isOpen, onClose, magnet }: DownloadModalProps) {
             <Input
               id="name"
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={e => setFormData({ ...formData, name: e.target.value })}
               placeholder="John Smith"
             />
           </div>
@@ -121,7 +123,9 @@ function DownloadModal({ isOpen, onClose, magnet }: DownloadModalProps) {
             <Input
               id="facilityName"
               value={formData.facilityName}
-              onChange={(e) => setFormData({ ...formData, facilityName: e.target.value })}
+              onChange={e =>
+                setFormData({ ...formData, facilityName: e.target.value })
+              }
               placeholder="Sunrise Senior Living"
             />
           </div>
@@ -131,7 +135,9 @@ function DownloadModal({ isOpen, onClose, magnet }: DownloadModalProps) {
             <Input
               id="jobTitle"
               value={formData.jobTitle}
-              onChange={(e) => setFormData({ ...formData, jobTitle: e.target.value })}
+              onChange={e =>
+                setFormData({ ...formData, jobTitle: e.target.value })
+              }
               placeholder="Administrator"
             />
           </div>
@@ -156,8 +162,8 @@ function DownloadModal({ isOpen, onClose, magnet }: DownloadModalProps) {
           </Button>
 
           <p className="text-xs text-muted-foreground text-center">
-            By downloading, you agree to receive occasional emails about HarmonyCare.
-            Unsubscribe anytime.
+            By downloading, you agree to receive occasional emails about
+            HarmonyCare. Unsubscribe anytime.
           </p>
         </div>
       </DialogContent>
@@ -215,26 +221,31 @@ export function FeaturedResources() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
               <FileText className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">Free Resources</span>
+              <span className="text-sm font-semibold text-primary">
+                Free Resources
+              </span>
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Start Your Transformation Today
             </h2>
             <p className="text-xl text-muted-foreground">
-              Download our most popular guides to see how HarmonyCare can revolutionize your facility—no commitment required.
+              Download our most popular guides to see how HarmonyCare can
+              revolutionize your facility—no commitment required.
             </p>
           </div>
 
           {/* Resource Cards */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {magnets.map((magnet, index) => (
               <Card
                 key={magnet.id}
                 className="group relative overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-card border-border"
               >
                 {/* Gradient Overlay */}
-                <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${getCategoryColor(magnet.category)}`}></div>
+                <div
+                  className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${getCategoryColor(magnet.category)}`}
+                ></div>
 
                 {/* Thumbnail */}
                 <div className="relative h-48 overflow-hidden bg-muted">
@@ -249,7 +260,7 @@ export function FeaturedResources() {
                       <FileText className="w-16 h-16 text-muted-foreground" />
                     </div>
                   )}
-                  
+
                   {/* Download Count Badge */}
                   <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-semibold flex items-center gap-1 shadow-lg">
                     <Download className="w-3 h-3" />
@@ -261,7 +272,8 @@ export function FeaturedResources() {
                 <div className="p-6 space-y-4">
                   {/* Category Badge */}
                   <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                    {magnet.category.charAt(0).toUpperCase() + magnet.category.slice(1)}
+                    {magnet.category.charAt(0).toUpperCase() +
+                      magnet.category.slice(1)}
                   </div>
 
                   {/* Title */}

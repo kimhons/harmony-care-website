@@ -1,0 +1,70 @@
+{
+  "query": "SELECT id, title, category, thumbnailUrl FROM leadMagnets ORDER BY id DESC LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 345pWMaQPV1VyKp.912bd57faac6 --database GC5X5TPdNGfhjqPDyVt4dB --execute SELECT id, title, category, thumbnailUrl FROM leadMagnets ORDER BY id DESC LIMIT 10;",
+  "rows": [
+    {
+      "id": "630003",
+      "title": "Family Communication Mastery Guide",
+      "category": "roi",
+      "thumbnailUrl": "/family-communication-thumbnail.png"
+    },
+    {
+      "id": "630002",
+      "title": "Financial Optimization Playbook",
+      "category": "roi",
+      "thumbnailUrl": "/financial-optimization-thumbnail.png"
+    },
+    {
+      "id": "630001",
+      "title": "Medication Management Excellence Guide",
+      "category": "medication",
+      "thumbnailUrl": "/medication-management-thumbnail.png"
+    },
+    {
+      "id": "600004",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png"
+    },
+    {
+      "id": "600003",
+      "title": "New Test Resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL"
+    },
+    {
+      "id": "600002",
+      "title": "Test Resource via Upload",
+      "category": "roi",
+      "thumbnailUrl": "https://example.com/test-thumbnail.png"
+    },
+    {
+      "id": "600001",
+      "title": "New Test Resource",
+      "category": "operations",
+      "thumbnailUrl": "NULL"
+    },
+    {
+      "id": "330001",
+      "title": "The ICF-ID Compliance Paradox: Why Perfect Documentation Still Gets You Cited",
+      "category": "compliance",
+      "thumbnailUrl": "/thumbnails/compliance-paradox-thumb.png"
+    },
+    {
+      "id": "240010",
+      "title": "Person-Centered Care Quick Wins Checklist",
+      "category": "care",
+      "thumbnailUrl": "NULL"
+    },
+    {
+      "id": "240009",
+      "title": "Medication Safety Quick Wins Checklist",
+      "category": "medication",
+      "thumbnailUrl": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tcategory\tthumbnailUrl\n630003\tFamily Communication Mastery Guide\troi\t/family-communication-thumbnail.png\n630002\tFinancial Optimization Playbook\troi\t/financial-optimization-thumbnail.png\n630001\tMedication Management Excellence Guide\tmedication\t/medication-management-thumbnail.png\n600004\tTest Resource via Upload\troi\thttps://example.com/test-thumbnail.png\n600003\tNew Test Resource\toperations\tNULL\n600002\tTest Resource via Upload\troi\thttps://example.com/test-thumbnail.png\n600001\tNew Test Resource\toperations\tNULL\n330001\tThe ICF-ID Compliance Paradox: Why Perfect Documentation Still Gets You Cited\tcompliance\t/thumbnails/compliance-paradox-thumb.png\n240010\tPerson-Centered Care Quick Wins Checklist\tcare\tNULL\n240009\tMedication Safety Quick Wins Checklist\tmedication\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 50
+}

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 describe("Featured Resources Homepage Integration", () => {
   describe("getFeatured Endpoint", () => {
-    it("should return top 3 active magnets by download count", async () => {
+    it("should return top 6 active magnets by download count", async () => {
       const { leadMagnetsRouter } = await import("./leadMagnets");
       const mockContext = {};
       const caller = leadMagnetsRouter.createCaller(mockContext as any);
@@ -11,10 +11,10 @@ describe("Featured Resources Homepage Integration", () => {
 
       expect(featured).toBeDefined();
       expect(Array.isArray(featured)).toBe(true);
-      expect(featured.length).toBeLessThanOrEqual(3);
+      expect(featured.length).toBeLessThanOrEqual(6);
 
       // All should be active
-      featured.forEach((magnet) => {
+      featured.forEach(magnet => {
         expect(magnet.isActive).toBe(1);
       });
 
@@ -34,7 +34,7 @@ describe("Featured Resources Homepage Integration", () => {
       const featured = await caller.getFeatured();
 
       // Verify all are active
-      const allActive = featured.every((m) => m.isActive === 1);
+      const allActive = featured.every(m => m.isActive === 1);
       expect(allActive).toBe(true);
     });
 
@@ -84,7 +84,7 @@ describe("Featured Resources Homepage Integration", () => {
 
       // Get featured magnets
       const featured = await caller.getFeatured();
-      
+
       if (featured.length === 0) {
         console.log("No featured magnets to test download");
         return;
@@ -119,7 +119,7 @@ describe("Featured Resources Homepage Integration", () => {
       const caller = leadMagnetsRouter.createCaller(mockContext as any);
 
       const featured = await caller.getFeatured();
-      
+
       if (featured.length === 0) {
         console.log("No featured magnets to test tracking");
         return;
@@ -137,8 +137,8 @@ describe("Featured Resources Homepage Integration", () => {
 
       // Verify count increased
       const updatedFeatured = await caller.getFeatured();
-      const updatedMagnet = updatedFeatured.find((m) => m.id === magnet.id);
-      
+      const updatedMagnet = updatedFeatured.find(m => m.id === magnet.id);
+
       if (updatedMagnet) {
         expect(updatedMagnet.downloadCount).toBe(initialCount + 1);
       }
@@ -180,9 +180,9 @@ describe("Featured Resources Homepage Integration", () => {
       const adminCaller = leadMagnetsRouter.createCaller(adminContext as any);
       const analytics = await adminCaller.adminGetAnalytics();
       const recentDownload = analytics.recentDownloads.find(
-        (d) => d.email === testEmail
+        d => d.email === testEmail
       );
-      
+
       // Download should exist in recent downloads
       expect(recentDownload).toBeDefined();
     });
@@ -227,9 +227,9 @@ describe("Featured Resources Homepage Integration", () => {
 
       if (featured.length > 0 && allMagnets.length > 0) {
         // Featured should include highest download count magnets
-        const maxDownloads = Math.max(...allMagnets.map((m) => m.downloadCount));
+        const maxDownloads = Math.max(...allMagnets.map(m => m.downloadCount));
         const topFeatured = featured[0];
-        
+
         // First featured should have high download count
         expect(topFeatured.downloadCount).toBeGreaterThanOrEqual(0);
       }
@@ -252,14 +252,14 @@ describe("Featured Resources Homepage Integration", () => {
       }
     });
 
-    it("should return exactly 3 or fewer magnets", async () => {
+    it("should return exactly 6 or fewer magnets", async () => {
       const { leadMagnetsRouter } = await import("./leadMagnets");
       const mockContext = {};
       const caller = leadMagnetsRouter.createCaller(mockContext as any);
 
       const featured = await caller.getFeatured();
 
-      expect(featured.length).toBeLessThanOrEqual(3);
+      expect(featured.length).toBeLessThanOrEqual(6);
     });
   });
 
@@ -272,9 +272,9 @@ describe("Featured Resources Homepage Integration", () => {
       const featured = await caller.getFeatured();
 
       if (featured.length >= 2) {
-        const categories = featured.map((m) => m.category);
+        const categories = featured.map(m => m.category);
         const uniqueCategories = new Set(categories);
-        
+
         // Ideally should have variety (but not required if all top downloads are same category)
         expect(uniqueCategories.size).toBeGreaterThan(0);
       }
